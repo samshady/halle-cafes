@@ -15,6 +15,9 @@ test('Full feature browser automation suite across all user interactions', async
   // 2. Start Headless Chrome
   const chrome = spawn('google-chrome', [
     '--headless=new',
+    '--no-sandbox',
+    '--disable-setuid-sandbox',
+    '--disable-gpu',
     `--remote-debugging-port=${cdpPort}`,
     '--window-size=1280,800',
     `http://localhost:${port}/`
