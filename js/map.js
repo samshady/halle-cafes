@@ -24,10 +24,10 @@ export class CafeMap {
       return;
     }
 
-    // Initialize MapLibre GL with OpenFreeMap Dark style
+    // Initialize MapLibre GL with OpenFreeMap Fiord style (rich dark slate with clear roads & water)
     this.map = new maplibregl.Map({
       container: this.containerId,
-      style: 'https://tiles.openfreemap.org/styles/dark',
+      style: 'https://tiles.openfreemap.org/styles/fiord',
       center: center, // [lng, lat] in MapLibre
       zoom: zoom,
       pitch: 35, // Subtle 3D tilt for architectural depth
@@ -46,39 +46,52 @@ export class CafeMap {
       'bottom-right'
     );
 
-    this.map.on('load', () => {
-      this.isLoaded = true;
-
-      // Optional: Add subtle 3D extruded buildings if source layer is present
+    const setupBuildingsLayer = () => {
       try {
+        if (!this.map || !this.map.getSource('openmaptiles') || this.map.getLayer('3d-buildings-extrude')) return;
         const layers = this.map.getStyle().layers || [];
         const labelLayer = layers.find(l => l.type === 'symbol' && l.layout && l.layout['text-field']);
         const labelLayerId = labelLayer ? labelLayer.id : undefined;
 
-        if (this.map.getSource('openmaptiles')) {
-          this.map.addLayer({
-            id: '3d-buildings-extrude',
-            source: 'openmaptiles',
-            'source-layer': 'building',
-            type: 'fill-extrusion',
-            minzoom: 14,
-            paint: {
-              'fill-extrusion-color': '#181825',
-              'fill-extrusion-height': ['get', 'render_height'],
-              'fill-extrusion-base': ['get', 'render_min_height'],
-              'fill-extrusion-opacity': 0.65
-            }
-          }, labelLayerId);
-        }
+        this.map.addLayer({
+          id: '3d-buildings-extrude',
+          source: 'openmaptiles',
+          'source-layer': 'building',
+          type: 'fill-extrusion',
+          minzoom: 14,
+          paint: {
+            'fill-extrusion-color': '#1e1e2e',
+            'fill-extrusion-height': ['get', 'render_height'],
+            'fill-extrusion-base': ['get', 'render_min_height'],
+            'fill-extrusion-opacity': 0.6
+          }
+        }, labelLayerId);
       } catch (err) {
         // Safe fallback if vector source doesn't support 3D extrusions
       }
+    };
+
+    this.map.on('load', () => {
+      this.isLoaded = true;
+      setupBuildingsLayer();
 
       // Re-render pending markers if dataset was passed before map finish load
       if (this.currentCafes.length > 0 && this.currentStore) {
         this.renderMarkers(this.currentCafes, this.currentStore);
       }
     });
+
+    this.map.on('style.load', () => {
+      setupBuildingsLayer();
+    });
+  }
+
+  setMapStyle(styleName) {
+    if (!this.map) return;
+    const styleUrl = styleName === 'liberty'
+      ? 'https://tiles.openfreemap.org/styles/liberty'
+      : 'https://tiles.openfreemap.org/styles/fiord';
+    this.map.setStyle(styleUrl);
   }
 
   createPinElement(cafe, isVisited, isSelected) {

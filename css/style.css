@@ -458,6 +458,15 @@ textarea:focus-visible {
   background-color: var(--surface1) !important;
 }
 
+.maplibregl-ctrl-group button .maplibregl-ctrl-icon {
+  filter: brightness(0) invert(1) !important;
+  opacity: 0.85;
+}
+
+.maplibregl-ctrl-group button:hover .maplibregl-ctrl-icon {
+  opacity: 1;
+}
+
 .maplibregl-ctrl-attrib {
   background: rgba(24, 24, 37, 0.8) !important;
   color: var(--subtext0) !important;
@@ -467,6 +476,46 @@ textarea:focus-visible {
 
 .maplibregl-ctrl-attrib a {
   color: var(--accent) !important;
+}
+
+/* Map Style Selector Toggle Pill */
+.map-style-toggle {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 100;
+  display: flex;
+  background: rgba(24, 24, 37, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius-full);
+  padding: 3px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
+}
+
+.map-style-btn {
+  background: transparent;
+  border: none;
+  color: var(--subtext0);
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 11px;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.map-style-btn:hover {
+  color: var(--text);
+}
+
+.map-style-btn.active {
+  background: var(--accent);
+  color: #11111b;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(203, 166, 247, 0.35);
 }
 
 /* Vector Marker Pins & Mobile Touch Targets */
@@ -573,7 +622,7 @@ textarea:focus-visible {
   border-radius: var(--radius-md);
   padding: 16px 18px;
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.05);
-  z-index: 10;
+  z-index: 1500;
   animation: preview-slide-up 0.22s cubic-bezier(0.16, 1, 0.3, 1);
   transition: opacity 0.2s ease, transform 0.2s ease;
 }
@@ -1030,6 +1079,7 @@ textarea:focus-visible {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   z-index: 9999;
+  display: flex;
   align-items: center;
   justify-content: center;
   padding: 16px;
@@ -1432,6 +1482,18 @@ textarea:focus-visible {
 
   body {
     padding-bottom: 60px;
+  }
+
+  .map-preview-card {
+    bottom: 68px;
+    left: 12px;
+    right: 12px;
+    max-width: none;
+  }
+
+  .map-style-toggle {
+    top: 10px;
+    right: 10px;
   }
 }
 

@@ -134,6 +134,12 @@
     <!-- Right Panel: Interactive MapLibre GL Vector Map -->
     <section id="map-view-container" class="panel-map hidden-mobile" aria-label="Interactive Map">
       <div id="map-container"></div>
+ 
+      <!-- Map Style Selector Toggle -->
+      <div class="map-style-toggle" role="group" aria-label="Map style switcher">
+        <button type="button" id="map-style-fiord" class="map-style-btn active" title="Slate dark vector cartography">Slate</button>
+        <button type="button" id="map-style-liberty" class="map-style-btn" title="Streets full color vector cartography">Streets</button>
+      </div>
 
       <!-- Floating Map Preview Drawer / Card (Non-blocking spatial browsing) -->
       <aside id="map-preview-card" class="map-preview-card hidden" aria-label="Selected Cafe Preview">

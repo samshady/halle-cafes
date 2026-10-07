@@ -78,6 +78,36 @@ class HalleCafeApp {
 
     // Responsive bottom sheet / tab toggle for mobile
     this.bindMobileTabs();
+
+    // Map style selector toggle
+    this.bindMapStyleToggle();
+  }
+
+  bindMapStyleToggle() {
+    const fiordBtn = document.getElementById('map-style-fiord');
+    const libertyBtn = document.getElementById('map-style-liberty');
+    if (!fiordBtn || !libertyBtn) return;
+
+    const savedStyle = localStorage.getItem('halle_map_style') || 'fiord';
+    if (savedStyle === 'liberty') {
+      libertyBtn.classList.add('active');
+      fiordBtn.classList.remove('active');
+      this.map.setMapStyle('liberty');
+    }
+
+    fiordBtn.addEventListener('click', () => {
+      fiordBtn.classList.add('active');
+      libertyBtn.classList.remove('active');
+      this.map.setMapStyle('fiord');
+      localStorage.setItem('halle_map_style', 'fiord');
+    });
+
+    libertyBtn.addEventListener('click', () => {
+      libertyBtn.classList.add('active');
+      fiordBtn.classList.remove('active');
+      this.map.setMapStyle('liberty');
+      localStorage.setItem('halle_map_style', 'liberty');
+    });
   }
 
   bindEvents() {

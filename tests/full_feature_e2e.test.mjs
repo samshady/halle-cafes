@@ -332,6 +332,38 @@ test('Full feature browser automation suite across all user interactions', async
     assert.ok(mobileTest.modalName.length > 0, 'Modal must display cafe name');
   });
 
+  await t.test('11. Map style toggle switches between Slate and Streets vector styles', async () => {
+    const styleTest = await evaluate(`
+      (() => {
+        const fiordBtn = document.getElementById('map-style-fiord');
+        const libertyBtn = document.getElementById('map-style-liberty');
+        
+        // Initial state is Slate (Fiord)
+        const initialSlateActive = fiordBtn.classList.contains('active');
+        
+        // Click Streets (Liberty)
+        libertyBtn.click();
+        const streetsActive = libertyBtn.classList.contains('active');
+        const slateInactive = !fiordBtn.classList.contains('active');
+        const storedStyle = localStorage.getItem('halle_map_style');
+        
+        // Click back to Slate (Fiord)
+        fiordBtn.click();
+        const slateActiveAgain = fiordBtn.classList.contains('active');
+        const finalStoredStyle = localStorage.getItem('halle_map_style');
+        
+        return { initialSlateActive, streetsActive, slateInactive, storedStyle, slateActiveAgain, finalStoredStyle };
+      })()
+    `);
+
+    assert.equal(styleTest.initialSlateActive, true, 'Slate button should be active initially');
+    assert.equal(styleTest.streetsActive, true, 'Streets button should be active after click');
+    assert.equal(styleTest.slateInactive, true, 'Slate button should be inactive after switching');
+    assert.equal(styleTest.storedStyle, 'liberty', 'localStorage should store liberty');
+    assert.equal(styleTest.slateActiveAgain, true, 'Slate button should be active again');
+    assert.equal(styleTest.finalStoredStyle, 'fiord', 'localStorage should store fiord');
+  });
+
   // Cleanup
   ws.close();
   chrome.kill();
