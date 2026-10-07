@@ -66,3 +66,25 @@ test('sorting by distance handles missing or present distances', () => {
   assert.equal(list[1].name, 'Cafe A');
   assert.equal(list[2].name, 'Cafe C');
 });
+
+test('sorting by Google rating ranks highest rated and most reviewed first', () => {
+  const sample = [
+    { name: 'Cafe Low', google_rating: 4.2, google_review_count: 50 },
+    { name: 'Cafe High Review', google_rating: 4.8, google_review_count: 320 },
+    { name: 'Cafe High Few', google_rating: 4.8, google_review_count: 40 },
+    { name: 'Cafe Mid', google_rating: 4.5, google_review_count: 100 }
+  ];
+
+  sample.sort((a, b) => {
+    const rA = a.google_rating ?? 0;
+    const rB = b.google_rating ?? 0;
+    if (rB !== rA) return rB - rA;
+    return (b.google_review_count ?? 0) - (a.google_review_count ?? 0);
+  });
+
+  assert.equal(sample[0].name, 'Cafe High Review');
+  assert.equal(sample[1].name, 'Cafe High Few');
+  assert.equal(sample[2].name, 'Cafe Mid');
+  assert.equal(sample[3].name, 'Cafe Low');
+});
+

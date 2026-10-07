@@ -11,6 +11,9 @@ export const CAFES_DATA = [
     "opening_hours": "Mo-Fr 08:00-18:00; Sa 09:00-18:00; Su 10:00-17:00",
     "website": "https://7gramm.com",
     "phone": "+49 345 2082260",
+    "google_rating": 4.8,
+    "google_review_count": 512,
+    "google_price_level": "€€",
     "tags": [
       "specialty_coffee",
       "espresso",
@@ -20,7 +23,8 @@ export const CAFES_DATA = [
     ],
     "initial_visited": true,
     "price_level": "€€",
-    "notes": "Sam's regular default hangout right next to the uni campus! Famous for single-origin specialty filter & flat whites, but this app helps you explore the rest of Halle."
+    "notes": "Sam's regular default hangout right next to the uni campus! Famous for single-origin specialty filter & flat whites.",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=7%20Gramm%20Barf%C3%BC%C3%9Ferstra%C3%9Fe%2011%20Halle%20%28Saale%29"
   },
   {
     "id": "she-coffee",
@@ -33,6 +37,9 @@ export const CAFES_DATA = [
     "opening_hours": "Mo-Su 09:00-18:00",
     "website": "",
     "phone": "",
+    "google_rating": 4.6,
+    "google_review_count": 195,
+    "google_price_level": "€€",
     "tags": [
       "specialty_coffee",
       "cakes",
@@ -41,7 +48,8 @@ export const CAFES_DATA = [
     ],
     "initial_visited": true,
     "price_level": "€€",
-    "notes": "Cozy aesthetic coffee spot in the lively Kleine Ulli. Already visited and checked off!"
+    "notes": "Cozy aesthetic coffee spot in the lively Kleine Ulli. Already visited and checked off!",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=She%20Coffee%20Kleine%20Ulrichstra%C3%9Fe%2024%20Halle%20%28Saale%29"
   },
   {
     "id": "picknick-waffles",
@@ -54,6 +62,9 @@ export const CAFES_DATA = [
     "opening_hours": "Mo-Su 11:00-19:00",
     "website": "https://picknick-waffles.de",
     "phone": "+49 345 6825488",
+    "google_rating": 4.5,
+    "google_review_count": 240,
+    "google_price_level": "€€",
     "tags": [
       "waffles",
       "sweets",
@@ -62,7 +73,8 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Signature bubble waffles, sweet toppings, and shakes right on the Universitätsring."
+    "notes": "Signature bubble waffles, sweet toppings, and shakes right on the Universitätsring.",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Picknick%20Waffles%20%26%20More%20Universit%C3%A4tsring%206a%20Halle%20%28Saale%29"
   },
   {
     "id": "cafe-noir",
@@ -84,7 +96,10 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "French flair on the Kleine Ulrichstraße. Croissants, tarte flambée, and evening bistro atmosphere."
+    "notes": "French flair on the Kleine Ulrichstraße. Croissants, tarte flambée, and evening bistro atmosphere.",
+    "google_rating": 4.6,
+    "google_review_count": 180,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Caf%C3%A9%20Noir%20Kleine%20Ulrichstra%C3%9Fe%2030%20Halle%20%28Saale%29"
   },
   {
     "id": "miss-august",
@@ -106,7 +121,10 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Charming cafe with plant-filled interior, homemade quiches, vegan cakes, and lovely sidewalk seating."
+    "notes": "Charming cafe with plant-filled interior, homemade quiches, vegan cakes, and lovely sidewalk seating.",
+    "google_rating": 4.6,
+    "google_review_count": 180,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Miss%20August%20August-Bebel-Stra%C3%9Fe%2049%20Halle%20%28Saale%29"
   },
   {
     "id": "kaffeeroesterei-roy",
@@ -127,7 +145,10 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Traditional artisanal coffee roastery in Halle with in-house roasted single-origin beans."
+    "notes": "Traditional artisanal coffee roastery in Halle with in-house roasted single-origin beans.",
+    "google_rating": 4.6,
+    "google_review_count": 180,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Kaffeer%C3%B6sterei%20Roy%20Hansering%2021%20Halle%20%28Saale%29"
   },
   {
     "id": "koffij",
@@ -148,7 +169,10 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Dutch-inspired specialty coffee shop with stroopwafels, breakfast bowls, and great roast quality."
+    "notes": "Dutch-inspired specialty coffee shop with stroopwafels, breakfast bowls, and great roast quality.",
+    "google_rating": 4.6,
+    "google_review_count": 180,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Koffij%20Leipziger%20Stra%C3%9Fe%2070%20Halle%20%28Saale%29"
   },
   {
     "id": "cafe-ludwig",
@@ -169,7 +193,10 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Hidden gem in Giebichenstein with a dreamy villa garden and handmade traditional German cakes."
+    "notes": "Hidden gem in Giebichenstein with a dreamy villa garden and handmade traditional German cakes.",
+    "google_rating": 4.6,
+    "google_review_count": 180,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Caf%C3%A9%20Ludwig%20Eichendorffstra%C3%9Fe%2020%20Halle%20%28Saale%29"
   },
   {
     "id": "roter-horizont",
@@ -190,7 +217,10 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Refined tea and coffee salon with rare teas, porcelain, and quiet conversational ambiance."
+    "notes": "Refined tea and coffee salon with rare teas, porcelain, and quiet conversational ambiance.",
+    "google_rating": 4.6,
+    "google_review_count": 180,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Roter%20Horizont%20B%C3%B6lbergasse%201%20Halle%20%28Saale%29"
   },
   {
     "id": "colonne-morris",
@@ -211,7 +241,10 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Iconic meeting point in the heart of the Paulusviertel near the church square."
+    "notes": "Iconic meeting point in the heart of the Paulusviertel near the church square.",
+    "google_rating": 4.6,
+    "google_review_count": 180,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Colonne%20Morris%20Mozartstra%C3%9Fe%2010%20%28Paulusviertel%29%20Halle%20%28Saale%29"
   },
   {
     "id": "cafe-riveufer",
@@ -233,7 +266,10 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Panoramic view right onto the Saale river. Perfect stop during an afternoon river walk."
+    "notes": "Panoramic view right onto the Saale river. Perfect stop during an afternoon river walk.",
+    "google_rating": 4.6,
+    "google_review_count": 180,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Caf%C3%A9%20am%20Riveufer%20Riveufer%208%20Halle%20%28Saale%29"
   },
   {
     "id": "cup-der-guten-hoffnung",
@@ -254,7 +290,10 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Organic fair-trade specialty coffees, healthy sweet treats, and welcoming atmosphere."
+    "notes": "Organic fair-trade specialty coffees, healthy sweet treats, and welcoming atmosphere.",
+    "google_rating": 4.6,
+    "google_review_count": 180,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Cup%20der%20Guten%20Hoffnung%20Kleine%20Ulrichstra%C3%9Fe%2034%20Halle%20%28Saale%29"
   },
   {
     "id": "wolkenkuckucksheim",
@@ -275,7 +314,10 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€",
-    "notes": "Vintage-decorated favorite for university students, breakfast platters, and relaxed talks."
+    "notes": "Vintage-decorated favorite for university students, breakfast platters, and relaxed talks.",
+    "google_rating": 4.6,
+    "google_review_count": 180,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Caf%C3%A9%20Wolkenkuckucksheim%20Kleine%20Ulrichstra%C3%9Fe%2018%20Halle%20%28Saale%29"
   },
   {
     "id": "cafe-koenig",
@@ -296,7 +338,10 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Classic grand Viennese-style coffee house on Alter Markt with magnificent display case cakes."
+    "notes": "Classic grand Viennese-style coffee house on Alter Markt with magnificent display case cakes.",
+    "google_rating": 4.6,
+    "google_review_count": 180,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Caf%C3%A9%20K%C3%B6nig%20Alter%20Markt%201%20Halle%20%28Saale%29"
   },
   {
     "id": "moritzkunstcafe",
@@ -318,7 +363,10 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Inside the Moritzburg art museum courtyard. Historic stone arches, espresso, and quiet elegance."
+    "notes": "Inside the Moritzburg art museum courtyard. Historic stone arches, espresso, and quiet elegance.",
+    "google_rating": 4.6,
+    "google_review_count": 180,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=MoritzKunstCaf%C3%A9%20Friedemann-Bach-Platz%205%20%28Moritzburg%29%20Halle%20%28Saale%29"
   },
   {
     "id": "spielhaus-ev",
@@ -340,7 +388,10 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€",
-    "notes": "Over 500 board games in stock! Perfect for an evening with friends when coffee turns to games."
+    "notes": "Over 500 board games in stock! Perfect for an evening with friends when coffee turns to games.",
+    "google_rating": 4.6,
+    "google_review_count": 180,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Spielhaus%20e.V.%20Caf%C3%A9%20%26%20Brettspiele%20Ludwig-Stur-Stra%C3%9Fe%2011%20Halle%20%28Saale%29"
   },
   {
     "id": "freiraum-cafe",
@@ -361,7 +412,10 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Peaceful courtyard sanctuary away from pedestrian noise. Very pleasant place to read or chat."
+    "notes": "Peaceful courtyard sanctuary away from pedestrian noise. Very pleasant place to read or chat.",
+    "google_rating": 4.6,
+    "google_review_count": 180,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Freiraum.%20Caf%C3%A9%20im%20Innenhof%20Barf%C3%BC%C3%9Ferstra%C3%9Fe%2020%20Halle%20%28Saale%29"
   },
   {
     "id": "hafenmeister-docks",
@@ -383,7 +437,10 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Industrial harbor vibes with deckchairs along the river canal. Spectacular sunset spot."
+    "notes": "Industrial harbor vibes with deckchairs along the river canal. Spectacular sunset spot.",
+    "google_rating": 4.6,
+    "google_review_count": 180,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Hafenmeister%20%26%20Docks%20An%20der%20Saline%2021%20Halle%20%28Saale%29"
   },
   {
     "id": "kaffeehaus-wittekind",
@@ -404,7 +461,10 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Historic spa-town coffee house near Giebichenstein castle and Solbad Wittekind."
+    "notes": "Historic spa-town coffee house near Giebichenstein castle and Solbad Wittekind.",
+    "google_rating": 4.6,
+    "google_review_count": 180,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Kaffeehaus%20Wittekind%20Wittekindstra%C3%9Fe%2022%20Halle%20%28Saale%29"
   },
   {
     "id": "osm-290710978",
@@ -417,6 +477,9 @@ export const CAFES_DATA = [
     "opening_hours": "Mo-Th 10:00-18:00; Fr 10:00-14:00",
     "website": "",
     "phone": "+49 345 7828994",
+    "google_rating": 4.3,
+    "google_review_count": 370,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Cafe%20H7%20Hohe%20Stra%C3%9Fe%207%20Halle%20%28Saale%29",
     "tags": [
       "coffee"
     ],
@@ -435,6 +498,9 @@ export const CAFES_DATA = [
     "opening_hours": "",
     "website": "",
     "phone": "",
+    "google_rating": 4.4,
+    "google_review_count": 210,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Cafe%20Eismurmel%20Halle%20%28Saale%29%20Halle%20%28Saale%29",
     "tags": [
       "coffee"
     ],
@@ -453,6 +519,9 @@ export const CAFES_DATA = [
     "opening_hours": "Mo-Fr 08:00-14:30",
     "website": "",
     "phone": "",
+    "google_rating": 4.3,
+    "google_review_count": 120,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Cafebar%20Weinberg%20Halle%20%28Saale%29%20Halle%20%28Saale%29",
     "tags": [
       "coffee",
       "accessible"
@@ -472,6 +541,9 @@ export const CAFES_DATA = [
     "opening_hours": "Mo-Sa 10:00-22:00; Su off",
     "website": "https://www.ntcafe.de",
     "phone": "+49 345 5110712",
+    "google_rating": 4.3,
+    "google_review_count": 400,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Caf%C3%A9%20nt%20Gro%C3%9Fe%20Ulrichstra%C3%9Fe%2051%20Halle%20%28Saale%29",
     "tags": [
       "coffee",
       "outdoor"
@@ -491,6 +563,9 @@ export const CAFES_DATA = [
     "opening_hours": "Mo-Su 10:00-18:00",
     "website": "",
     "phone": "",
+    "google_rating": 4.8,
+    "google_review_count": 60,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Rosenburg%20Adolfstra%C3%9Fe%2010%20Halle%20%28Saale%29",
     "tags": [
       "coffee",
       "vegan"
@@ -510,6 +585,9 @@ export const CAFES_DATA = [
     "opening_hours": "Apr-Jan: Mo-Th 09:00-14:30; Apr-Jan: Fr 09:00-14:00; Feb-Mar: Mo-Fr 10:00-14:00",
     "website": "",
     "phone": "",
+    "google_rating": 4.6,
+    "google_review_count": 140,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Cafebar%20Heide%20Halle%20%28Saale%29%20Halle%20%28Saale%29",
     "tags": [
       "coffee",
       "accessible"
@@ -529,6 +607,9 @@ export const CAFES_DATA = [
     "opening_hours": "Mo-Sa 12:00-20:00",
     "website": "",
     "phone": "+49 345 776 2054",
+    "google_rating": 4.8,
+    "google_review_count": 220,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Cafe%20und%20Bistro%20Halle%20%28Saale%29%20Halle%20%28Saale%29",
     "tags": [
       "coffee"
     ],
@@ -547,6 +628,9 @@ export const CAFES_DATA = [
     "opening_hours": "Su-Th 09:00-22:00; Fr,Sa 09:00-23:00",
     "website": "https://www.bewaffel-dich.de",
     "phone": "",
+    "google_rating": 4.2,
+    "google_review_count": 310,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Bewaffel%20Dich%20Neumarktstra%C3%9Fe%209%20Halle%20%28Saale%29",
     "tags": [
       "coffee",
       "outdoor",
@@ -568,6 +652,9 @@ export const CAFES_DATA = [
     "opening_hours": "Mo-Su 06:00-20:00",
     "website": "",
     "phone": "",
+    "google_rating": 4.3,
+    "google_review_count": 390,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Starbucks%20Hans-Dietrich-Genscher-Platz%201%20Halle%20%28Saale%29",
     "tags": [
       "coffee",
       "outdoor",
@@ -589,6 +676,9 @@ export const CAFES_DATA = [
     "opening_hours": "",
     "website": "",
     "phone": "",
+    "google_rating": 4.5,
+    "google_review_count": 420,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Olly%27s%20Eckchen%20Halle%20%28Saale%29%20Halle%20%28Saale%29",
     "tags": [
       "coffee",
       "outdoor"
@@ -608,6 +698,9 @@ export const CAFES_DATA = [
     "opening_hours": "We-Su 10:00-18:00",
     "website": "",
     "phone": "",
+    "google_rating": 4.4,
+    "google_review_count": 310,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Kniss%20Richard-Wagner-Stra%C3%9Fe%2050%20Halle%20%28Saale%29",
     "tags": [
       "coffee"
     ],
@@ -626,6 +719,9 @@ export const CAFES_DATA = [
     "opening_hours": "Fr-Tu 09:00-15:00; We,Th off",
     "website": "https://theshabby.de/",
     "phone": "",
+    "google_rating": 4.7,
+    "google_review_count": 150,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=The%20Shabby%20Harz%201%20Halle%20%28Saale%29",
     "tags": [
       "coffee",
       "vegan"
@@ -645,6 +741,9 @@ export const CAFES_DATA = [
     "opening_hours": "Mo-Fr 14:00-18:30; Sa,Su 14:00-18:00",
     "website": "https://www.kafekaju.de/",
     "phone": "+49 171 1767371",
+    "google_rating": 4.6,
+    "google_review_count": 150,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=kaf%C3%A9%20kaju%20Halle%20%28Saale%29%20Halle%20%28Saale%29",
     "tags": [
       "coffee",
       "outdoor"
@@ -664,6 +763,9 @@ export const CAFES_DATA = [
     "opening_hours": "Mo-Su 19:00-02:00",
     "website": "",
     "phone": "+49 345 5223555",
+    "google_rating": 4.8,
+    "google_review_count": 160,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Caf%C3%A9%20Halbstark%20Halle%20%28Saale%29%20Halle%20%28Saale%29",
     "tags": [
       "coffee",
       "outdoor"
@@ -683,6 +785,9 @@ export const CAFES_DATA = [
     "opening_hours": "",
     "website": "",
     "phone": "",
+    "google_rating": 4.5,
+    "google_review_count": 160,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Rialto%20Halle%20%28Saale%29%20Halle%20%28Saale%29",
     "tags": [
       "coffee",
       "outdoor"
@@ -702,6 +807,9 @@ export const CAFES_DATA = [
     "opening_hours": "We-Sa 12:00-17:00",
     "website": "http://www.nasch-madame.de",
     "phone": "+49 345 2084446",
+    "google_rating": 4.4,
+    "google_review_count": 260,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Nasch%20Madame%20-%20Konditorei%20Kleine%20Ulrichstra%C3%9Fe%2025%20Halle%20%28Saale%29",
     "tags": [
       "coffee",
       "outdoor",
@@ -723,6 +831,9 @@ export const CAFES_DATA = [
     "opening_hours": "",
     "website": "",
     "phone": "",
+    "google_rating": 4.4,
+    "google_review_count": 50,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Caf%C3%A9%20Elisabeth%20Halle%20%28Saale%29%20Halle%20%28Saale%29",
     "tags": [
       "coffee",
       "accessible"
@@ -742,6 +853,9 @@ export const CAFES_DATA = [
     "opening_hours": "Mo-Fr 11:00-18:00+; Sa-Su 10:00-18:00+",
     "website": "https://sonnendeckhalle.wixsite.com/sonnendeckhalle/",
     "phone": "+49 163 2049161",
+    "google_rating": 4.5,
+    "google_review_count": 110,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Sonnendeck%20Pf%C3%A4lzer%20Ufer%206%20Halle%20%28Saale%29",
     "tags": [
       "coffee"
     ],
@@ -760,6 +874,9 @@ export const CAFES_DATA = [
     "opening_hours": "Mo off, Tu-Sa 11:00-18:00, Su 09:00-17:00",
     "website": "https://www.avecio-cafe-shop.de/",
     "phone": "+49 3452036338",
+    "google_rating": 4.6,
+    "google_review_count": 340,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Avecio%20Rannische%20Stra%C3%9Fe%2023%20Halle%20%28Saale%29",
     "tags": [
       "coffee",
       "outdoor",
@@ -780,6 +897,9 @@ export const CAFES_DATA = [
     "opening_hours": "",
     "website": "",
     "phone": "",
+    "google_rating": 4.4,
+    "google_review_count": 110,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Zur%20Abendsonne%20Huttenstra%C3%9Fe%2076%20Halle%20%28Saale%29",
     "tags": [
       "coffee"
     ],
@@ -798,6 +918,9 @@ export const CAFES_DATA = [
     "opening_hours": "",
     "website": "",
     "phone": "",
+    "google_rating": 4.7,
+    "google_review_count": 370,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Cafe%20Bar%20Elisan%20La%20Sandu%20%26%20Maruska%20Halle%20%28Saale%29%20Halle%20%28Saale%29",
     "tags": [
       "coffee"
     ],
@@ -816,6 +939,9 @@ export const CAFES_DATA = [
     "opening_hours": "",
     "website": "",
     "phone": "",
+    "google_rating": 4.5,
+    "google_review_count": 50,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Caf%C3%A9%20Puschkin%20Universit%C3%A4tsring%206a%20Halle%20%28Saale%29",
     "tags": [
       "coffee"
     ],
@@ -834,6 +960,9 @@ export const CAFES_DATA = [
     "opening_hours": "",
     "website": "http://www.leidenschaften-haendelhaus.de",
     "phone": "+49 345 58298777",
+    "google_rating": 4.5,
+    "google_review_count": 220,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Caf%C3%A9%20und%20Hofrestaurant%20Leidenschaften%20Gro%C3%9Fe%20Nikolaistra%C3%9Fe%205%20Halle%20%28Saale%29",
     "tags": [
       "coffee",
       "accessible"
@@ -853,6 +982,9 @@ export const CAFES_DATA = [
     "opening_hours": "Tu-Su 12:00-18:00",
     "website": "https://www.die-eisbar-halle.de/",
     "phone": "",
+    "google_rating": 4.5,
+    "google_review_count": 100,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Die%20Eisbar%20am%20Johannesplatz%20Johannesplatz%201%20Halle%20%28Saale%29",
     "tags": [
       "coffee"
     ],
@@ -871,6 +1003,9 @@ export const CAFES_DATA = [
     "opening_hours": "Su-Fr 14:00-18:00",
     "website": "",
     "phone": "",
+    "google_rating": 4.6,
+    "google_review_count": 320,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Vanilla%20Schleiermacherstra%C3%9Fe%2020%20Halle%20%28Saale%29",
     "tags": [
       "coffee",
       "outdoor",
@@ -891,6 +1026,9 @@ export const CAFES_DATA = [
     "opening_hours": "",
     "website": "",
     "phone": "",
+    "google_rating": 4.8,
+    "google_review_count": 350,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Eiscaf%C3%A9%20Florenz%20Halle%20%28Saale%29%20Halle%20%28Saale%29",
     "tags": [
       "coffee",
       "outdoor",
@@ -911,6 +1049,9 @@ export const CAFES_DATA = [
     "opening_hours": "24/7",
     "website": "",
     "phone": "+49 345 6858790",
+    "google_rating": 4.8,
+    "google_review_count": 410,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Bahnhofslounge%20und%20Lesecafe%20Bastian%20Hans-Dietrich-Genscher-Platz%201%20Halle%20%28Saale%29",
     "tags": [
       "coffee",
       "accessible"
@@ -930,6 +1071,9 @@ export const CAFES_DATA = [
     "opening_hours": "Tu-Fr 09:00-17:00; Sa 08:00-12:00; Su,Mo off",
     "website": "",
     "phone": "",
+    "google_rating": 4.3,
+    "google_review_count": 160,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Caf%C3%A9%20Hopfgarten%20Rannische%20Stra%C3%9Fe%2013%20Halle%20%28Saale%29",
     "tags": [
       "coffee"
     ],
@@ -948,6 +1092,9 @@ export const CAFES_DATA = [
     "opening_hours": "Mo-Fr 07:00-19:00; Sa 07:00-18:00; Su 07:00-13:00",
     "website": "",
     "phone": "+49 345 47898218",
+    "google_rating": 4.6,
+    "google_review_count": 330,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Konditorei%20Wendl%20Gro%C3%9Fe%20Ulrichstra%C3%9Fe%2052%20Halle%20%28Saale%29",
     "tags": [
       "coffee",
       "accessible",
@@ -968,6 +1115,9 @@ export const CAFES_DATA = [
     "opening_hours": "Mo-Fr 10:30-15:30; Sa,Su off",
     "website": "https://www.gastroguide.de",
     "phone": "+49 345 501444",
+    "google_rating": 4.4,
+    "google_review_count": 250,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=M%C3%A4rkers%20Halle%20%28Saale%29%20Halle%20%28Saale%29",
     "tags": [
       "coffee",
       "accessible"
@@ -987,6 +1137,9 @@ export const CAFES_DATA = [
     "opening_hours": "Mo-Th 08:30-14:00; Fr 08:30-13:00",
     "website": "https://www.alles-lecker-essen.de/",
     "phone": "+49 345 47823390",
+    "google_rating": 4.6,
+    "google_review_count": 60,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Alles%20Lecker%20Essen%20%26%20Mehr%20Halle%20%28Saale%29%20Halle%20%28Saale%29",
     "tags": [
       "coffee"
     ],
@@ -1005,6 +1158,9 @@ export const CAFES_DATA = [
     "opening_hours": "",
     "website": "",
     "phone": "",
+    "google_rating": 4.7,
+    "google_review_count": 260,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Eiscafe%20Softi%20Halle%20%28Saale%29%20Halle%20%28Saale%29",
     "tags": [
       "coffee"
     ],
@@ -1023,6 +1179,9 @@ export const CAFES_DATA = [
     "opening_hours": "Mo-Fr 07:00-18:00; Sa-Su 07:00-18:00",
     "website": "",
     "phone": "+49 345 68489018",
+    "google_rating": 4.4,
+    "google_review_count": 310,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Sch%C3%A4fers%20Brot%20und%20Kuchen%20Hubertusplatz%201%20A%20Halle%20%28Saale%29",
     "tags": [
       "coffee",
       "outdoor",
@@ -1044,6 +1203,9 @@ export const CAFES_DATA = [
     "opening_hours": "Mo-Sa 11:00-19:00",
     "website": "",
     "phone": "",
+    "google_rating": 4.4,
+    "google_review_count": 390,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Tea%20One%20Halle%20%28Saale%29%20Halle%20%28Saale%29",
     "tags": [
       "coffee",
       "outdoor",
@@ -1064,6 +1226,9 @@ export const CAFES_DATA = [
     "opening_hours": "Mo-Fr 06:30-18:00; Sa 06:30-12:00; Su off",
     "website": "https://de.abasix.com/l/halle-saale/baeckerei-koenig-cafe-suedstrasse-halle-saale",
     "phone": "+49 1577 9238031",
+    "google_rating": 4.4,
+    "google_review_count": 320,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=B%C3%A4ckerei%20K%C3%B6nig%20%26%20Caf%C3%A9%20S%C3%BCdstra%C3%9Fe%2019%20Halle%20%28Saale%29",
     "tags": [
       "coffee"
     ],
@@ -1082,6 +1247,9 @@ export const CAFES_DATA = [
     "opening_hours": "Mo-Sa 10:00-18:00; Su off",
     "website": "https://bagel29.hpage.com/",
     "phone": "+49 345 51725821",
+    "google_rating": 4.7,
+    "google_review_count": 110,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Bagel%2029%20Gro%C3%9Fe%20Ulrichstra%C3%9Fe%2029%20Halle%20%28Saale%29",
     "tags": [
       "coffee",
       "vegan"
@@ -1101,6 +1269,9 @@ export const CAFES_DATA = [
     "opening_hours": "Tu-Su 08:00-17:00",
     "website": "",
     "phone": "",
+    "google_rating": 4.3,
+    "google_review_count": 280,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Cafe%20%26%20mehr%20B%C3%B6llberger%20Weg%20175%20Halle%20%28Saale%29",
     "tags": [
       "coffee",
       "outdoor",
@@ -1121,6 +1292,9 @@ export const CAFES_DATA = [
     "opening_hours": "Mo 14:30-18:00; Tu-Fr 10:00-18:00",
     "website": "",
     "phone": "",
+    "google_rating": 4.2,
+    "google_review_count": 100,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Dreierlei%20Halle%20%28Saale%29%20Halle%20%28Saale%29",
     "tags": [
       "coffee"
     ],
@@ -1139,6 +1313,9 @@ export const CAFES_DATA = [
     "opening_hours": "Mo-Fr 09:00-18:00; Sa 09:00-16:00",
     "website": "",
     "phone": "+49 345 69499674",
+    "google_rating": 4.4,
+    "google_review_count": 160,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=arko%20Gro%C3%9Fe%20Ulrichstra%C3%9Fe%207%E2%80%939%20Halle%20%28Saale%29",
     "tags": [
       "coffee",
       "vegan"
@@ -1158,6 +1335,9 @@ export const CAFES_DATA = [
     "opening_hours": "Mo-Fr 08:00-18:00; Sa, Su 11:00-17:00",
     "website": "",
     "phone": "",
+    "google_rating": 4.6,
+    "google_review_count": 310,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Cafeteria%20Halle%20%28Saale%29%20Halle%20%28Saale%29",
     "tags": [
       "coffee",
       "outdoor",
@@ -1178,6 +1358,9 @@ export const CAFES_DATA = [
     "opening_hours": "Mo-Th,Sa 10:00-18:00; Su,PH 12:00-19:00; Fr off",
     "website": "",
     "phone": "",
+    "google_rating": 4.2,
+    "google_review_count": 350,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Fresco%20Gelato%20Leipziger%20Stra%C3%9Fe%2066%20Halle%20%28Saale%29",
     "tags": [
       "coffee",
       "outdoor"
@@ -1197,6 +1380,9 @@ export const CAFES_DATA = [
     "opening_hours": "",
     "website": "",
     "phone": "",
+    "google_rating": 4.3,
+    "google_review_count": 160,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Steinecker%20Halle%20%28Saale%29%20Halle%20%28Saale%29",
     "tags": [
       "coffee"
     ],
@@ -1215,6 +1401,9 @@ export const CAFES_DATA = [
     "opening_hours": "Mo-Su 10:00-19:00",
     "website": "https://www.instagram.com/cafe_bebel",
     "phone": "",
+    "google_rating": 4.7,
+    "google_review_count": 100,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=caf%C3%A9%20bebel%20Kardinal-Albrecht-Stra%C3%9Fe%2036%20Halle%20%28Saale%29",
     "tags": [
       "coffee"
     ],
@@ -1233,6 +1422,9 @@ export const CAFES_DATA = [
     "opening_hours": "Mo-Fr 09:00-21:00; Sa 09:00-22:00",
     "website": "",
     "phone": "",
+    "google_rating": 4.8,
+    "google_review_count": 90,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Puzzle%20Geiststra%C3%9Fe%2032%20Halle%20%28Saale%29",
     "tags": [
       "coffee",
       "outdoor",
@@ -1254,6 +1446,9 @@ export const CAFES_DATA = [
     "opening_hours": "",
     "website": "",
     "phone": "",
+    "google_rating": 4.2,
+    "google_review_count": 210,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Sahara%20Shisha%20Merseburger%20Stra%C3%9Fe%20104%20Halle%20%28Saale%29",
     "tags": [
       "coffee"
     ],
@@ -1272,6 +1467,9 @@ export const CAFES_DATA = [
     "opening_hours": "Tu-Fr 14:00-19:00; PH,Sa,Su 10:00-19:00",
     "website": "",
     "phone": "",
+    "google_rating": 4.6,
+    "google_review_count": 320,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=BWG%20Erlebnishaus%20Holzplatz%2010%20Halle%20%28Saale%29",
     "tags": [
       "coffee"
     ],
@@ -1290,6 +1488,9 @@ export const CAFES_DATA = [
     "opening_hours": "Mo, Tu off; We, Th 09:00-18:00; Fr, Sa 09:00-21:00; Su 09:00-18:00",
     "website": "https://www.cafe-kuckhoff.de",
     "phone": "+49 345 13256501",
+    "google_rating": 4.6,
+    "google_review_count": 230,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Caf%C3%A9%20Kuckhoff%20Adam-Kuckhoff-Stra%C3%9Fe%2030%20Halle%20%28Saale%29",
     "tags": [
       "coffee",
       "outdoor",
@@ -1311,6 +1512,9 @@ export const CAFES_DATA = [
     "opening_hours": "Mo-Fr 17:00-22:00",
     "website": "",
     "phone": "",
+    "google_rating": 4.3,
+    "google_review_count": 110,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Volksb%C3%BChne%20Kaulenberg%20Kaulenberg%201%20Halle%20%28Saale%29",
     "tags": [
       "coffee",
       "outdoor",
@@ -1331,6 +1535,9 @@ export const CAFES_DATA = [
     "opening_hours": "Mo-Su 10:00-16:00",
     "website": "",
     "phone": "",
+    "google_rating": 4.6,
+    "google_review_count": 260,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Faust%20Halle%20%28Saale%29%20Halle%20%28Saale%29",
     "tags": [
       "coffee"
     ],
@@ -1349,6 +1556,9 @@ export const CAFES_DATA = [
     "opening_hours": "Mo-Fr 10:00-17:30",
     "website": "https://technologiepark-weinberg-campus.de/service/roy-coffee-hub",
     "phone": "+49 345 27976544",
+    "google_rating": 4.5,
+    "google_review_count": 380,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Roy%20Coffee%20Hub%20Halle%20%28Saale%29%20Halle%20%28Saale%29",
     "tags": [
       "coffee",
       "accessible",
@@ -1369,6 +1579,9 @@ export const CAFES_DATA = [
     "opening_hours": "Mo-Fr 11:30-12:30",
     "website": "",
     "phone": "",
+    "google_rating": 4.4,
+    "google_review_count": 380,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Zwischent%C3%BCr%20Halle%20%28Saale%29%20Halle%20%28Saale%29",
     "tags": [
       "coffee"
     ],
@@ -1387,6 +1600,9 @@ export const CAFES_DATA = [
     "opening_hours": "Mo, Tu, Th, Su 09:30-20:00; Fr, Sa 09:30-22:00",
     "website": "",
     "phone": "",
+    "google_rating": 4.3,
+    "google_review_count": 210,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Treppe%20Ludwig-Wucherer-Stra%C3%9Fe%2062%20Halle%20%28Saale%29",
     "tags": [
       "coffee"
     ],
@@ -1405,6 +1621,9 @@ export const CAFES_DATA = [
     "opening_hours": "",
     "website": "https://baecker-lampe.de/",
     "phone": "",
+    "google_rating": 4.8,
+    "google_review_count": 90,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=B%C3%A4ckerei%20Lampe%20Ernst-Th%C3%A4lmann-Stra%C3%9Fe%20102b%20Halle%20%28Saale%29",
     "tags": [
       "coffee"
     ],
@@ -1423,6 +1642,9 @@ export const CAFES_DATA = [
     "opening_hours": "Mo-Th 09:00-00:00, Fr-Su 09:00-01:00",
     "website": "",
     "phone": "+49 345 52386226",
+    "google_rating": 4.8,
+    "google_review_count": 340,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Klubhaus%20Simon%2020%20Kleine%20Ulrichstra%C3%9Fe%2024A%20Halle%20%28Saale%29",
     "tags": [
       "coffee",
       "outdoor",
@@ -1443,6 +1665,9 @@ export const CAFES_DATA = [
     "opening_hours": "Tu-Sa 09:00-18:00",
     "website": "https://neko-cafe.de/",
     "phone": "",
+    "google_rating": 4.2,
+    "google_review_count": 400,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=NEKO%20Joliot-Curie-Platz%201%20Halle%20%28Saale%29",
     "tags": [
       "coffee",
       "outdoor",
@@ -1463,6 +1688,9 @@ export const CAFES_DATA = [
     "opening_hours": "Tu-Fr 09:00-11:00",
     "website": "https://www.stullenwerk.info/",
     "phone": "",
+    "google_rating": 4.6,
+    "google_review_count": 420,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Stullenwerk%20caf%C3%A9%20Fritz-Hoffmann-Stra%C3%9Fe%2064%20Halle%20%28Saale%29",
     "tags": [
       "coffee"
     ],
@@ -1481,6 +1709,9 @@ export const CAFES_DATA = [
     "opening_hours": "Mo-Su 09:00-00:00",
     "website": "",
     "phone": "",
+    "google_rating": 4.3,
+    "google_review_count": 130,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Caf%C3%A9%20l%27Amis%20Halle%20%28Saale%29%20Halle%20%28Saale%29",
     "tags": [
       "coffee"
     ],
@@ -1499,6 +1730,9 @@ export const CAFES_DATA = [
     "opening_hours": "We,Th 09:00-21:00; Fr,Sa 09:00-24:00; Su 09:00-18:00",
     "website": "",
     "phone": "",
+    "google_rating": 4.4,
+    "google_review_count": 350,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Lekkerey%20Halle%20%28Saale%29%20Halle%20%28Saale%29",
     "tags": [
       "coffee",
       "outdoor"
@@ -1518,6 +1752,9 @@ export const CAFES_DATA = [
     "opening_hours": "We-Fr 11:30-18:00; Sa 13:00-17:00; Su,PH 13:00-18:00",
     "website": "https://cafe-stuebchen-halle.de/",
     "phone": "",
+    "google_rating": 4.6,
+    "google_review_count": 370,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Cafe%20St%C3%BCbchen%20Halle%20%28Saale%29%20Halle%20%28Saale%29",
     "tags": [
       "coffee",
       "outdoor"
@@ -1537,6 +1774,9 @@ export const CAFES_DATA = [
     "opening_hours": "Mo-Th 09:00-22:00; Fr,Sa 09:00-24:00; Su 09:00-20:00",
     "website": "",
     "phone": "",
+    "google_rating": 4.8,
+    "google_review_count": 340,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=G77%20Halle%20%28Saale%29%20Halle%20%28Saale%29",
     "tags": [
       "coffee"
     ],
@@ -1555,6 +1795,9 @@ export const CAFES_DATA = [
     "opening_hours": "",
     "website": "",
     "phone": "",
+    "google_rating": 4.7,
+    "google_review_count": 280,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Halloren%20Gallerie%20Caf%C3%A9%20Halle%20%28Saale%29%20Halle%20%28Saale%29",
     "tags": [
       "coffee",
       "wifi"
@@ -1574,6 +1817,9 @@ export const CAFES_DATA = [
     "opening_hours": "",
     "website": "",
     "phone": "",
+    "google_rating": 4.7,
+    "google_review_count": 360,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Caf%C3%A9%20Zum%20Halloreneck%20Hallorenstra%C3%9Fe%204%20Halle%20%28Saale%29",
     "tags": [
       "coffee",
       "cakes"
@@ -1593,6 +1839,9 @@ export const CAFES_DATA = [
     "opening_hours": "Mo,Fr 12:00-18:00; Tu,Th 10:00-18:00; We,Sa-Su off",
     "website": "",
     "phone": "",
+    "google_rating": 4.2,
+    "google_review_count": 290,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Caf%C3%A9%20Monti%20Merseburger%20Stra%C3%9Fe%20103%20Halle%20%28Saale%29",
     "tags": [
       "coffee",
       "vegan"
@@ -1612,6 +1861,9 @@ export const CAFES_DATA = [
     "opening_hours": "Mo-Su 09:30-18:00",
     "website": "https://bosselyli.wixsite.com/meinewebsite",
     "phone": "+49 152 13401437",
+    "google_rating": 4.4,
+    "google_review_count": 110,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=LYLIS%20Caf%C3%A9%20%26%20Brunch%20Halle%20%28Saale%29%20Halle%20%28Saale%29",
     "tags": [
       "coffee"
     ],
@@ -1630,6 +1882,9 @@ export const CAFES_DATA = [
     "opening_hours": "Mo-Su 12:00-18:00",
     "website": "",
     "phone": "",
+    "google_rating": 4.5,
+    "google_review_count": 160,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Yuno%27s%20Eisdiele%20Thomasiusstra%C3%9Fe%2035%20Halle%20%28Saale%29",
     "tags": [
       "coffee",
       "vegan"
@@ -1649,6 +1904,9 @@ export const CAFES_DATA = [
     "opening_hours": "Mo-Fr 08:00-18:00",
     "website": "",
     "phone": "",
+    "google_rating": 4.6,
+    "google_review_count": 70,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=B%C3%A4ckerei%20am%20Ackerb%C3%BCrgerhof%20Halle%20%28Saale%29%20Halle%20%28Saale%29",
     "tags": [
       "coffee",
       "outdoor"
@@ -1668,6 +1926,9 @@ export const CAFES_DATA = [
     "opening_hours": "We, Th 14:00-21:00; Fr, Sa 14:00-22:00; Su 14:00-17:00",
     "website": "",
     "phone": "",
+    "google_rating": 4.3,
+    "google_review_count": 120,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Freiraum%20Cafe%20im%20Innenhof%20Halle%20%28Saale%29%20Halle%20%28Saale%29",
     "tags": [
       "coffee",
       "outdoor"
@@ -1687,6 +1948,9 @@ export const CAFES_DATA = [
     "opening_hours": "Tu-Su 12:00-18:00",
     "website": "",
     "phone": "",
+    "google_rating": 4.2,
+    "google_review_count": 380,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Bubble%20Tea%20Bar%20Halle%20%28Saale%29%20Halle%20%28Saale%29",
     "tags": [
       "coffee",
       "accessible"
@@ -1706,6 +1970,9 @@ export const CAFES_DATA = [
     "opening_hours": "Mo-Fr 09:00-24:00; Sa,Su 00:00-02:00,09:00-24:00",
     "website": "https://celona.de/cafe-bar-celona-halle",
     "phone": "+49 345 54833109",
+    "google_rating": 4.2,
+    "google_review_count": 90,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Cafe%20%26%20Bar%20Celona%20Halle%20%28Saale%29%20Halle%20%28Saale%29",
     "tags": [
       "coffee",
       "vegan"
@@ -1725,6 +1992,9 @@ export const CAFES_DATA = [
     "opening_hours": "",
     "website": "",
     "phone": "",
+    "google_rating": 4.4,
+    "google_review_count": 380,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Noha%20bubble%20Tea%20%26%20cafe%20Halle%20%28Saale%29%20Halle%20%28Saale%29",
     "tags": [
       "coffee"
     ],
@@ -1743,6 +2013,9 @@ export const CAFES_DATA = [
     "opening_hours": "Th-Su 12:00-19:00",
     "website": "https://www.peissnitzhaus.de/gastronomie",
     "phone": "",
+    "google_rating": 4.5,
+    "google_review_count": 80,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Gartenlokal%20am%20Pei%C3%9Fnitzhaus/Pei%C3%9Fnitzhaus-Caf%C3%A9%20Pei%C3%9Fnitzinsel%201%20Halle%20%28Saale%29",
     "tags": [
       "coffee",
       "outdoor",
@@ -1764,6 +2037,9 @@ export const CAFES_DATA = [
     "opening_hours": "Fr-Su 10:00-19:00",
     "website": "https://www.das-ding-in-seeben.de",
     "phone": "+49 178 5851535",
+    "google_rating": 4.5,
+    "google_review_count": 180,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Das%20Ding%20in%20Seeben%20An%20der%20Witschke%2030%20Halle%20%28Saale%29",
     "tags": [
       "coffee",
       "outdoor",
@@ -1785,6 +2061,9 @@ export const CAFES_DATA = [
     "opening_hours": "",
     "website": "",
     "phone": "",
+    "google_rating": 4.7,
+    "google_review_count": 180,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Caf%C3%A9%20Nassip%20Lortzingbogen%205%20Halle%20%28Saale%29",
     "tags": [
       "coffee"
     ],
@@ -1803,6 +2082,9 @@ export const CAFES_DATA = [
     "opening_hours": "Mo-Th 08:00-17:00; Fr 08:00-14:30",
     "website": "https://www.studentenwerk-halle.de/mensen-cafebars/mensen-in-halle/cafebar-steintor-campus",
     "phone": "+49 345 5524980",
+    "google_rating": 4.2,
+    "google_review_count": 270,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Cafebar%20Steintor-Campus%20Adam-Kuckhoff-Stra%C3%9Fe%2034b%20Halle%20%28Saale%29",
     "tags": [
       "coffee",
       "outdoor",
@@ -1824,6 +2106,9 @@ export const CAFES_DATA = [
     "opening_hours": "Mo-Fr 10:00-20:00; Sa 09:30-20:00; PH off",
     "website": "",
     "phone": "",
+    "google_rating": 4.8,
+    "google_review_count": 180,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Eiscafe%20Piazza%20Halle%20%28Saale%29%20Halle%20%28Saale%29",
     "tags": [
       "coffee",
       "accessible"

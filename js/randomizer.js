@@ -8,8 +8,9 @@ import { getCafeOpenStatus } from './hours.js';
 import { formatWalkDistance } from './map.js';
 
 export class CafeRandomizer {
-  constructor(onSelectCafe) {
+  constructor(onSelectCafe, onNotify = null) {
     this.onSelectCafe = onSelectCafe;
+    this.onNotify = onNotify;
     this.modalEl = document.getElementById('randomizer-modal');
     this.nameEl = document.getElementById('randomizer-winner-name');
     this.metaEl = document.getElementById('randomizer-winner-meta');
@@ -26,6 +27,12 @@ export class CafeRandomizer {
     const closeBtn = document.getElementById('randomizer-close-btn');
     if (closeBtn) {
       closeBtn.addEventListener('click', () => this.close());
+    }
+
+    if (this.modalEl) {
+      this.modalEl.addEventListener('click', (e) => {
+        if (e.target === this.modalEl) this.close();
+      });
     }
 
     const spinAgainBtn = document.getElementById('randomizer-spin-again');
@@ -75,7 +82,11 @@ export class CafeRandomizer {
 
   spin(pool) {
     if (!pool || pool.length === 0) {
-      alert('No cafes match the current filters to pick from!');
+      if (this.onNotify) {
+        this.onNotify('No cafes match the current filters to pick from!');
+      } else {
+        alert('No cafes match the current filters to pick from!');
+      }
       return;
     }
     this.lastPool = pool;
@@ -117,9 +128,18 @@ export class CafeRandomizer {
     const status = getCafeOpenStatus(cafe.opening_hours);
     const distText = cafe.distanceMeters ? formatWalkDistance(cafe.distanceMeters) : null;
 
+    const googleBadge = cafe.google_rating ? `
+      <span class="google-rating-pill" title="Google Maps Rating">
+        <span style="color:#f9e2af;">★</span>
+        <span>${cafe.google_rating.toFixed(1)}</span>
+        <span style="opacity:0.75; font-size:11px;">(${cafe.google_review_count || 0})</span>
+      </span>
+    ` : '';
+
     this.nameEl.textContent = cafe.name;
     this.metaEl.innerHTML = `
       <span class="status-badge ${status.statusClass}">${status.badgeText}</span>
+      ${googleBadge}
       <span class="text-sm opacity-80">${cafe.address || cafe.neighborhood}</span>
       ${distText ? `<span class="dist-badge">🚶 ${distText}</span>` : ''}
     `;
@@ -135,5 +155,20 @@ export class CafeRandomizer {
       .join(' ');
 
     this.actionsEl.classList.remove('opacity-0', 'pointer-events-none');
+
+    // Trigger celebratory confetti if library is loaded
+    if (typeof window.confetti === 'function') {
+      try {
+        window.confetti({
+          particleCount: 75,
+          spread: 65,
+          origin: { y: 0.58 },
+          colors: ['#cba6f7', '#fab387', '#a6e3a1', '#89b4fa', '#f9e2af']
+        });
+      } catch (e) {
+        // Ignore confetti error if any
+      }
+    }
   }
 }
+

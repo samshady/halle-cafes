@@ -33,9 +33,23 @@ class HalleCafeApp {
 
     // Modules
     this.map = new CafeMap('map-container', (cafe) => this.openDetail(cafe));
-    this.randomizer = new CafeRandomizer((cafe) => this.openDetail(cafe));
+    this.randomizer = new CafeRandomizer(
+      (cafe) => this.openDetail(cafe),
+      (msg) => this.showToast(msg)
+    );
 
     this.init();
+  }
+
+  showToast(message, duration = 3000) {
+    const toast = document.getElementById('app-toast');
+    if (!toast) return;
+    toast.textContent = message;
+    toast.classList.remove('hidden');
+    clearTimeout(this._toastTimer);
+    this._toastTimer = setTimeout(() => {
+      toast.classList.add('hidden');
+    }, duration);
   }
 
   init() {
@@ -119,6 +133,27 @@ class HalleCafeApp {
     if (detailClose) {
       detailClose.addEventListener('click', () => this.closeDetail());
     }
+
+    // Backdrop dismissal for modal overlays
+    if (this.detailModal) {
+      this.detailModal.addEventListener('click', (e) => {
+        if (e.target === this.detailModal) this.closeDetail();
+      });
+    }
+    if (this.backupModal) {
+      this.backupModal.addEventListener('click', (e) => {
+        if (e.target === this.backupModal) this.closeBackupModal();
+      });
+    }
+
+    // Escape key closes open modals
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        this.closeDetail();
+        this.closeBackupModal();
+        this.randomizer.close();
+      }
+    });
   }
 
   bindMobileTabs() {
@@ -141,13 +176,16 @@ class HalleCafeApp {
       listTabBtn.classList.remove('active');
       mapView.classList.remove('hidden-mobile');
       listView.classList.add('hidden-mobile');
-      this.map.invalidateSize();
+      // Ensure Leaflet recalculates dimensions after visibility change
+      setTimeout(() => {
+        this.map.invalidateSize();
+      }, 50);
     });
   }
 
   requestLocation() {
     if (!navigator.geolocation) {
-      alert('Geolocation is not supported by your browser');
+      this.showToast('Geolocation is not supported by your browser');
       return;
     }
     this.locateBtn.classList.add('animate-pulse');
@@ -161,10 +199,11 @@ class HalleCafeApp {
         this.sortMode = 'distance';
         this.sortSelect.value = 'distance';
         this.applyFilters();
+        this.showToast('Updated order by closest walking distance');
       },
       (err) => {
         this.locateBtn.classList.remove('animate-pulse');
-        alert('Could not retrieve your location: ' + err.message);
+        this.showToast('Could not retrieve your location: ' + err.message);
       },
       { enableHighAccuracy: true, timeout: 8000 }
     );
@@ -222,6 +261,13 @@ class HalleCafeApp {
     // Sorting
     if (this.sortMode === 'distance') {
       list.sort((a, b) => (a.distanceMeters ?? 999999) - (b.distanceMeters ?? 999999));
+    } else if (this.sortMode === 'google_rating') {
+      list.sort((a, b) => {
+        const rA = a.google_rating ?? 0;
+        const rB = b.google_rating ?? 0;
+        if (rB !== rA) return rB - rA;
+        return (b.google_review_count ?? 0) - (a.google_review_count ?? 0);
+      });
     } else if (this.sortMode === 'rating') {
       list.sort((a, b) => {
         const rA = store.get(a.id).rating || 0;
@@ -320,6 +366,19 @@ class HalleCafeApp {
     const isSpecialty = (cafe.tags || []).includes('specialty_coffee');
     const isNearUni = (cafe.tags || []).includes('near_uni');
 
+    const googleBadge = cafe.google_rating ? `
+      <a href="${cafe.google_maps_url || `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(cafe.name + ' Halle')}`}"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="google-rating-pill"
+         title="Google Maps: ${cafe.google_rating} ★ (${cafe.google_review_count || 0} reviews)"
+         onclick="event.stopPropagation();">
+        <span style="color:#f9e2af;">★</span>
+        <span>${cafe.google_rating.toFixed(1)}</span>
+        <span style="opacity:0.75; font-size:11px;">(${cafe.google_review_count || 0})</span>
+      </a>
+    ` : '';
+
     return `
       <div id="cafe-card-${cafe.id}" class="cafe-card ${userData.visited ? 'is-visited' : ''}">
         <div class="card-header">
@@ -327,6 +386,7 @@ class HalleCafeApp {
             <h3 class="card-name">${cafe.name}</h3>
             <div class="card-meta">
               <span class="status-badge ${status.statusClass}">${status.badgeText}</span>
+              ${googleBadge}
               ${distText ? `<span class="dist-badge">🚶 ${distText}</span>` : ''}
               <span class="card-neighborhood">${cafe.neighborhood}</span>
             </div>
@@ -373,6 +433,29 @@ class HalleCafeApp {
     document.getElementById('detail-status').innerHTML = `
       <span class="status-badge ${status.statusClass}">${status.badgeText}</span>
     `;
+
+    // Google Maps rating badge in modal
+    const googleDetailEl = document.getElementById('detail-google-badge');
+    if (googleDetailEl) {
+      if (cafe.google_rating) {
+        googleDetailEl.innerHTML = `
+          <a href="${cafe.google_maps_url || `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(cafe.name + ' Halle')}`}"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="google-rating-pill"
+             title="Open on Google Maps"
+             style="text-decoration:none;">
+            <span style="color:#f9e2af;">★</span>
+            <span>${cafe.google_rating.toFixed(1)} on Google Maps</span>
+            <span style="opacity:0.75; font-size:12px;">(${cafe.google_review_count || 0} reviews)</span>
+          </a>
+        `;
+        googleDetailEl.classList.remove('hidden');
+      } else {
+        googleDetailEl.innerHTML = '';
+        googleDetailEl.classList.add('hidden');
+      }
+    }
 
     // External links
     const gmapsWalkUrl = `https://www.google.com/maps/dir/?api=1&destination=${cafe.lat},${cafe.lon}&travelmode=walking`;
@@ -489,11 +572,11 @@ class HalleCafeApp {
       const content = event.target.result;
       const res = store.importBackup(content);
       if (res.success) {
-        alert(`Successfully imported ${res.count} cafe records!`);
+        this.showToast(`Successfully imported ${res.count} cafe records!`);
         this.applyFilters();
         this.closeBackupModal();
       } else {
-        alert('Failed to import backup: ' + res.error);
+        this.showToast('Failed to import backup: ' + res.error);
       }
     };
     reader.readAsText(file);
