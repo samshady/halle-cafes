@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no">
+  <title>Halle Cafés • Guide &amp; Tracker</title>
+  <meta name="description" content="Personal cafe discovery, live opening hours, and visit review tracker for Halle (Saale).">
+  <meta name="theme-color" content="#1e1e2e">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>☕</text></svg>">
+  
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+
+  <!-- App Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Top Navigation & Search Header -->
+  <header class="app-header">
+    <div class="header-top">
+      <div class="brand-group">
+        <span class="brand-icon">☕</span>
+        <h1 class="brand-title">Halle Cafés</h1>
+      </div>
+      <div class="header-actions">
+        <span id="visited-stats-count" class="badge-stats">0 / 0 explored</span>
+        <button id="backup-btn" class="btn-icon" title="Data Backup &amp; Settings" aria-label="Settings">
+          ⚙️
+        </button>
+      </div>
+    </div>
+
+    <!-- Search & Fast Actions Row -->
+    <div class="search-bar-wrap">
+      <div class="search-input-box">
+        <span class="search-icon-decor">🔍</span>
+        <input type="text" id="search-input" placeholder="Search cafes, coffee, roasters, street..." autocomplete="off">
+        <button id="search-clear-btn" class="search-clear-btn" title="Clear search">×</button>
+      </div>
+      <button id="pick-btn" class="btn-pick" title="Pick a random cafe based on current filters">
+        🎲 Pick for Me
+      </button>
+      <button id="locate-btn" class="btn-locate" title="Find cafes near your location">
+        📍 Near Me
+      </button>
+    </div>
+
+    <!-- Filter Chips Scroll Area -->
+    <div class="filters-scroll">
+      <button class="filter-chip active" data-filter="all">All</button>
+      <button class="filter-chip" data-filter="open">🟢 Open Now</button>
+      <button class="filter-chip" data-filter="unvisited">📌 Unvisited</button>
+      <button class="filter-chip" data-filter="specialty">★ Specialty Coffee</button>
+      <button class="filter-chip" data-filter="near_uni">🎓 Near Uni</button>
+      <button class="filter-chip" data-filter="outdoor">🌿 Outdoor &amp; Garden</button>
+      <button class="filter-chip" data-filter="favorite">⭐ Favorites</button>
+      <button class="filter-chip" data-filter="visited">✓ Visited</button>
+    </div>
+  </header>
+
+  <!-- Secondary Meta & Sort Bar -->
+  <div class="meta-sort-bar">
+    <span id="cafe-count">Loading places...</span>
+    <div style="display: flex; align-items: center; gap: 6px;">
+      <label for="sort-select">Sort:</label>
+      <select id="sort-select" class="sort-select">
+        <option value="recommended">Recommended</option>
+        <option value="distance">Closest First</option>
+        <option value="rating">My Rating</option>
+        <option value="name">Name (A-Z)</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Main View: Split on Desktop / Tabbed on Mobile -->
+  <main class="app-main">
+    <!-- Left Panel: Cafe Cards List -->
+    <section id="list-view-container" class="panel-list">
+      <div id="cafe-cards-list"></div>
+    </section>
+
+    <!-- Right Panel: Interactive Leaflet Map -->
+    <section id="map-view-container" class="panel-map hidden-mobile">
+      <div id="map-container"></div>
+    </section>
+  </main>
+
+  <!-- Mobile Bottom Tab Bar -->
+  <nav class="mobile-nav-tabs">
+    <button id="tab-list-btn" class="tab-btn active">📋 List View</button>
+    <button id="tab-map-btn" class="tab-btn">🗺️ Map View</button>
+  </nav>
+
+  <!-- MODAL: "Pick For Me" Randomizer -->
+  <div id="randomizer-modal" class="modal-overlay hidden" role="dialog" aria-modal="true">
+    <div class="modal-card">
+      <button id="randomizer-close-btn" class="modal-close-btn" aria-label="Close">✕</button>
+      
+      <div style="text-align: center; margin-bottom: 12px;">
+        <span style="font-size: 36px;">🎲</span>
+        <h2 style="font-size: 20px; font-weight: 800; margin-top: 4px;">Where Should We Go?</h2>
+        <p style="font-size: 13px; color: var(--subtext0);">Shuffling through current open &amp; filtered spots...</p>
+      </div>
+
+      <div id="randomizer-reel" class="reel-spinner">
+        ☕ Shuffling...
+      </div>
+
+      <div class="winner-card">
+        <h3 id="randomizer-winner-name" class="winner-name">Café Winner</h3>
+        <div id="randomizer-winner-meta" class="card-meta" style="justify-content: center; margin-top: 8px;"></div>
+        <p id="randomizer-winner-notes" class="card-notes hidden" style="margin-top: 10px;"></p>
+        <div id="randomizer-winner-tags" class="card-tags" style="justify-content: center; margin-top: 10px;"></div>
+      </div>
+
+      <div id="randomizer-actions" class="card-actions opacity-0 pointer-events-none" style="display: flex; gap: 8px; justify-content: center; border: none; padding-top: 6px;">
+        <button id="randomizer-walk-directions" class="btn-pick" style="padding: 10px 18px;">
+          🚶 Walk There
+        </button>
+        <button id="randomizer-view-details" class="card-btn-action" style="padding: 10px 14px;">
+          View &amp; Review
+        </button>
+        <button id="randomizer-spin-again" class="btn-icon" style="width: 42px; height: 42px;" title="Spin Again">
+          🔄
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: Cafe Detail & Personal Review Logger -->
+  <div id="detail-modal" class="modal-overlay hidden" role="dialog" aria-modal="true">
+    <div class="modal-card">
+      <button id="detail-close-btn" class="modal-close-btn" aria-label="Close">✕</button>
+
+      <div style="margin-bottom: 14px;">
+        <h2 id="detail-name" style="font-size: 22px; font-weight: 800; line-height: 1.2;">Café Name</h2>
+        <div style="display: flex; align-items: center; gap: 8px; margin-top: 6px;">
+          <div id="detail-status"></div>
+          <span id="detail-address" style="font-size: 13px; color: var(--subtext0);">Address</span>
+        </div>
+      </div>
+
+      <!-- Quick Action Buttons -->
+      <div style="display: flex; gap: 8px; margin-bottom: 18px; flex-wrap: wrap;">
+        <a id="detail-gmaps-link" href="#" target="_blank" rel="noopener noreferrer" class="card-btn-action" style="text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
+          🗺️ Google Maps
+        </a>
+        <a id="detail-apple-link" href="#" target="_blank" rel="noopener noreferrer" class="card-btn-action" style="text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
+          🍏 Apple Maps
+        </a>
+        <a id="detail-website-link" href="#" target="_blank" rel="noopener noreferrer" class="card-btn-action hidden" style="text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
+          🌐 Website
+        </a>
+      </div>
+
+      <!-- Opening Hours Weekly Schedule -->
+      <details style="background: var(--mantle); border-radius: var(--radius-sm); padding: 10px 14px; margin-bottom: 18px; font-size: 13px;">
+        <summary style="font-weight: 600; cursor: pointer; color: var(--peach);">🕒 Weekly Opening Hours Schedule</summary>
+        <ul id="detail-schedule-list" style="list-style: none; padding-top: 8px; display: flex; flex-direction: column; gap: 4px; color: var(--subtext0);">
+        </ul>
+      </details>
+
+      <!-- Personal Review & Tracker Section -->
+      <div style="background: var(--mantle); border-radius: var(--radius-md); padding: 16px; border: 1px solid var(--surface1);">
+        <h3 style="font-size: 15px; font-weight: 700; color: var(--accent); margin-bottom: 12px; display: flex; align-items: center; gap: 6px;">
+          ✍️ My Personal Log &amp; Rating
+        </h3>
+
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
+          <label style="font-size: 14px; display: flex; align-items: center; gap: 8px; cursor: pointer;">
+            <input type="checkbox" id="detail-visited-check" style="width: 18px; height: 18px; accent-color: var(--green);">
+            <span style="font-weight: 600;">I have visited this place</span>
+          </label>
+        </div>
+
+        <div style="margin-bottom: 14px;">
+          <div style="font-size: 13px; color: var(--subtext0); margin-bottom: 4px;">My Rating:</div>
+          <div id="detail-rating-stars" style="display: flex; gap: 2px;"></div>
+        </div>
+
+        <div>
+          <label for="detail-notes-input" style="font-size: 13px; color: var(--subtext0); display: block; margin-bottom: 6px;">
+            Personal Notes &amp; Highlights (drinks ordered, atmosphere, tips):
+          </label>
+          <textarea id="detail-notes-input" rows="3" placeholder="e.g. Tried the oat flat white and carrot cake. Great quiet corner for reading..." style="
+            width: 100%;
+            background: var(--crust);
+            border: 1px solid var(--surface1);
+            border-radius: var(--radius-sm);
+            padding: 10px;
+            color: var(--text);
+            font-family: inherit;
+            font-size: 13px;
+            resize: vertical;
+          "></textarea>
+        </div>
+
+        <button id="detail-save-btn" class="btn-pick" style="width: 100%; justify-content: center; margin-top: 14px; padding: 10px;">
+          💾 Save Changes
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: Backup, Export & Import -->
+  <div id="backup-modal" class="modal-overlay hidden" role="dialog" aria-modal="true">
+    <div class="modal-card">
+      <button id="backup-close-btn" class="modal-close-btn" aria-label="Close">✕</button>
+
+      <h2 style="font-size: 20px; font-weight: 800; margin-bottom: 8px;">Data &amp; Backup</h2>
+      <p style="font-size: 13px; color: var(--subtext0); margin-bottom: 18px;">
+        All your visit logs, ratings, and notes are stored local-first on your device. Export a backup anytime or transfer to another phone.
+      </p>
+
+      <div style="display: flex; flex-direction: column; gap: 14px;">
+        <button id="export-json-btn" class="btn-pick" style="justify-content: center; padding: 12px;">
+          📥 Export Backup (.json)
+        </button>
+
+        <div style="border-top: 1px solid var(--surface1); padding-top: 14px;">
+          <label style="font-size: 14px; font-weight: 600; display: block; margin-bottom: 6px;">
+            Restore Backup:
+          </label>
+          <input type="file" id="import-json-file" accept=".json" style="
+            width: 100%;
+            padding: 8px;
+            background: var(--crust);
+            border: 1px solid var(--surface1);
+            border-radius: var(--radius-sm);
+            font-size: 13px;
+            color: var(--subtext0);
+          ">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+  <!-- App ES Modules -->
+  <script type="module" src="js/app.js"></script>
+
+  <!-- Service Worker Registration for PWA -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js').catch(err => {
+          console.log('Service Worker registration skipped:', err);
+        });
+      });
+    }
+  </script>
+</body>
+</html>

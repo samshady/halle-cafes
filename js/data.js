@@ -1,0 +1,1857 @@
+// Generated Halle (Saale) Cafes Dataset (95 locations)
+export const CAFES_DATA = [
+  {
+    "id": "ziegelkram",
+    "name": "Ziegelkram (am Campus)",
+    "lat": 51.4862,
+    "lon": 11.9688,
+    "address": "Universitätsplatz / Universitätsring",
+    "postcode": "06108",
+    "neighborhood": "Altstadt / Uni Campus",
+    "opening_hours": "Mo-Fr 08:00-18:00",
+    "website": "https://www.uni-halle.de",
+    "phone": "",
+    "tags": [
+      "near_uni",
+      "outdoor",
+      "budget",
+      "coffee",
+      "study"
+    ],
+    "initial_visited": true,
+    "price_level": "€",
+    "notes": "Sam's regular default hangout right next to the university. Great outdoor seating on sunny days."
+  },
+  {
+    "id": "she-coffee",
+    "name": "She Coffee",
+    "lat": 51.4842,
+    "lon": 11.968,
+    "address": "Kleine Ulrichstraße 24",
+    "postcode": "06108",
+    "neighborhood": "Altstadt",
+    "opening_hours": "Mo-Su 09:00-18:00",
+    "website": "",
+    "phone": "",
+    "tags": [
+      "specialty_coffee",
+      "cakes",
+      "cozy",
+      "visited"
+    ],
+    "initial_visited": true,
+    "price_level": "€€",
+    "notes": "Cozy aesthetic coffee spot in the lively Kleine Ulli. Already visited and checked off!"
+  },
+  {
+    "id": "7-gramm",
+    "name": "7 Gramm",
+    "lat": 51.48544,
+    "lon": 11.96991,
+    "address": "Barfüßerstraße 11",
+    "postcode": "06108",
+    "neighborhood": "Altstadt",
+    "opening_hours": "Mo-Fr 08:00-18:00; Sa 09:00-18:00; Su 10:00-17:00",
+    "website": "https://7gramm.com",
+    "phone": "+49 345 2082260",
+    "tags": [
+      "specialty_coffee",
+      "espresso",
+      "near_uni",
+      "cakes",
+      "visited"
+    ],
+    "initial_visited": true,
+    "price_level": "€€",
+    "notes": "Benchmark specialty third-wave coffee spot in Halle. Famous for single-origin filter & flat whites."
+  },
+  {
+    "id": "picknick-waffles",
+    "name": "Picknick Waffles & More",
+    "lat": 51.48716,
+    "lon": 11.96867,
+    "address": "Universitätsring 6a",
+    "postcode": "06108",
+    "neighborhood": "Altstadt / Uni",
+    "opening_hours": "Mo-Su 11:00-19:00",
+    "website": "https://picknick-waffles.de",
+    "phone": "+49 345 6825488",
+    "tags": [
+      "waffles",
+      "sweets",
+      "near_uni",
+      "outdoor"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Signature bubble waffles, sweet toppings, and shakes right on the Universitätsring."
+  },
+  {
+    "id": "cafe-noir",
+    "name": "Café Noir",
+    "lat": 51.48518,
+    "lon": 11.9665,
+    "address": "Kleine Ulrichstraße 30",
+    "postcode": "06108",
+    "neighborhood": "Altstadt",
+    "opening_hours": "Tu-Sa 09:00-22:00; Su 09:00-18:00",
+    "website": "https://www.cafenoir-halle.de",
+    "phone": "+49 345 2029780",
+    "tags": [
+      "french",
+      "bistro",
+      "wine",
+      "outdoor",
+      "breakfast"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "French flair on the Kleine Ulrichstraße. Croissants, tarte flambée, and evening bistro atmosphere."
+  },
+  {
+    "id": "miss-august",
+    "name": "Miss August",
+    "lat": 51.4871,
+    "lon": 11.97136,
+    "address": "August-Bebel-Straße 49",
+    "postcode": "06108",
+    "neighborhood": "Paulusviertel / Bebel",
+    "opening_hours": "Tu-Fr 09:00-18:00; Sa-Su 10:00-18:00",
+    "website": "https://miss-august.de",
+    "phone": "",
+    "tags": [
+      "brunch",
+      "vegan",
+      "cakes",
+      "cozy",
+      "outdoor"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Charming cafe with plant-filled interior, homemade quiches, vegan cakes, and lovely sidewalk seating."
+  },
+  {
+    "id": "kaffeeroesterei-roy",
+    "name": "Kaffeerösterei Roy",
+    "lat": 51.48344,
+    "lon": 11.97492,
+    "address": "Hansering 21",
+    "postcode": "06108",
+    "neighborhood": "Nördliche Innenstadt",
+    "opening_hours": "Mo-Fr 09:00-18:00; Sa 09:00-14:00",
+    "website": "https://roesterei-roy.de",
+    "phone": "+49 345 2023577",
+    "tags": [
+      "specialty_coffee",
+      "roastery",
+      "beans",
+      "espresso"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Traditional artisanal coffee roastery in Halle with in-house roasted single-origin beans."
+  },
+  {
+    "id": "koffij",
+    "name": "Koffij",
+    "lat": 51.47915,
+    "lon": 11.97886,
+    "address": "Leipziger Straße 70",
+    "postcode": "06108",
+    "neighborhood": "Charlottenviertel",
+    "opening_hours": "Mo-Sa 09:00-18:00",
+    "website": "https://koffij.de",
+    "phone": "+49 345 2138980",
+    "tags": [
+      "specialty_coffee",
+      "dutch",
+      "breakfast",
+      "cozy"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Dutch-inspired specialty coffee shop with stroopwafels, breakfast bowls, and great roast quality."
+  },
+  {
+    "id": "cafe-ludwig",
+    "name": "Café Ludwig",
+    "lat": 51.5012,
+    "lon": 11.96197,
+    "address": "Eichendorffstraße 20",
+    "postcode": "06114",
+    "neighborhood": "Giebichenstein",
+    "opening_hours": "We-Su 14:00-18:00",
+    "website": "https://cafeludwig-halle.de",
+    "phone": "+49 345 5220300",
+    "tags": [
+      "garden",
+      "heritage",
+      "cakes",
+      "scenic"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Hidden gem in Giebichenstein with a dreamy villa garden and handmade traditional German cakes."
+  },
+  {
+    "id": "roter-horizont",
+    "name": "Roter Horizont",
+    "lat": 51.48557,
+    "lon": 11.96654,
+    "address": "Bölbergasse 1",
+    "postcode": "06108",
+    "neighborhood": "Altstadt",
+    "opening_hours": "Tu-Sa 10:00-18:30",
+    "website": "https://roter-horizont.de",
+    "phone": "+49 345 2026857",
+    "tags": [
+      "tea",
+      "coffee",
+      "calm",
+      "cultural"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Refined tea and coffee salon with rare teas, porcelain, and quiet conversational ambiance."
+  },
+  {
+    "id": "colonne-morris",
+    "name": "Colonne Morris",
+    "lat": 51.49332,
+    "lon": 11.97452,
+    "address": "Mozartstraße 10 (Paulusviertel)",
+    "postcode": "06114",
+    "neighborhood": "Paulusviertel",
+    "opening_hours": "Tu-Su 09:30-18:00",
+    "website": "",
+    "phone": "",
+    "tags": [
+      "neighborhood",
+      "paulusviertel",
+      "espresso",
+      "outdoor"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Iconic meeting point in the heart of the Paulusviertel near the church square."
+  },
+  {
+    "id": "cafe-riveufer",
+    "name": "Café am Riveufer",
+    "lat": 51.50268,
+    "lon": 11.95059,
+    "address": "Riveufer 8",
+    "postcode": "06114",
+    "neighborhood": "Giebichenstein / Saale",
+    "opening_hours": "We-Su 11:30-19:00",
+    "website": "https://cafe-am-riveufer.de",
+    "phone": "+49 345 5238210",
+    "tags": [
+      "river_view",
+      "saale",
+      "outdoor",
+      "cakes",
+      "sun"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Panoramic view right onto the Saale river. Perfect stop during an afternoon river walk."
+  },
+  {
+    "id": "cup-der-guten-hoffnung",
+    "name": "Cup der Guten Hoffnung",
+    "lat": 51.485,
+    "lon": 11.9667,
+    "address": "Kleine Ulrichstraße 34",
+    "postcode": "06108",
+    "neighborhood": "Altstadt",
+    "opening_hours": "Tu-Su 10:00-18:00",
+    "website": "",
+    "phone": "",
+    "tags": [
+      "cozy",
+      "fairtrade",
+      "bio",
+      "vegan"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Organic fair-trade specialty coffees, healthy sweet treats, and welcoming atmosphere."
+  },
+  {
+    "id": "wolkenkuckucksheim",
+    "name": "Café Wolkenkuckucksheim",
+    "lat": 51.4858,
+    "lon": 11.9663,
+    "address": "Kleine Ulrichstraße 18",
+    "postcode": "06108",
+    "neighborhood": "Altstadt",
+    "opening_hours": "Mo-Su 10:00-22:00",
+    "website": "",
+    "phone": "",
+    "tags": [
+      "quirky",
+      "students",
+      "breakfast",
+      "outdoor"
+    ],
+    "initial_visited": false,
+    "price_level": "€",
+    "notes": "Vintage-decorated favorite for university students, breakfast platters, and relaxed talks."
+  },
+  {
+    "id": "cafe-koenig",
+    "name": "Café König",
+    "lat": 51.4831,
+    "lon": 11.9702,
+    "address": "Alter Markt 1",
+    "postcode": "06108",
+    "neighborhood": "Altstadt",
+    "opening_hours": "Mo-Su 08:30-18:00",
+    "website": "https://cafekoenig-halle.de",
+    "phone": "+49 345 2021111",
+    "tags": [
+      "traditional",
+      "confectionery",
+      "cakes",
+      "historic"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Classic grand Viennese-style coffee house on Alter Markt with magnificent display case cakes."
+  },
+  {
+    "id": "moritzkunstcafe",
+    "name": "MoritzKunstCafé",
+    "lat": 51.4866,
+    "lon": 11.9634,
+    "address": "Friedemann-Bach-Platz 5 (Moritzburg)",
+    "postcode": "06108",
+    "neighborhood": "Altstadt / Moritzburg",
+    "opening_hours": "Tu-Su 10:00-18:00",
+    "website": "https://moritzkunstcafe.de",
+    "phone": "+49 345 2082690",
+    "tags": [
+      "art",
+      "castle",
+      "historic",
+      "outdoor",
+      "cultural"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Inside the Moritzburg art museum courtyard. Historic stone arches, espresso, and quiet elegance."
+  },
+  {
+    "id": "spielhaus-ev",
+    "name": "Spielhaus e.V. Café & Brettspiele",
+    "lat": 51.4895,
+    "lon": 11.9705,
+    "address": "Ludwig-Stur-Straße 11",
+    "postcode": "06108",
+    "neighborhood": "Nördliche Innenstadt",
+    "opening_hours": "We-Su 15:00-23:00",
+    "website": "https://spielhaus-halle.de",
+    "phone": "",
+    "tags": [
+      "boardgames",
+      "games",
+      "drinks",
+      "evening",
+      "community"
+    ],
+    "initial_visited": false,
+    "price_level": "€",
+    "notes": "Over 500 board games in stock! Perfect for an evening with friends when coffee turns to games."
+  },
+  {
+    "id": "freiraum-cafe",
+    "name": "Freiraum. Café im Innenhof",
+    "lat": 51.4851,
+    "lon": 11.9678,
+    "address": "Barfüßerstraße 20",
+    "postcode": "06108",
+    "neighborhood": "Altstadt",
+    "opening_hours": "Tu-Sa 10:00-18:00",
+    "website": "",
+    "phone": "",
+    "tags": [
+      "courtyard",
+      "hidden_gem",
+      "quiet",
+      "outdoor"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Peaceful courtyard sanctuary away from pedestrian noise. Very pleasant place to read or chat."
+  },
+  {
+    "id": "hafenmeister-docks",
+    "name": "Hafenmeister & Docks",
+    "lat": 51.48491,
+    "lon": 11.96107,
+    "address": "An der Saline 21",
+    "postcode": "06110",
+    "neighborhood": "Saline / Saale",
+    "opening_hours": "Th-Su 12:00-20:00",
+    "website": "https://hafenmeister-halle.de",
+    "phone": "+49 345 6858900",
+    "tags": [
+      "waterfront",
+      "sun",
+      "drinks",
+      "beer_garden",
+      "summer"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Industrial harbor vibes with deckchairs along the river canal. Spectacular sunset spot."
+  },
+  {
+    "id": "kaffeehaus-wittekind",
+    "name": "Kaffeehaus Wittekind",
+    "lat": 51.5034,
+    "lon": 11.9568,
+    "address": "Wittekindstraße 22",
+    "postcode": "06114",
+    "neighborhood": "Giebichenstein",
+    "opening_hours": "Tu-Su 11:30-18:00",
+    "website": "https://kaffeehaus-wittekind.de",
+    "phone": "+49 345 5220330",
+    "tags": [
+      "historic",
+      "traditional",
+      "cakes",
+      "spa_park"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Historic spa-town coffee house near Giebichenstein castle and Solbad Wittekind."
+  },
+  {
+    "id": "osm-290710978",
+    "name": "Cafe H7",
+    "lat": 51.42624,
+    "lon": 11.98596,
+    "address": "Hohe Straße 7",
+    "postcode": "06132",
+    "neighborhood": "Halle",
+    "opening_hours": "Mo-Th 10:00-18:00; Fr 10:00-14:00",
+    "website": "",
+    "phone": "+49 345 7828994",
+    "tags": [
+      "coffee"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+  },
+  {
+    "id": "osm-458754383",
+    "name": "Cafe Eismurmel",
+    "lat": 51.50741,
+    "lon": 11.94906,
+    "address": "Halle (Saale)",
+    "postcode": "06108",
+    "neighborhood": "Halle Zentrum",
+    "opening_hours": "",
+    "website": "",
+    "phone": "",
+    "tags": [
+      "coffee"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+  },
+  {
+    "id": "osm-719186393",
+    "name": "Cafebar Weinberg",
+    "lat": 51.49851,
+    "lon": 11.94366,
+    "address": "Halle (Saale)",
+    "postcode": "06120",
+    "neighborhood": "Halle",
+    "opening_hours": "Mo-Fr 08:00-14:30",
+    "website": "",
+    "phone": "",
+    "tags": [
+      "coffee",
+      "accessible"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+  },
+  {
+    "id": "osm-788761098",
+    "name": "Café nt",
+    "lat": 51.48532,
+    "lon": 11.96858,
+    "address": "Große Ulrichstraße 51",
+    "postcode": "06108",
+    "neighborhood": "Halle Zentrum",
+    "opening_hours": "Mo-Sa 10:00-22:00; Su off",
+    "website": "https://www.ntcafe.de",
+    "phone": "+49 345 5110712",
+    "tags": [
+      "coffee",
+      "outdoor"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+  },
+  {
+    "id": "osm-1045144852",
+    "name": "Rosenburg",
+    "lat": 51.49722,
+    "lon": 11.96383,
+    "address": "Adolfstraße 10",
+    "postcode": "06114",
+    "neighborhood": "Giebichenstein",
+    "opening_hours": "Mo-Su 10:00-18:00",
+    "website": "",
+    "phone": "",
+    "tags": [
+      "coffee",
+      "vegan"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+  },
+  {
+    "id": "osm-1431266176",
+    "name": "Cafebar Heide",
+    "lat": 51.49659,
+    "lon": 11.93384,
+    "address": "Halle (Saale)",
+    "postcode": "06108",
+    "neighborhood": "Halle Zentrum",
+    "opening_hours": "Apr-Jan: Mo-Th 09:00-14:30; Apr-Jan: Fr 09:00-14:00; Feb-Mar: Mo-Fr 10:00-14:00",
+    "website": "",
+    "phone": "",
+    "tags": [
+      "coffee",
+      "accessible"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+  },
+  {
+    "id": "osm-1553908513",
+    "name": "Cafe und Bistro",
+    "lat": 51.42713,
+    "lon": 11.98358,
+    "address": "Halle (Saale)",
+    "postcode": "06108",
+    "neighborhood": "Halle Zentrum",
+    "opening_hours": "Mo-Sa 12:00-20:00",
+    "website": "",
+    "phone": "+49 345 776 2054",
+    "tags": [
+      "coffee"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+  },
+  {
+    "id": "osm-1639760594",
+    "name": "Bewaffel Dich",
+    "lat": 51.48827,
+    "lon": 11.96725,
+    "address": "Neumarktstraße 9",
+    "postcode": "06108",
+    "neighborhood": "Halle Zentrum",
+    "opening_hours": "Su-Th 09:00-22:00; Fr,Sa 09:00-23:00",
+    "website": "https://www.bewaffel-dich.de",
+    "phone": "",
+    "tags": [
+      "coffee",
+      "outdoor",
+      "wifi",
+      "vegan"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Local Halle cafe recorded on OpenStreetMap (waffle)."
+  },
+  {
+    "id": "osm-1706189129",
+    "name": "Starbucks",
+    "lat": 51.47774,
+    "lon": 11.98684,
+    "address": "Hans-Dietrich-Genscher-Platz 1",
+    "postcode": "06112",
+    "neighborhood": "Halle",
+    "opening_hours": "Mo-Su 06:00-20:00",
+    "website": "",
+    "phone": "",
+    "tags": [
+      "coffee",
+      "outdoor",
+      "accessible",
+      "vegan"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee_shop)."
+  },
+  {
+    "id": "osm-1878912162",
+    "name": "Olly's Eckchen",
+    "lat": 51.4855,
+    "lon": 11.92369,
+    "address": "Halle (Saale)",
+    "postcode": "06108",
+    "neighborhood": "Halle Zentrum",
+    "opening_hours": "",
+    "website": "",
+    "phone": "",
+    "tags": [
+      "coffee",
+      "outdoor"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+  },
+  {
+    "id": "osm-1909479959",
+    "name": "Kniss",
+    "lat": 51.497,
+    "lon": 11.96398,
+    "address": "Richard-Wagner-Straße 50",
+    "postcode": "06108",
+    "neighborhood": "Halle Zentrum",
+    "opening_hours": "We-Su 10:00-18:00",
+    "website": "",
+    "phone": "",
+    "tags": [
+      "coffee"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+  },
+  {
+    "id": "osm-2068490770",
+    "name": "The Shabby",
+    "lat": 51.48812,
+    "lon": 11.96757,
+    "address": "Harz 1",
+    "postcode": "06108",
+    "neighborhood": "Halle Zentrum",
+    "opening_hours": "Fr-Tu 09:00-15:00; We,Th off",
+    "website": "https://theshabby.de/",
+    "phone": "",
+    "tags": [
+      "coffee",
+      "vegan"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+  },
+  {
+    "id": "osm-2121299766",
+    "name": "kafé kaju",
+    "lat": 51.48628,
+    "lon": 11.9747,
+    "address": "Halle (Saale)",
+    "postcode": "06108",
+    "neighborhood": "Halle Zentrum",
+    "opening_hours": "Mo-Fr 14:00-18:30; Sa,Su 14:00-18:00",
+    "website": "https://www.kafekaju.de/",
+    "phone": "+49 171 1767371",
+    "tags": [
+      "coffee",
+      "outdoor"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+  },
+  {
+    "id": "osm-2168666376",
+    "name": "Café Halbstark",
+    "lat": 51.50057,
+    "lon": 11.95461,
+    "address": "Halle (Saale)",
+    "postcode": "06108",
+    "neighborhood": "Halle Zentrum",
+    "opening_hours": "Mo-Su 19:00-02:00",
+    "website": "",
+    "phone": "+49 345 5223555",
+    "tags": [
+      "coffee",
+      "outdoor"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+  },
+  {
+    "id": "osm-2496733844",
+    "name": "Rialto",
+    "lat": 51.48221,
+    "lon": 11.97082,
+    "address": "Halle (Saale)",
+    "postcode": "06108",
+    "neighborhood": "Halle Zentrum",
+    "opening_hours": "",
+    "website": "",
+    "phone": "",
+    "tags": [
+      "coffee",
+      "outdoor"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Local Halle cafe recorded on OpenStreetMap (ice_cream)."
+  },
+  {
+    "id": "osm-2496741334",
+    "name": "Nasch Madame - Konditorei",
+    "lat": 51.48587,
+    "lon": 11.96651,
+    "address": "Kleine Ulrichstraße 25",
+    "postcode": "06108",
+    "neighborhood": "Halle Zentrum",
+    "opening_hours": "We-Sa 12:00-17:00",
+    "website": "http://www.nasch-madame.de",
+    "phone": "+49 345 2084446",
+    "tags": [
+      "coffee",
+      "outdoor",
+      "vegan",
+      "cakes"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Local Halle cafe recorded on OpenStreetMap (cake)."
+  },
+  {
+    "id": "osm-2612038332",
+    "name": "Café Elisabeth",
+    "lat": 51.45936,
+    "lon": 11.97806,
+    "address": "Halle (Saale)",
+    "postcode": "06108",
+    "neighborhood": "Halle Zentrum",
+    "opening_hours": "",
+    "website": "",
+    "phone": "",
+    "tags": [
+      "coffee",
+      "accessible"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Local Halle cafe recorded on OpenStreetMap (german)."
+  },
+  {
+    "id": "osm-2715257424",
+    "name": "Sonnendeck",
+    "lat": 51.48517,
+    "lon": 11.96089,
+    "address": "Pfälzer Ufer 6",
+    "postcode": "06108",
+    "neighborhood": "Halle Zentrum",
+    "opening_hours": "Mo-Fr 11:00-18:00+; Sa-Su 10:00-18:00+",
+    "website": "https://sonnendeckhalle.wixsite.com/sonnendeckhalle/",
+    "phone": "+49 163 2049161",
+    "tags": [
+      "coffee"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Local Halle cafe recorded on OpenStreetMap (regional;breakfast)."
+  },
+  {
+    "id": "osm-2833895201",
+    "name": "Avecio",
+    "lat": 51.48019,
+    "lon": 11.97003,
+    "address": "Rannische Straße 23",
+    "postcode": "06108",
+    "neighborhood": "Halle Zentrum",
+    "opening_hours": "Mo off, Tu-Sa 11:00-18:00, Su 09:00-17:00",
+    "website": "https://www.avecio-cafe-shop.de/",
+    "phone": "+49 3452036338",
+    "tags": [
+      "coffee",
+      "outdoor",
+      "accessible"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Local Halle cafe recorded on OpenStreetMap (international;mediterranean)."
+  },
+  {
+    "id": "osm-3296356394",
+    "name": "Zur Abendsonne",
+    "lat": 51.46292,
+    "lon": 11.97719,
+    "address": "Huttenstraße 76",
+    "postcode": "06110",
+    "neighborhood": "Halle",
+    "opening_hours": "",
+    "website": "",
+    "phone": "",
+    "tags": [
+      "coffee"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+  },
+  {
+    "id": "osm-3316470159",
+    "name": "Cafe Bar Elisan La Sandu & Maruska",
+    "lat": 51.43106,
+    "lon": 11.98397,
+    "address": "Halle (Saale)",
+    "postcode": "06108",
+    "neighborhood": "Halle Zentrum",
+    "opening_hours": "",
+    "website": "",
+    "phone": "",
+    "tags": [
+      "coffee"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+  },
+  {
+    "id": "osm-3321414027",
+    "name": "Café Puschkin",
+    "lat": 51.48716,
+    "lon": 11.96867,
+    "address": "Universitätsring 6a",
+    "postcode": "06108",
+    "neighborhood": "Halle Zentrum",
+    "opening_hours": "",
+    "website": "",
+    "phone": "",
+    "tags": [
+      "coffee"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+  },
+  {
+    "id": "osm-3538984193",
+    "name": "Café und Hofrestaurant Leidenschaften",
+    "lat": 51.4841,
+    "lon": 11.96726,
+    "address": "Große Nikolaistraße 5",
+    "postcode": "06108",
+    "neighborhood": "Halle Zentrum",
+    "opening_hours": "",
+    "website": "http://www.leidenschaften-haendelhaus.de",
+    "phone": "+49 345 58298777",
+    "tags": [
+      "coffee",
+      "accessible"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+  },
+  {
+    "id": "osm-3729420919",
+    "name": "Die Eisbar am Johannesplatz",
+    "lat": 51.47023,
+    "lon": 11.97451,
+    "address": "Johannesplatz 1",
+    "postcode": "06110",
+    "neighborhood": "Halle",
+    "opening_hours": "Tu-Su 12:00-18:00",
+    "website": "https://www.die-eisbar-halle.de/",
+    "phone": "",
+    "tags": [
+      "coffee"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Local Halle cafe recorded on OpenStreetMap (ice_cream)."
+  },
+  {
+    "id": "osm-3753966634",
+    "name": "Vanilla",
+    "lat": 51.49376,
+    "lon": 11.97476,
+    "address": "Schleiermacherstraße 20",
+    "postcode": "06114",
+    "neighborhood": "Giebichenstein",
+    "opening_hours": "Su-Fr 14:00-18:00",
+    "website": "",
+    "phone": "",
+    "tags": [
+      "coffee",
+      "outdoor",
+      "vegan"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Local Halle cafe recorded on OpenStreetMap (ice_cream)."
+  },
+  {
+    "id": "osm-3755861506",
+    "name": "Eiscafé Florenz",
+    "lat": 51.45454,
+    "lon": 12.01642,
+    "address": "Halle (Saale)",
+    "postcode": "06108",
+    "neighborhood": "Halle Zentrum",
+    "opening_hours": "",
+    "website": "",
+    "phone": "",
+    "tags": [
+      "coffee",
+      "outdoor",
+      "accessible"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Local Halle cafe recorded on OpenStreetMap (ice_cream)."
+  },
+  {
+    "id": "osm-3802761329",
+    "name": "Bahnhofslounge und Lesecafe Bastian",
+    "lat": 51.4773,
+    "lon": 11.98737,
+    "address": "Hans-Dietrich-Genscher-Platz 1",
+    "postcode": "06112",
+    "neighborhood": "Halle",
+    "opening_hours": "24/7",
+    "website": "",
+    "phone": "+49 345 6858790",
+    "tags": [
+      "coffee",
+      "accessible"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+  },
+  {
+    "id": "osm-3968685832",
+    "name": "Café Hopfgarten",
+    "lat": 51.4788,
+    "lon": 11.97031,
+    "address": "Rannische Straße 13",
+    "postcode": "06108",
+    "neighborhood": "Halle Zentrum",
+    "opening_hours": "Tu-Fr 09:00-17:00; Sa 08:00-12:00; Su,Mo off",
+    "website": "",
+    "phone": "",
+    "tags": [
+      "coffee"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+  },
+  {
+    "id": "osm-4218926289",
+    "name": "Konditorei Wendl",
+    "lat": 51.48514,
+    "lon": 11.96877,
+    "address": "Große Ulrichstraße 52",
+    "postcode": "06108",
+    "neighborhood": "Halle Zentrum",
+    "opening_hours": "Mo-Fr 07:00-19:00; Sa 07:00-18:00; Su 07:00-13:00",
+    "website": "",
+    "phone": "+49 345 47898218",
+    "tags": [
+      "coffee",
+      "accessible",
+      "vegan"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+  },
+  {
+    "id": "osm-4218938452",
+    "name": "Märkers",
+    "lat": 51.48176,
+    "lon": 11.97186,
+    "address": "Halle (Saale)",
+    "postcode": "06108",
+    "neighborhood": "Halle Zentrum",
+    "opening_hours": "Mo-Fr 10:30-15:30; Sa,Su off",
+    "website": "https://www.gastroguide.de",
+    "phone": "+49 345 501444",
+    "tags": [
+      "coffee",
+      "accessible"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+  },
+  {
+    "id": "osm-4278401679",
+    "name": "Alles Lecker Essen & Mehr",
+    "lat": 51.48275,
+    "lon": 11.97418,
+    "address": "Halle (Saale)",
+    "postcode": "06108",
+    "neighborhood": "Halle Zentrum",
+    "opening_hours": "Mo-Th 08:30-14:00; Fr 08:30-13:00",
+    "website": "https://www.alles-lecker-essen.de/",
+    "phone": "+49 345 47823390",
+    "tags": [
+      "coffee"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+  },
+  {
+    "id": "osm-4774029082",
+    "name": "Eiscafe Softi",
+    "lat": 51.4799,
+    "lon": 11.97676,
+    "address": "Halle (Saale)",
+    "postcode": "06108",
+    "neighborhood": "Halle Zentrum",
+    "opening_hours": "",
+    "website": "",
+    "phone": "",
+    "tags": [
+      "coffee"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Local Halle cafe recorded on OpenStreetMap (ice_cream)."
+  },
+  {
+    "id": "osm-4868553221",
+    "name": "Schäfers Brot und Kuchen",
+    "lat": 51.49954,
+    "lon": 11.93324,
+    "address": "Hubertusplatz 1 A",
+    "postcode": "06120",
+    "neighborhood": "Halle",
+    "opening_hours": "Mo-Fr 07:00-18:00; Sa-Su 07:00-18:00",
+    "website": "",
+    "phone": "+49 345 68489018",
+    "tags": [
+      "coffee",
+      "outdoor",
+      "accessible",
+      "wifi"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee_shop)."
+  },
+  {
+    "id": "osm-4915180422",
+    "name": "Tea One",
+    "lat": 51.48816,
+    "lon": 11.97716,
+    "address": "Halle (Saale)",
+    "postcode": "06108",
+    "neighborhood": "Halle Zentrum",
+    "opening_hours": "Mo-Sa 11:00-19:00",
+    "website": "",
+    "phone": "",
+    "tags": [
+      "coffee",
+      "outdoor",
+      "vegan"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Local Halle cafe recorded on OpenStreetMap (bubble_tea)."
+  },
+  {
+    "id": "osm-4936665823",
+    "name": "Bäckerei König & Café",
+    "lat": 51.47168,
+    "lon": 11.97723,
+    "address": "Südstraße 19",
+    "postcode": "06110",
+    "neighborhood": "Halle",
+    "opening_hours": "Mo-Fr 06:30-18:00; Sa 06:30-12:00; Su off",
+    "website": "https://de.abasix.com/l/halle-saale/baeckerei-koenig-cafe-suedstrasse-halle-saale",
+    "phone": "+49 1577 9238031",
+    "tags": [
+      "coffee"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+  },
+  {
+    "id": "osm-4974999721",
+    "name": "Bagel 29",
+    "lat": 51.48675,
+    "lon": 11.96677,
+    "address": "Große Ulrichstraße 29",
+    "postcode": "06108",
+    "neighborhood": "Halle Zentrum",
+    "opening_hours": "Mo-Sa 10:00-18:00; Su off",
+    "website": "https://bagel29.hpage.com/",
+    "phone": "+49 345 51725821",
+    "tags": [
+      "coffee",
+      "vegan"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Local Halle cafe recorded on OpenStreetMap (bagel)."
+  },
+  {
+    "id": "osm-4999064613",
+    "name": "Cafe & mehr",
+    "lat": 51.46782,
+    "lon": 11.9563,
+    "address": "Böllberger Weg 175",
+    "postcode": "06128",
+    "neighborhood": "Halle",
+    "opening_hours": "Tu-Su 08:00-17:00",
+    "website": "",
+    "phone": "",
+    "tags": [
+      "coffee",
+      "outdoor",
+      "accessible"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+  },
+  {
+    "id": "osm-5639849221",
+    "name": "Dreierlei",
+    "lat": 51.49221,
+    "lon": 11.97368,
+    "address": "Halle (Saale)",
+    "postcode": "06108",
+    "neighborhood": "Halle Zentrum",
+    "opening_hours": "Mo 14:30-18:00; Tu-Fr 10:00-18:00",
+    "website": "",
+    "phone": "",
+    "tags": [
+      "coffee"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+  },
+  {
+    "id": "osm-6058235422",
+    "name": "arko",
+    "lat": 51.48469,
+    "lon": 11.96906,
+    "address": "Große Ulrichstraße 7–9",
+    "postcode": "06108",
+    "neighborhood": "Halle Zentrum",
+    "opening_hours": "Mo-Fr 09:00-18:00; Sa 09:00-16:00",
+    "website": "",
+    "phone": "+49 345 69499674",
+    "tags": [
+      "coffee",
+      "vegan"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+  },
+  {
+    "id": "osm-6228140608",
+    "name": "Cafeteria",
+    "lat": 51.50115,
+    "lon": 11.93511,
+    "address": "Halle (Saale)",
+    "postcode": "06108",
+    "neighborhood": "Halle Zentrum",
+    "opening_hours": "Mo-Fr 08:00-18:00; Sa, Su 11:00-17:00",
+    "website": "",
+    "phone": "",
+    "tags": [
+      "coffee",
+      "outdoor",
+      "wifi"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Local Halle cafe recorded on OpenStreetMap (pizza;sandwich;ice_cream;coffee_shop)."
+  },
+  {
+    "id": "osm-6306132258",
+    "name": "Fresco Gelato",
+    "lat": 51.47898,
+    "lon": 11.98014,
+    "address": "Leipziger Straße 66",
+    "postcode": "06108",
+    "neighborhood": "Halle Zentrum",
+    "opening_hours": "Mo-Th,Sa 10:00-18:00; Su,PH 12:00-19:00; Fr off",
+    "website": "",
+    "phone": "",
+    "tags": [
+      "coffee",
+      "outdoor"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Local Halle cafe recorded on OpenStreetMap (ice_cream)."
+  },
+  {
+    "id": "osm-6332026523",
+    "name": "Steinecker",
+    "lat": 51.47993,
+    "lon": 11.92036,
+    "address": "Halle (Saale)",
+    "postcode": "06108",
+    "neighborhood": "Halle Zentrum",
+    "opening_hours": "",
+    "website": "",
+    "phone": "",
+    "tags": [
+      "coffee"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+  },
+  {
+    "id": "osm-6376659360",
+    "name": "café bebel",
+    "lat": 51.49161,
+    "lon": 11.96842,
+    "address": "Kardinal-Albrecht-Straße 36",
+    "postcode": "06108",
+    "neighborhood": "Halle Zentrum",
+    "opening_hours": "Mo-Su 10:00-19:00",
+    "website": "https://www.instagram.com/cafe_bebel",
+    "phone": "",
+    "tags": [
+      "coffee"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+  },
+  {
+    "id": "osm-6396650685",
+    "name": "Puzzle",
+    "lat": 51.49145,
+    "lon": 11.96575,
+    "address": "Geiststraße 32",
+    "postcode": "06108",
+    "neighborhood": "Halle Zentrum",
+    "opening_hours": "Mo-Fr 09:00-21:00; Sa 09:00-22:00",
+    "website": "",
+    "phone": "",
+    "tags": [
+      "coffee",
+      "outdoor",
+      "accessible",
+      "wifi"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+  },
+  {
+    "id": "osm-6852493113",
+    "name": "Sahara Shisha",
+    "lat": 51.46524,
+    "lon": 11.98339,
+    "address": "Merseburger Straße 104",
+    "postcode": "06110",
+    "neighborhood": "Halle",
+    "opening_hours": "",
+    "website": "",
+    "phone": "",
+    "tags": [
+      "coffee"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+  },
+  {
+    "id": "osm-7881499334",
+    "name": "BWG Erlebnishaus",
+    "lat": 51.48001,
+    "lon": 11.95682,
+    "address": "Holzplatz 10",
+    "postcode": "06110",
+    "neighborhood": "Halle",
+    "opening_hours": "Tu-Fr 14:00-19:00; PH,Sa,Su 10:00-19:00",
+    "website": "",
+    "phone": "",
+    "tags": [
+      "coffee"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Local Halle cafe recorded on OpenStreetMap (pasta;pizza)."
+  },
+  {
+    "id": "osm-8018723343",
+    "name": "Café Kuckhoff",
+    "lat": 51.49101,
+    "lon": 11.97188,
+    "address": "Adam-Kuckhoff-Straße 30",
+    "postcode": "06108",
+    "neighborhood": "Halle Zentrum",
+    "opening_hours": "Mo, Tu off; We, Th 09:00-18:00; Fr, Sa 09:00-21:00; Su 09:00-18:00",
+    "website": "https://www.cafe-kuckhoff.de",
+    "phone": "+49 345 13256501",
+    "tags": [
+      "coffee",
+      "outdoor",
+      "accessible",
+      "vegan"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+  },
+  {
+    "id": "osm-8068997302",
+    "name": "Volksbühne Kaulenberg",
+    "lat": 51.4865,
+    "lon": 11.96764,
+    "address": "Kaulenberg 1",
+    "postcode": "06108",
+    "neighborhood": "Halle Zentrum",
+    "opening_hours": "Mo-Fr 17:00-22:00",
+    "website": "",
+    "phone": "",
+    "tags": [
+      "coffee",
+      "outdoor",
+      "wifi"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+  },
+  {
+    "id": "osm-8229489653",
+    "name": "Faust",
+    "lat": 51.48819,
+    "lon": 11.9675,
+    "address": "Halle (Saale)",
+    "postcode": "06108",
+    "neighborhood": "Halle Zentrum",
+    "opening_hours": "Mo-Su 10:00-16:00",
+    "website": "",
+    "phone": "",
+    "tags": [
+      "coffee"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+  },
+  {
+    "id": "osm-8815183457",
+    "name": "Roy Coffee Hub",
+    "lat": 51.4984,
+    "lon": 11.94061,
+    "address": "Halle (Saale)",
+    "postcode": "06120",
+    "neighborhood": "Halle",
+    "opening_hours": "Mo-Fr 10:00-17:30",
+    "website": "https://technologiepark-weinberg-campus.de/service/roy-coffee-hub",
+    "phone": "+49 345 27976544",
+    "tags": [
+      "coffee",
+      "accessible",
+      "wifi"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+  },
+  {
+    "id": "osm-8926280584",
+    "name": "Zwischentür",
+    "lat": 51.46834,
+    "lon": 11.99223,
+    "address": "Halle (Saale)",
+    "postcode": "06108",
+    "neighborhood": "Halle Zentrum",
+    "opening_hours": "Mo-Fr 11:30-12:30",
+    "website": "",
+    "phone": "",
+    "tags": [
+      "coffee"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Local Halle cafe recorded on OpenStreetMap (\"Halles kleinstes Bistro, mit den kürzesten Öffnungszeiten\")."
+  },
+  {
+    "id": "osm-9140808707",
+    "name": "Treppe",
+    "lat": 51.49297,
+    "lon": 11.97156,
+    "address": "Ludwig-Wucherer-Straße 62",
+    "postcode": "06108",
+    "neighborhood": "Halle Zentrum",
+    "opening_hours": "Mo, Tu, Th, Su 09:30-20:00; Fr, Sa 09:30-22:00",
+    "website": "",
+    "phone": "",
+    "tags": [
+      "coffee"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+  },
+  {
+    "id": "osm-9368518256",
+    "name": "Bäckerei Lampe",
+    "lat": 51.43349,
+    "lon": 11.90454,
+    "address": "Ernst-Thälmann-Straße 102b",
+    "postcode": "06179",
+    "neighborhood": "Halle",
+    "opening_hours": "",
+    "website": "https://baecker-lampe.de/",
+    "phone": "",
+    "tags": [
+      "coffee"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+  },
+  {
+    "id": "osm-10786591799",
+    "name": "Klubhaus Simon 20",
+    "lat": 51.48615,
+    "lon": 11.96651,
+    "address": "Kleine Ulrichstraße 24A",
+    "postcode": "06108",
+    "neighborhood": "Halle Zentrum",
+    "opening_hours": "Mo-Th 09:00-00:00, Fr-Su 09:00-01:00",
+    "website": "",
+    "phone": "+49 345 52386226",
+    "tags": [
+      "coffee",
+      "outdoor",
+      "vegan"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+  },
+  {
+    "id": "osm-10983113691",
+    "name": "NEKO",
+    "lat": 51.48561,
+    "lon": 11.97214,
+    "address": "Joliot-Curie-Platz 1",
+    "postcode": "06108",
+    "neighborhood": "Halle Zentrum",
+    "opening_hours": "Tu-Sa 09:00-18:00",
+    "website": "https://neko-cafe.de/",
+    "phone": "",
+    "tags": [
+      "coffee",
+      "outdoor",
+      "vegan"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+  },
+  {
+    "id": "osm-11601674769",
+    "name": "Stullenwerk café",
+    "lat": 51.4896,
+    "lon": 12.00031,
+    "address": "Fritz-Hoffmann-Straße 64",
+    "postcode": "06116",
+    "neighborhood": "Halle",
+    "opening_hours": "Tu-Fr 09:00-11:00",
+    "website": "https://www.stullenwerk.info/",
+    "phone": "",
+    "tags": [
+      "coffee"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+  },
+  {
+    "id": "osm-11637702098",
+    "name": "Café l'Amis",
+    "lat": 51.48689,
+    "lon": 11.96691,
+    "address": "Halle (Saale)",
+    "postcode": "06108",
+    "neighborhood": "Halle Zentrum",
+    "opening_hours": "Mo-Su 09:00-00:00",
+    "website": "",
+    "phone": "",
+    "tags": [
+      "coffee"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+  },
+  {
+    "id": "osm-12121507753",
+    "name": "Lekkerey",
+    "lat": 51.48597,
+    "lon": 11.9665,
+    "address": "Halle (Saale)",
+    "postcode": "06108",
+    "neighborhood": "Halle Zentrum",
+    "opening_hours": "We,Th 09:00-21:00; Fr,Sa 09:00-24:00; Su 09:00-18:00",
+    "website": "",
+    "phone": "",
+    "tags": [
+      "coffee",
+      "outdoor"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+  },
+  {
+    "id": "osm-12794274096",
+    "name": "Cafe Stübchen",
+    "lat": 51.51349,
+    "lon": 11.95807,
+    "address": "Halle (Saale)",
+    "postcode": "06118",
+    "neighborhood": "Halle",
+    "opening_hours": "We-Fr 11:30-18:00; Sa 13:00-17:00; Su,PH 13:00-18:00",
+    "website": "https://cafe-stuebchen-halle.de/",
+    "phone": "",
+    "tags": [
+      "coffee",
+      "outdoor"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Local Halle cafe recorded on OpenStreetMap (ice_cream;coffee_shop)."
+  },
+  {
+    "id": "osm-13041167309",
+    "name": "G77",
+    "lat": 51.48408,
+    "lon": 11.9718,
+    "address": "Halle (Saale)",
+    "postcode": "06108",
+    "neighborhood": "Halle Zentrum",
+    "opening_hours": "Mo-Th 09:00-22:00; Fr,Sa 09:00-24:00; Su 09:00-20:00",
+    "website": "",
+    "phone": "",
+    "tags": [
+      "coffee"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+  },
+  {
+    "id": "osm-13105858906",
+    "name": "Halloren Gallerie Café",
+    "lat": 51.4781,
+    "lon": 12.00845,
+    "address": "Halle (Saale)",
+    "postcode": "06108",
+    "neighborhood": "Halle Zentrum",
+    "opening_hours": "",
+    "website": "",
+    "phone": "",
+    "tags": [
+      "coffee",
+      "wifi"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+  },
+  {
+    "id": "osm-13386004559",
+    "name": "Café Zum Halloreneck",
+    "lat": 51.48124,
+    "lon": 11.92948,
+    "address": "Hallorenstraße 4",
+    "postcode": "06122",
+    "neighborhood": "Halle",
+    "opening_hours": "",
+    "website": "",
+    "phone": "",
+    "tags": [
+      "coffee",
+      "cakes"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Local Halle cafe recorded on OpenStreetMap (cake;coffee_shop)."
+  },
+  {
+    "id": "osm-13612778809",
+    "name": "Café Monti",
+    "lat": 51.46518,
+    "lon": 11.98404,
+    "address": "Merseburger Straße 103",
+    "postcode": "06112",
+    "neighborhood": "Halle",
+    "opening_hours": "Mo,Fr 12:00-18:00; Tu,Th 10:00-18:00; We,Sa-Su off",
+    "website": "",
+    "phone": "",
+    "tags": [
+      "coffee",
+      "vegan"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+  },
+  {
+    "id": "osm-13712030161",
+    "name": "LYLIS Café & Brunch",
+    "lat": 51.47925,
+    "lon": 11.97846,
+    "address": "Halle (Saale)",
+    "postcode": "06108",
+    "neighborhood": "Halle Zentrum",
+    "opening_hours": "Mo-Su 09:30-18:00",
+    "website": "https://bosselyli.wixsite.com/meinewebsite",
+    "phone": "+49 152 13401437",
+    "tags": [
+      "coffee"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+  },
+  {
+    "id": "osm-13725892602",
+    "name": "Yuno's Eisdiele",
+    "lat": 51.47221,
+    "lon": 11.97941,
+    "address": "Thomasiusstraße 35",
+    "postcode": "06110",
+    "neighborhood": "Halle",
+    "opening_hours": "Mo-Su 12:00-18:00",
+    "website": "",
+    "phone": "",
+    "tags": [
+      "coffee",
+      "vegan"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Local Halle cafe recorded on OpenStreetMap (ice_cream)."
+  },
+  {
+    "id": "osm-13920220820",
+    "name": "Bäckerei am Ackerbürgerhof",
+    "lat": 51.48359,
+    "lon": 11.96564,
+    "address": "Halle (Saale)",
+    "postcode": "06108",
+    "neighborhood": "Halle Zentrum",
+    "opening_hours": "Mo-Fr 08:00-18:00",
+    "website": "",
+    "phone": "",
+    "tags": [
+      "coffee",
+      "outdoor"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+  },
+  {
+    "id": "osm-14002613444",
+    "name": "Freiraum Cafe im Innenhof",
+    "lat": 51.481,
+    "lon": 11.99458,
+    "address": "Halle (Saale)",
+    "postcode": "06108",
+    "neighborhood": "Halle Zentrum",
+    "opening_hours": "We, Th 14:00-21:00; Fr, Sa 14:00-22:00; Su 14:00-17:00",
+    "website": "",
+    "phone": "",
+    "tags": [
+      "coffee",
+      "outdoor"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+  },
+  {
+    "id": "osm-14008320422",
+    "name": "Bubble Tea Bar",
+    "lat": 51.47908,
+    "lon": 11.97953,
+    "address": "Halle (Saale)",
+    "postcode": "06108",
+    "neighborhood": "Halle Zentrum",
+    "opening_hours": "Tu-Su 12:00-18:00",
+    "website": "",
+    "phone": "",
+    "tags": [
+      "coffee",
+      "accessible"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Local Halle cafe recorded on OpenStreetMap (bubble_tea)."
+  },
+  {
+    "id": "osm-14162083221",
+    "name": "Cafe & Bar Celona",
+    "lat": 51.48285,
+    "lon": 11.97074,
+    "address": "Halle (Saale)",
+    "postcode": "06108",
+    "neighborhood": "Halle Zentrum",
+    "opening_hours": "Mo-Fr 09:00-24:00; Sa,Su 00:00-02:00,09:00-24:00",
+    "website": "https://celona.de/cafe-bar-celona-halle",
+    "phone": "+49 345 54833109",
+    "tags": [
+      "coffee",
+      "vegan"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+  },
+  {
+    "id": "osm-14177966174",
+    "name": "Noha bubble Tea & cafe",
+    "lat": 51.48806,
+    "lon": 11.97707,
+    "address": "Halle (Saale)",
+    "postcode": "06108",
+    "neighborhood": "Halle Zentrum",
+    "opening_hours": "",
+    "website": "",
+    "phone": "",
+    "tags": [
+      "coffee"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+  },
+  {
+    "id": "osm-61561597",
+    "name": "Gartenlokal am Peißnitzhaus/Peißnitzhaus-Café",
+    "lat": 51.49364,
+    "lon": 11.94751,
+    "address": "Peißnitzinsel 1",
+    "postcode": "06108",
+    "neighborhood": "Halle Zentrum",
+    "opening_hours": "Th-Su 12:00-19:00",
+    "website": "https://www.peissnitzhaus.de/gastronomie",
+    "phone": "",
+    "tags": [
+      "coffee",
+      "outdoor",
+      "accessible",
+      "vegan"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Local Halle cafe recorded on OpenStreetMap (regional;coffee_shop;burger;tarte_flambee)."
+  },
+  {
+    "id": "osm-98848040",
+    "name": "Das Ding in Seeben",
+    "lat": 51.53181,
+    "lon": 11.96711,
+    "address": "An der Witschke 30",
+    "postcode": "06118",
+    "neighborhood": "Halle",
+    "opening_hours": "Fr-Su 10:00-19:00",
+    "website": "https://www.das-ding-in-seeben.de",
+    "phone": "+49 178 5851535",
+    "tags": [
+      "coffee",
+      "outdoor",
+      "wifi",
+      "vegan"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Local Halle cafe recorded on OpenStreetMap (Das Ding in Seeben ist eine sozial-gastronomische Einrichtung, in der am Wochenende der gastronomische Betrieb geöffnet ist und tagesabhängig soziale Veranstaltungen stattfinden)."
+  },
+  {
+    "id": "osm-199999374",
+    "name": "Café Nassip",
+    "lat": 51.46695,
+    "lon": 11.92115,
+    "address": "Lortzingbogen 5",
+    "postcode": "06124",
+    "neighborhood": "Halle",
+    "opening_hours": "",
+    "website": "",
+    "phone": "",
+    "tags": [
+      "coffee"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+  },
+  {
+    "id": "osm-375345326",
+    "name": "Cafebar Steintor-Campus",
+    "lat": 51.48934,
+    "lon": 11.97375,
+    "address": "Adam-Kuckhoff-Straße 34b",
+    "postcode": "06108",
+    "neighborhood": "Halle Zentrum",
+    "opening_hours": "Mo-Th 08:00-17:00; Fr 08:00-14:30",
+    "website": "https://www.studentenwerk-halle.de/mensen-cafebars/mensen-in-halle/cafebar-steintor-campus",
+    "phone": "+49 345 5524980",
+    "tags": [
+      "coffee",
+      "outdoor",
+      "accessible",
+      "vegan"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+  },
+  {
+    "id": "osm-392235628",
+    "name": "Eiscafe Piazza",
+    "lat": 51.51207,
+    "lon": 12.04999,
+    "address": "Halle (Saale)",
+    "postcode": "06108",
+    "neighborhood": "Halle Zentrum",
+    "opening_hours": "Mo-Fr 10:00-20:00; Sa 09:30-20:00; PH off",
+    "website": "",
+    "phone": "",
+    "tags": [
+      "coffee",
+      "accessible"
+    ],
+    "initial_visited": false,
+    "price_level": "€€",
+    "notes": "Local Halle cafe recorded on OpenStreetMap (ice_cream)."
+  }
+];

@@ -1,0 +1,5 @@
+node_modules/
+*.log
+osm_halle_raw.json
+nominatim_matches.json
+.DS_Store
