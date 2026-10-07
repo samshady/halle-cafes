@@ -1,7 +1,7 @@
 /**
  * map.js
- * Interactive Leaflet Map integration for Halle Cafes.
- * Uses CartoDB dark-themed vector-styled tiles to match Catppuccin Mocha palette.
+ * High-performance, Hardware-Accelerated Vector Map integration for Halle Cafes.
+ * Powered by MapLibre GL JS + OpenFreeMap Dark Style (100% Keyless, Zero Cost, WebGL 60fps).
  */
 
 export class CafeMap {
@@ -13,112 +13,106 @@ export class CafeMap {
     this.userMarker = null;
     this.userCoords = null;
     this.selectedId = null;
+    this.isLoaded = false;
+    this.currentCafes = [];
+    this.currentStore = null;
   }
 
-  init(center = [51.4855, 11.9680], zoom = 14) {
-    if (typeof L === 'undefined') {
-      console.error('Leaflet is not loaded');
+  init(center = [11.9680, 51.4855], zoom = 14.2) {
+    if (typeof maplibregl === 'undefined') {
+      console.error('MapLibre GL JS is not loaded');
       return;
     }
 
-    this.map = L.map(this.containerId, {
-      zoomControl: false,
-      attributionControl: true,
-      tap: false // Disable legacy simulated tap so mobile browsers fire native touch and click events
-    }).setView(center, zoom);
-
-    // 1. Saale Dark Mode tiles (Default: tuned high-contrast dark theme, 100% keyless, zero watermarks)
-    this.darkLayer = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      maxZoom: 19,
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(this.map);
-
-    // 2. Standard OpenStreetMap (Clean, natural light map for bright daylight)
-    this.standardLayer = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      maxZoom: 19,
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    // Initialize MapLibre GL with OpenFreeMap Dark style
+    this.map = new maplibregl.Map({
+      container: this.containerId,
+      style: 'https://tiles.openfreemap.org/styles/dark',
+      center: center, // [lng, lat] in MapLibre
+      zoom: zoom,
+      pitch: 35, // Subtle 3D tilt for architectural depth
+      bearing: -5,
+      antialias: true,
+      attributionControl: true
     });
 
-    // 3. OpenStreetMap Deutschland (High-detail German cartography)
-    this.deLayer = L.tileLayer('https://{s}.tile.openstreetmap.de/{z}/{x}/{y}.png', {
-      maxZoom: 19,
-      subdomains: 'abc',
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    });
+    // Navigation Controls (Zoom +/- and Compass Pitch Reset)
+    this.map.addControl(
+      new maplibregl.NavigationControl({
+        showCompass: true,
+        showZoom: true,
+        visualizePitch: true
+      }),
+      'bottom-right'
+    );
 
-    // Map style layer switcher (top right)
-    L.control.layers(
-      {
-        '🌙 Saale Dark': this.darkLayer,
-        '🗺️ Standard Map': this.standardLayer,
-        '🇩🇪 OpenStreetMap DE': this.deLayer
-      },
-      null,
-      { position: 'topright', collapsed: true }
-    ).addTo(this.map);
+    this.map.on('load', () => {
+      this.isLoaded = true;
 
-    // Dynamic tile filter toggling on layer switch
-    this.map.on('baselayerchange', (e) => {
-      const tilePane = this.map.getPane('tilePane');
-      if (!tilePane) return;
-      if (e.name && e.name.includes('Dark')) {
-        tilePane.classList.remove('no-filter');
-      } else {
-        tilePane.classList.add('no-filter');
+      // Optional: Add subtle 3D extruded buildings if source layer is present
+      try {
+        const layers = this.map.getStyle().layers || [];
+        const labelLayer = layers.find(l => l.type === 'symbol' && l.layout && l.layout['text-field']);
+        const labelLayerId = labelLayer ? labelLayer.id : undefined;
+
+        if (this.map.getSource('openmaptiles')) {
+          this.map.addLayer({
+            id: '3d-buildings-extrude',
+            source: 'openmaptiles',
+            'source-layer': 'building',
+            type: 'fill-extrusion',
+            minzoom: 14,
+            paint: {
+              'fill-extrusion-color': '#181825',
+              'fill-extrusion-height': ['get', 'render_height'],
+              'fill-extrusion-base': ['get', 'render_min_height'],
+              'fill-extrusion-opacity': 0.65
+            }
+          }, labelLayerId);
+        }
+      } catch (err) {
+        // Safe fallback if vector source doesn't support 3D extrusions
+      }
+
+      // Re-render pending markers if dataset was passed before map finish load
+      if (this.currentCafes.length > 0 && this.currentStore) {
+        this.renderMarkers(this.currentCafes, this.currentStore);
       }
     });
-
-    // Zoom control at bottom right
-    L.control.zoom({ position: 'bottomright' }).addTo(this.map);
   }
 
-  createPinIcon(cafe, isVisited, isSelected) {
-    const bg = isVisited ? '#a6e3a1' : (isSelected ? '#cba6f7' : '#fab387');
-    const glyph = isVisited ? '✓' : '☕';
-    const pinSize = isSelected ? 36 : 30;
+  createPinElement(cafe, isVisited, isSelected) {
+    const el = document.createElement('div');
+    el.className = `cafe-marker-wrap ${isSelected ? 'is-selected' : ''} ${isVisited ? 'is-visited' : ''}`;
+    el.setAttribute('data-id', cafe.id);
+    el.setAttribute('aria-label', `${cafe.name} (${cafe.neighborhood})`);
+    el.style.cursor = 'pointer';
 
-    const html = `
-      <div class="custom-marker ${isSelected ? 'is-selected' : ''} ${isVisited ? 'is-visited' : ''}" style="
-        width: ${pinSize}px;
-        height: ${pinSize}px;
-        background: ${bg};
-        border-radius: 50% 50% 50% 0;
-        transform: rotate(-45deg);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.45);
-        border: 2px solid #1e1e2e;
-        transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        pointer-events: auto;
-      ">
-        <span style="
-          transform: rotate(45deg);
-          color: #11111b;
-          font-weight: 800;
-          font-size: ${isSelected ? 16 : 13}px;
-          user-select: none;
-          pointer-events: none;
-        ">${glyph}</span>
+    const bg = isVisited ? 'var(--green, #a6e3a1)' : (isSelected ? 'var(--accent, #cba6f7)' : 'var(--peach, #fab387)');
+    const glyphColor = '#11111b';
+    const glyph = isVisited ? '✓' : '☕';
+
+    el.innerHTML = `
+      <div class="marker-pulse-halo ${isSelected ? 'active' : ''}"></div>
+      <div class="custom-marker-badge" style="background: ${bg};">
+        <span class="marker-glyph" style="color: ${glyphColor};">${glyph}</span>
       </div>
     `;
 
-    return L.divIcon({
-      html,
-      className: 'cafe-marker-wrap',
-      iconSize: [pinSize, pinSize],
-      iconAnchor: [pinSize / 2, pinSize]
-    });
+    return el;
   }
 
   renderMarkers(cafes, store) {
+    this.currentCafes = cafes;
+    this.currentStore = store;
     if (!this.map) return;
 
-    // Remove obsolete markers
     const currentIds = new Set(cafes.map(c => c.id));
+
+    // Remove obsolete markers
     for (const [id, marker] of this.markers.entries()) {
       if (!currentIds.has(id)) {
-        this.map.removeLayer(marker);
+        marker.remove();
         this.markers.delete(id);
       }
     }
@@ -128,45 +122,43 @@ export class CafeMap {
       const userData = store.get(cafe.id);
       const isVisited = userData.visited;
       const isSelected = cafe.id === this.selectedId;
-      const icon = this.createPinIcon(cafe, isVisited, isSelected);
 
       if (this.markers.has(cafe.id)) {
         const marker = this.markers.get(cafe.id);
-        marker.setIcon(icon);
+        const el = marker.getElement();
+        if (el) {
+          el.className = `cafe-marker-wrap ${isSelected ? 'is-selected' : ''} ${isVisited ? 'is-visited' : ''}`;
+          const badge = el.querySelector('.custom-marker-badge');
+          const halo = el.querySelector('.marker-pulse-halo');
+          if (badge) {
+            badge.style.background = isVisited ? 'var(--green, #a6e3a1)' : (isSelected ? 'var(--accent, #cba6f7)' : 'var(--peach, #fab387)');
+            const glyph = badge.querySelector('.marker-glyph');
+            if (glyph) glyph.textContent = isVisited ? '✓' : '☕';
+          }
+          if (halo) {
+            halo.className = `marker-pulse-halo ${isSelected ? 'active' : ''}`;
+          }
+        }
       } else {
-        const marker = L.marker([cafe.lat, cafe.lon], {
-          icon,
-          title: cafe.name,
-          alt: cafe.name,
-          riseOnHover: true
-        }).addTo(this.map);
+        const el = this.createPinElement(cafe, isVisited, isSelected);
 
         const handleSelect = (e) => {
-          if (e && e.originalEvent) {
-            L.DomEvent.stopPropagation(e);
-          }
+          if (e) e.stopPropagation();
           this.selectCafe(cafe.id);
           if (this.onSelectCafe) {
             this.onSelectCafe(cafe);
           }
         };
 
-        // Primary Leaflet click listener
-        marker.on('click', handleSelect);
+        el.addEventListener('click', handleSelect);
 
-        // Fail-safe DOM click listener
-        const bindDomEvents = () => {
-          const el = marker.getElement();
-          if (el) {
-            el.style.cursor = 'pointer';
-            el.setAttribute('aria-label', `${cafe.name} (${cafe.neighborhood})`);
-            el.onclick = (ev) => {
-              ev.stopPropagation();
-              handleSelect(ev);
-            };
-          }
-        };
-        setTimeout(bindDomEvents, 50);
+        // MapLibre Marker instance
+        const marker = new maplibregl.Marker({
+          element: el,
+          anchor: 'center'
+        })
+          .setLngLat([cafe.lon, cafe.lat])
+          .addTo(this.map);
 
         this.markers.set(cafe.id, marker);
       }
@@ -175,9 +167,32 @@ export class CafeMap {
 
   selectCafe(cafeId, panTo = true) {
     this.selectedId = cafeId;
-    const marker = this.markers.get(cafeId);
-    if (marker && panTo) {
-      this.map.panTo(marker.getLatLng(), { animate: true, duration: 0.5 });
+
+    // Update active visual state across all markers
+    for (const [id, marker] of this.markers.entries()) {
+      const el = marker.getElement();
+      if (!el) continue;
+      const isSelected = id === cafeId;
+      const halo = el.querySelector('.marker-pulse-halo');
+      if (isSelected) {
+        el.classList.add('is-selected');
+        if (halo) halo.classList.add('active');
+        el.style.zIndex = '999';
+      } else {
+        el.classList.remove('is-selected');
+        if (halo) halo.classList.remove('active');
+        el.style.zIndex = '';
+      }
+    }
+
+    const targetMarker = this.markers.get(cafeId);
+    if (targetMarker && panTo && this.map) {
+      const lngLat = targetMarker.getLngLat();
+      this.map.easeTo({
+        center: [lngLat.lng, lngLat.lat],
+        zoom: Math.max(this.map.getZoom(), 15.5),
+        duration: 800
+      });
     }
   }
 
@@ -185,32 +200,37 @@ export class CafeMap {
     this.userCoords = coords;
     if (!this.map) return;
 
-    const latlng = [coords.latitude, coords.longitude];
+    const lngLat = [coords.longitude, coords.latitude];
 
     if (this.userMarker) {
-      this.userMarker.setLatLng(latlng);
+      this.userMarker.setLngLat(lngLat);
     } else {
-      const pulseHtml = `
+      const el = document.createElement('div');
+      el.className = 'user-marker-wrap';
+      el.innerHTML = `
         <div class="user-pulse-marker">
           <div class="pulse-ring"></div>
           <div class="pulse-dot"></div>
         </div>
       `;
-      const icon = L.divIcon({
-        html: pulseHtml,
-        className: 'user-marker-wrap',
-        iconSize: [24, 24],
-        iconAnchor: [12, 12]
-      });
-      this.userMarker = L.marker(latlng, { icon }).addTo(this.map);
+      this.userMarker = new maplibregl.Marker({
+        element: el,
+        anchor: 'center'
+      })
+        .setLngLat(lngLat)
+        .addTo(this.map);
     }
 
-    this.map.setView(latlng, 15);
+    this.map.flyTo({
+      center: lngLat,
+      zoom: 15.5,
+      duration: 1200
+    });
   }
 
   invalidateSize() {
     if (this.map) {
-      this.map.invalidateSize();
+      this.map.resize();
     }
   }
 }

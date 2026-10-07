@@ -4,7 +4,7 @@
  * Enables offline access and caching of app assets.
  */
 
-const CACHE_NAME = 'halle-cafes-v2';
+const CACHE_NAME = 'halle-cafes-v3';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',

@@ -32,8 +32,21 @@ class HalleCafeApp {
     this.backupModal = document.getElementById('backup-modal');
     this.backupBtn = document.getElementById('backup-btn');
 
+    // Floating Map Preview Elements
+    this.mapPreviewCard = document.getElementById('map-preview-card');
+    this.mapPreviewClose = document.getElementById('map-preview-close');
+    this.previewTitle = document.getElementById('preview-title');
+    this.previewBadgeStatus = document.getElementById('preview-badge-status');
+    this.previewMeta = document.getElementById('preview-meta');
+    this.previewNotes = document.getElementById('preview-notes');
+    this.previewOpenModalBtn = document.getElementById('preview-open-modal-btn');
+    this.previewDirectionsBtn = document.getElementById('preview-directions-btn');
+
     // Modules
-    this.map = new CafeMap('map-container', (cafe) => this.openDetail(cafe));
+    this.map = new CafeMap('map-container', (cafe) => {
+      this.showMapPreview(cafe);
+      this.openDetail(cafe);
+    });
     this.randomizer = new CafeRandomizer(
       (cafe) => this.openDetail(cafe),
       (msg) => this.showToast(msg)
@@ -154,9 +167,22 @@ class HalleCafeApp {
       if (e.key === 'Escape') {
         this.closeDetail();
         this.closeBackupModal();
+        this.hideMapPreview();
         this.randomizer.close();
       }
     });
+
+    // Map preview drawer buttons
+    if (this.mapPreviewClose) {
+      this.mapPreviewClose.addEventListener('click', () => this.hideMapPreview());
+    }
+    if (this.previewOpenModalBtn) {
+      this.previewOpenModalBtn.addEventListener('click', () => {
+        if (this.selectedCafe) {
+          this.openDetail(this.selectedCafe);
+        }
+      });
+    }
   }
 
   bindMobileTabs() {
@@ -546,6 +572,44 @@ class HalleCafeApp {
     this.detailModal.classList.add('hidden');
     this.detailModal.classList.remove('flex');
     this.selectedCafe = null;
+  }
+
+  showMapPreview(cafe) {
+    if (!this.mapPreviewCard) return;
+
+    this.selectedCafe = cafe;
+    const status = getCafeOpenStatus(cafe.opening_hours);
+    const walkText = formatWalkDistance(cafe.distanceMeters);
+
+    if (this.previewTitle) this.previewTitle.textContent = cafe.name;
+    if (this.previewBadgeStatus) {
+      this.previewBadgeStatus.textContent = status.badgeText;
+      this.previewBadgeStatus.className = `preview-status-pill ${status.statusClass}`;
+    }
+    if (this.previewMeta) {
+      const parts = [cafe.neighborhood];
+      if (cafe.google_rating) {
+        parts.push(`★ ${cafe.google_rating.toFixed(1)} (${cafe.google_review_count || 0})`);
+      }
+      if (walkText) {
+        parts.push(walkText);
+      }
+      this.previewMeta.textContent = parts.join(' • ');
+    }
+    if (this.previewNotes) {
+      this.previewNotes.textContent = cafe.notes || (cafe.tags || []).map(t => `#${t.replace('_', ' ')}`).slice(0, 3).join(' ') || '';
+    }
+    if (this.previewDirectionsBtn) {
+      this.previewDirectionsBtn.href = `https://www.google.com/maps/dir/?api=1&destination=${cafe.lat},${cafe.lon}&travelmode=walking`;
+    }
+
+    this.mapPreviewCard.classList.remove('hidden');
+  }
+
+  hideMapPreview() {
+    if (this.mapPreviewCard) {
+      this.mapPreviewCard.classList.add('hidden');
+    }
   }
 
   renderStats() {

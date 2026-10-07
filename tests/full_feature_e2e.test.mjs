@@ -109,10 +109,14 @@ test('Full feature browser automation suite across all user interactions', async
         const modalCard = document.querySelector('#detail-modal .modal-card');
         const cardRect = modalCard.getBoundingClientRect();
         const topEl = document.elementFromPoint(cardRect.left + cardRect.width / 2, cardRect.top + cardRect.height / 2);
-        const isCoveredByMap = topEl ? topEl.closest('#map-view-container, .leaflet-container') !== null : false;
+        const isCoveredByMap = topEl ? topEl.closest('#map-view-container, .maplibregl-map, .leaflet-container') !== null : false;
         const isInsideCard = topEl ? modalCard.contains(topEl) : false;
 
-        return { isHidden, name, address, googleBadge, isCoveredByMap, isInsideCard };
+        const previewCard = document.getElementById('map-preview-card');
+        const previewOpen = previewCard ? !previewCard.classList.contains('hidden') : false;
+        const previewTitle = document.getElementById('preview-title')?.textContent;
+
+        return { isHidden, name, address, googleBadge, isCoveredByMap, isInsideCard, previewOpen, previewTitle };
       })()
     `);
     assert.equal(result.isHidden, false, 'Modal should be visible');
@@ -121,6 +125,8 @@ test('Full feature browser automation suite across all user interactions', async
     assert.ok(result.googleBadge.includes('4.8'), 'Google rating should be displayed');
     assert.equal(result.isCoveredByMap, false, 'Modal card must NOT be covered by map elements');
     assert.equal(result.isInsideCard, true, 'Top element must be inside modal card');
+    assert.equal(result.previewOpen, true, 'Map preview drawer must be visible on pin click');
+    assert.equal(result.previewTitle, '7 Gramm');
   });
 
   await t.test('3. Modal can be dismissed via Escape key', async () => {
