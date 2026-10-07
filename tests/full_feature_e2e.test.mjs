@@ -364,6 +364,53 @@ test('Full feature browser automation suite across all user interactions', async
     assert.equal(styleTest.finalStoredStyle, 'fiord', 'localStorage should store fiord');
   });
 
+  await t.test('12. Map panning keeps markers perfectly anchored to geographic coordinates without drifting', async () => {
+    const panAccuracy = await evaluate(`
+      (() => {
+        const map = window.app.map.map;
+        const cafe = window.app.cafes[0]; // 7 Gramm
+        const marker = window.app.map.markers.get(cafe.id);
+        const el = marker.getElement();
+        const mapRect = map.getContainer().getBoundingClientRect();
+
+        function measureDrift() {
+          const proj = map.project([cafe.lon, cafe.lat]);
+          const rect = el.getBoundingClientRect();
+          const screenX = rect.left + rect.width / 2 - mapRect.left;
+          const screenY = rect.top + rect.height / 2 - mapRect.top;
+          return {
+            diffX: Math.abs(screenX - proj.x),
+            diffY: Math.abs(screenY - proj.y),
+            computedPos: window.getComputedStyle(el).position
+          };
+        }
+
+        const initial = measureDrift();
+
+        // Pan map east and south by 160px
+        map.panBy([160, 120], { duration: 0 });
+        const afterPan1 = measureDrift();
+
+        // Pan map west and north by 240px
+        map.panBy([-240, -180], { duration: 0 });
+        const afterPan2 = measureDrift();
+
+        // Reset map center
+        map.setCenter([11.9680, 51.4855]);
+
+        return { initial, afterPan1, afterPan2 };
+      })()
+    `);
+
+    assert.equal(panAccuracy.initial.computedPos, 'absolute', 'Marker must have position: absolute');
+    assert.ok(panAccuracy.initial.diffX < 1.0, `Initial X drift must be subpixel (<1px), got ${panAccuracy.initial.diffX}`);
+    assert.ok(panAccuracy.initial.diffY < 1.0, `Initial Y drift must be subpixel (<1px), got ${panAccuracy.initial.diffY}`);
+    assert.ok(panAccuracy.afterPan1.diffX < 1.0, `Post-pan 1 X drift must be subpixel (<1px), got ${panAccuracy.afterPan1.diffX}`);
+    assert.ok(panAccuracy.afterPan1.diffY < 1.0, `Post-pan 1 Y drift must be subpixel (<1px), got ${panAccuracy.afterPan1.diffY}`);
+    assert.ok(panAccuracy.afterPan2.diffX < 1.0, `Post-pan 2 X drift must be subpixel (<1px), got ${panAccuracy.afterPan2.diffX}`);
+    assert.ok(panAccuracy.afterPan2.diffY < 1.0, `Post-pan 2 Y drift must be subpixel (<1px), got ${panAccuracy.afterPan2.diffY}`);
+  });
+
   // Cleanup
   ws.close();
   chrome.kill();

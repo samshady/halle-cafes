@@ -526,7 +526,10 @@ textarea:focus-visible {
   display: flex !important;
   align-items: center;
   justify-content: center;
-  position: relative;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  will-change: transform;
   width: 34px;
   height: 34px;
   min-width: 34px;
@@ -606,6 +609,51 @@ textarea:focus-visible {
     transform: translate(-50%, -50%) scale(2.4);
     opacity: 0;
   }
+}
+
+/* User Geolocation Pulse Marker */
+.user-marker-wrap {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  will-change: transform;
+  pointer-events: none;
+  width: 20px;
+  height: 20px;
+}
+
+.user-pulse-marker {
+  position: relative;
+  width: 20px;
+  height: 20px;
+}
+
+.user-pulse-marker .pulse-dot {
+  width: 14px;
+  height: 14px;
+  background: var(--blue, #89b4fa);
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  box-shadow: 0 0 10px rgba(137, 180, 250, 0.85);
+}
+
+.user-pulse-marker .pulse-ring {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(137, 180, 250, 0.35);
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  animation: user-pulse 1.8s ease-out infinite;
+}
+
+@keyframes user-pulse {
+  0% { transform: scale(0.5); opacity: 1; }
+  100% { transform: scale(2.2); opacity: 0; }
 }
 
 /* Floating Map Preview Drawer / Bottom Sheet */

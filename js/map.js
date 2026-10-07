@@ -30,8 +30,8 @@ export class CafeMap {
       style: 'https://tiles.openfreemap.org/styles/fiord',
       center: center, // [lng, lat] in MapLibre
       zoom: zoom,
-      pitch: 35, // Subtle 3D tilt for architectural depth
-      bearing: -5,
+      pitch: 0, // Clean 2D top-down cartographic view
+      bearing: 0,
       antialias: true,
       attributionControl: true
     });
@@ -96,7 +96,7 @@ export class CafeMap {
 
   createPinElement(cafe, isVisited, isSelected) {
     const el = document.createElement('div');
-    el.className = `cafe-marker-wrap ${isSelected ? 'is-selected' : ''} ${isVisited ? 'is-visited' : ''}`;
+    el.className = `cafe-marker-wrap maplibregl-marker ${isSelected ? 'is-selected' : ''} ${isVisited ? 'is-visited' : ''}`;
     el.setAttribute('data-id', cafe.id);
     el.setAttribute('aria-label', `${cafe.name} (${cafe.neighborhood})`);
     el.style.cursor = 'pointer';
@@ -140,7 +140,7 @@ export class CafeMap {
         const marker = this.markers.get(cafe.id);
         const el = marker.getElement();
         if (el) {
-          el.className = `cafe-marker-wrap ${isSelected ? 'is-selected' : ''} ${isVisited ? 'is-visited' : ''}`;
+          el.className = `cafe-marker-wrap maplibregl-marker ${isSelected ? 'is-selected' : ''} ${isVisited ? 'is-visited' : ''}`;
           const badge = el.querySelector('.custom-marker-badge');
           const halo = el.querySelector('.marker-pulse-halo');
           if (badge) {
@@ -219,7 +219,7 @@ export class CafeMap {
       this.userMarker.setLngLat(lngLat);
     } else {
       const el = document.createElement('div');
-      el.className = 'user-marker-wrap';
+      el.className = 'user-marker-wrap maplibregl-marker';
       el.innerHTML = `
         <div class="user-pulse-marker">
           <div class="pulse-ring"></div>
