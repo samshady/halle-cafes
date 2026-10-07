@@ -34,8 +34,9 @@
   --radius-lg: 22px;
   --radius-full: 9999px;
   
-  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-serif: 'Fraunces', Georgia, serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-display: 'Bricolage Grotesque', 'Inter', sans-serif;
+  --font-serif: var(--font-display);
 }
 
 * {
@@ -50,11 +51,14 @@ body {
   background-color: var(--bg);
   color: var(--text);
   line-height: 1.5;
+  letter-spacing: -0.011em;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Accessibility focus-visible ring */
@@ -118,10 +122,10 @@ textarea:focus-visible {
 }
 
 .brand-title {
-  font-family: var(--font-serif);
-  font-size: 21px;
+  font-family: var(--font-display);
+  font-size: 22px;
   font-weight: 700;
-  letter-spacing: -0.3px;
+  letter-spacing: -0.03em;
   background: linear-gradient(100deg, #ffffff 20%, var(--rosewater) 80%);
   -webkit-background-clip: text;
   background-clip: text;
@@ -728,9 +732,10 @@ textarea:focus-visible {
 }
 
 .preview-title {
-  font-family: var(--font-serif);
-  font-size: 17px;
+  font-family: var(--font-display);
+  font-size: 18px;
   font-weight: 700;
+  letter-spacing: -0.025em;
   color: #ffffff;
   line-height: 1.25;
 }
@@ -765,6 +770,7 @@ textarea:focus-visible {
   font-size: 13px;
   color: var(--subtext1);
   margin-top: 4px;
+  font-feature-settings: "tnum";
 }
 
 .preview-notes-snippet {
@@ -882,9 +888,10 @@ textarea:focus-visible {
 }
 
 .card-name {
-  font-family: var(--font-serif);
-  font-size: 18px;
+  font-family: var(--font-display);
+  font-size: 19px;
   font-weight: 700;
+  letter-spacing: -0.025em;
   color: #ffffff;
   line-height: 1.25;
 }
@@ -925,6 +932,8 @@ textarea:focus-visible {
 .google-rating-pill {
   font-size: 12px;
   font-weight: 700;
+  font-feature-settings: "tnum";
+  letter-spacing: -0.01em;
   color: #f9e2af; /* Catppuccin Yellow: crisp high contrast against dark surface */
   background: rgba(249, 226, 175, 0.12);
   border: 1px solid rgba(249, 226, 175, 0.28);
@@ -1088,6 +1097,8 @@ textarea:focus-visible {
   padding: 4px 10px;
   border-radius: var(--radius-full);
   font-weight: 700;
+  font-feature-settings: "tnum";
+  letter-spacing: -0.01em;
 }
 
 /* Mobile Tabs (bottom) */
@@ -1325,6 +1336,7 @@ textarea:focus-visible {
   flex-direction: column;
   gap: 6px;
   color: var(--subtext1);
+  font-feature-settings: "tnum";
 }
 
 .user-tracker-box {
