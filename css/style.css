@@ -412,6 +412,12 @@ textarea:focus-visible {
   background: var(--bg);
 }
 
+#cafe-cards-list {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
 .panel-map {
   flex: 1;
   display: flex;

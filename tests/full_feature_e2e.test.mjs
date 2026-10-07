@@ -100,6 +100,13 @@ test('Full feature browser automation suite across all user interactions', async
         const el = marker7.getElement();
         el.click();
 
+        const previewCard = document.getElementById('map-preview-card');
+        const previewOpen = previewCard ? !previewCard.classList.contains('hidden') : false;
+        const previewTitle = document.getElementById('preview-title')?.textContent;
+
+        // Click Full Details & Review button on preview card
+        document.getElementById('preview-open-modal-btn').click();
+
         const modal = document.getElementById('detail-modal');
         const isHidden = modal.classList.contains('hidden');
         const name = document.getElementById('detail-name').textContent;
@@ -111,10 +118,6 @@ test('Full feature browser automation suite across all user interactions', async
         const topEl = document.elementFromPoint(cardRect.left + cardRect.width / 2, cardRect.top + cardRect.height / 2);
         const isCoveredByMap = topEl ? topEl.closest('#map-view-container, .maplibregl-map, .leaflet-container') !== null : false;
         const isInsideCard = topEl ? modalCard.contains(topEl) : false;
-
-        const previewCard = document.getElementById('map-preview-card');
-        const previewOpen = previewCard ? !previewCard.classList.contains('hidden') : false;
-        const previewTitle = document.getElementById('preview-title')?.textContent;
 
         return { isHidden, name, address, googleBadge, isCoveredByMap, isInsideCard, previewOpen, previewTitle };
       })()
@@ -314,6 +317,9 @@ test('Full feature browser automation suite across all user interactions', async
         // Click a pin while in map view
         const marker = Array.from(window.app.map.markers.values())[0];
         marker.getElement().click();
+
+        // Click Full Details & Review on preview drawer
+        document.getElementById('preview-open-modal-btn').click();
 
         const modal = document.getElementById('detail-modal');
         const modalOpen = !modal.classList.contains('hidden');

@@ -45,7 +45,6 @@ class HalleCafeApp {
     // Modules
     this.map = new CafeMap('map-container', (cafe) => {
       this.showMapPreview(cafe);
-      this.openDetail(cafe);
     });
     this.randomizer = new CafeRandomizer(
       (cafe) => this.openDetail(cafe),
@@ -204,12 +203,30 @@ class HalleCafeApp {
 
     // Map preview drawer buttons
     if (this.mapPreviewClose) {
-      this.mapPreviewClose.addEventListener('click', () => this.hideMapPreview());
+      this.mapPreviewClose.addEventListener('click', (e) => {
+        e.stopPropagation();
+        this.hideMapPreview();
+      });
     }
     if (this.previewOpenModalBtn) {
-      this.previewOpenModalBtn.addEventListener('click', () => {
-        if (this.selectedCafe) {
-          this.openDetail(this.selectedCafe);
+      this.previewOpenModalBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const target = this.previewCafe || this.selectedCafe;
+        if (target) {
+          this.openDetail(target);
+        }
+      });
+    }
+
+    const previewContent = document.querySelector('.preview-content');
+    if (previewContent) {
+      previewContent.addEventListener('click', (e) => {
+        if (e.target.closest('#preview-directions-btn') || e.target.closest('#map-preview-close') || e.target.closest('#preview-open-modal-btn')) {
+          return;
+        }
+        const target = this.previewCafe || this.selectedCafe;
+        if (target) {
+          this.openDetail(target);
         }
       });
     }
@@ -608,6 +625,7 @@ class HalleCafeApp {
     if (!this.mapPreviewCard) return;
 
     this.selectedCafe = cafe;
+    this.previewCafe = cafe;
     const status = getCafeOpenStatus(cafe.opening_hours);
     const walkText = formatWalkDistance(cafe.distanceMeters);
 
@@ -640,6 +658,7 @@ class HalleCafeApp {
     if (this.mapPreviewCard) {
       this.mapPreviewCard.classList.add('hidden');
     }
+    this.previewCafe = null;
   }
 
   renderStats() {

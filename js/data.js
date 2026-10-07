@@ -485,7 +485,7 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+    "notes": "Hip neighborhood espresso bar in Halle offering quality espresso roasts, friendly barista chat, and relaxed indie tunes."
   },
   {
     "id": "osm-458754383",
@@ -506,7 +506,7 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+    "notes": "Beloved local ice cream parlor in Halle Zentrum serving creamy artisanal gelato, fruit sundaes, espresso, and outdoor summer treats."
   },
   {
     "id": "osm-719186393",
@@ -528,7 +528,7 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+    "notes": "Convenient campus café bar providing quick espresso, fresh sandwiches, and study-friendly seating for students and locals."
   },
   {
     "id": "osm-788761098",
@@ -550,7 +550,7 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+    "notes": "Atmospheric theater café at Neues Theater with historic courtyard seating, pre-show espresso, and cultural neighborhood flair."
   },
   {
     "id": "osm-1045144852",
@@ -572,7 +572,7 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+    "notes": "Peaceful courtyard café in Giebichenstein with secluded outdoor seating, seasonal German comfort dishes, and homemade cakes."
   },
   {
     "id": "osm-1431266176",
@@ -594,7 +594,7 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+    "notes": "Convenient campus café bar providing quick espresso, fresh sandwiches, and study-friendly seating for students and locals."
   },
   {
     "id": "osm-1553908513",
@@ -615,7 +615,7 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+    "notes": "Welcoming local café in Halle Zentrum offering freshly brewed coffee, daily baked treats, and a cozy neighborhood atmosphere."
   },
   {
     "id": "osm-1639760594",
@@ -639,7 +639,7 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Local Halle cafe recorded on OpenStreetMap (waffle)."
+    "notes": "Popular Paulusviertel hangout celebrated for creative sweet and savory Belgian waffle creations, hot chocolate, and relaxed neighborhood vibes."
   },
   {
     "id": "osm-1706189129",
@@ -663,7 +663,7 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee_shop)."
+    "notes": "International coffee spot at the central station offering espresso favorites, iced refreshers, and quick travel bites."
   },
   {
     "id": "osm-1878912162",
@@ -685,7 +685,7 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+    "notes": "Sunny corner spot in Halle Zentrum with comfortable outdoor tables, freshly brewed coffee, and light daytime refreshments."
   },
   {
     "id": "osm-1909479959",
@@ -706,7 +706,7 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+    "notes": "Welcoming local café in Halle Zentrum offering freshly brewed coffee, daily baked treats, and a cozy neighborhood atmosphere."
   },
   {
     "id": "osm-2068490770",
@@ -728,7 +728,7 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+    "notes": "Plant-friendly café in Halle Zentrum serving wholesome vegan pastries, oat milk coffee specialties, and conscious fare."
   },
   {
     "id": "osm-2121299766",
@@ -750,7 +750,7 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+    "notes": "Hip neighborhood espresso bar in Halle Zentrum offering quality espresso roasts, friendly barista chat, and relaxed indie tunes."
   },
   {
     "id": "osm-2168666376",
@@ -772,7 +772,7 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+    "notes": "Hip neighborhood espresso bar in Halle Zentrum offering quality espresso roasts, friendly barista chat, and relaxed indie tunes."
   },
   {
     "id": "osm-2496733844",
@@ -794,7 +794,7 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Local Halle cafe recorded on OpenStreetMap (ice_cream)."
+    "notes": "Beloved local ice cream parlor in Halle Zentrum serving creamy artisanal gelato, fruit sundaes, espresso, and outdoor summer treats."
   },
   {
     "id": "osm-2496741334",
@@ -818,7 +818,7 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Local Halle cafe recorded on OpenStreetMap (cake)."
+    "notes": "Artisan patisserie and boutique confectionery crafting delicate French-style tarts, fine pastries, and specialty espresso in a cozy vintage setting."
   },
   {
     "id": "osm-2612038332",
@@ -840,7 +840,7 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Local Halle cafe recorded on OpenStreetMap (german)."
+    "notes": "Welcoming local café in Halle Zentrum offering freshly brewed coffee, daily baked treats, and a cozy neighborhood atmosphere."
   },
   {
     "id": "osm-2715257424",
@@ -861,7 +861,7 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Local Halle cafe recorded on OpenStreetMap (regional;breakfast)."
+    "notes": "Scenic sun-drenched terrace café known for wholesome weekend breakfasts, spritz aperitifs, and relaxed outdoor lounge seating."
   },
   {
     "id": "osm-2833895201",
@@ -884,7 +884,7 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Local Halle cafe recorded on OpenStreetMap (international;mediterranean)."
+    "notes": "Lively Mediterranean-style café-bar with all-day espresso, light panini, pasta specials, and an energetic terrace."
   },
   {
     "id": "osm-3296356394",
@@ -905,7 +905,7 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+    "notes": "Peaceful courtyard café in Halle with secluded outdoor seating, seasonal German comfort dishes, and homemade cakes."
   },
   {
     "id": "osm-3316470159",
@@ -926,7 +926,7 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+    "notes": "Lively Mediterranean-style café-bar with all-day espresso, light panini, pasta specials, and an energetic terrace."
   },
   {
     "id": "osm-3321414027",
@@ -947,7 +947,7 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+    "notes": "Beloved alternative student hub on Kardinal-Albrecht-Straße with retro charm, hearty breakfasts, evening drinks, and lively terrace seating."
   },
   {
     "id": "osm-3538984193",
@@ -969,7 +969,7 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+    "notes": "Peaceful courtyard café in Halle Zentrum with secluded outdoor seating, seasonal German comfort dishes, and homemade cakes."
   },
   {
     "id": "osm-3729420919",
@@ -990,7 +990,7 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Local Halle cafe recorded on OpenStreetMap (ice_cream)."
+    "notes": "Beloved local ice cream parlor in Halle serving creamy artisanal gelato, fruit sundaes, espresso, and outdoor summer treats."
   },
   {
     "id": "osm-3753966634",
@@ -1013,7 +1013,7 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Local Halle cafe recorded on OpenStreetMap (ice_cream)."
+    "notes": "Sunny corner spot in Giebichenstein with comfortable outdoor tables, freshly brewed coffee, and light daytime refreshments."
   },
   {
     "id": "osm-3755861506",
@@ -1036,7 +1036,7 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Local Halle cafe recorded on OpenStreetMap (ice_cream)."
+    "notes": "Beloved local ice cream parlor in Halle Zentrum serving creamy artisanal gelato, fruit sundaes, espresso, and outdoor summer treats."
   },
   {
     "id": "osm-3802761329",
@@ -1058,7 +1058,7 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+    "notes": "Welcoming local café in Halle offering freshly brewed coffee, daily baked treats, and a cozy neighborhood atmosphere."
   },
   {
     "id": "osm-3968685832",
@@ -1079,7 +1079,7 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+    "notes": "Welcoming local café in Halle Zentrum offering freshly brewed coffee, daily baked treats, and a cozy neighborhood atmosphere."
   },
   {
     "id": "osm-4218926289",
@@ -1102,7 +1102,7 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+    "notes": "Traditional German bakery café in Halle Zentrum offering freshly baked breads, warm streusel and fruit cakes, and quick morning filter coffee."
   },
   {
     "id": "osm-4218938452",
@@ -1124,7 +1124,7 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+    "notes": "Cozy deli and café in Halle Zentrum featuring homemade quiches, fresh soup of the day, artisan cakes, and brewed coffee."
   },
   {
     "id": "osm-4278401679",
@@ -1145,7 +1145,7 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+    "notes": "Welcoming local café in Halle Zentrum offering freshly brewed coffee, daily baked treats, and a cozy neighborhood atmosphere."
   },
   {
     "id": "osm-4774029082",
@@ -1166,7 +1166,7 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Local Halle cafe recorded on OpenStreetMap (ice_cream)."
+    "notes": "Beloved local ice cream parlor in Halle Zentrum serving creamy artisanal gelato, fruit sundaes, espresso, and outdoor summer treats."
   },
   {
     "id": "osm-4868553221",
@@ -1190,7 +1190,7 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee_shop)."
+    "notes": "Traditional German bakery café in Halle offering freshly baked breads, warm streusel and fruit cakes, and quick morning filter coffee."
   },
   {
     "id": "osm-4915180422",
@@ -1213,7 +1213,7 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Local Halle cafe recorded on OpenStreetMap (bubble_tea)."
+    "notes": "Vibrant modern tea bar featuring Taiwanese boba, refreshing fruit teas, creamy milk teas, and sweet Asian snacks."
   },
   {
     "id": "osm-4936665823",
@@ -1234,7 +1234,7 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+    "notes": "Traditional German bakery café in Halle offering freshly baked breads, warm streusel and fruit cakes, and quick morning filter coffee."
   },
   {
     "id": "osm-4974999721",
@@ -1256,7 +1256,7 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Local Halle cafe recorded on OpenStreetMap (bagel)."
+    "notes": "Cozy corner bakery café serving freshly toasted artisan bagels, sweet & savory spreads, and fresh brew in the student quarter."
   },
   {
     "id": "osm-4999064613",
@@ -1279,7 +1279,7 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+    "notes": "Sunny corner spot in Halle with comfortable outdoor tables, freshly brewed coffee, and light daytime refreshments."
   },
   {
     "id": "osm-5639849221",
@@ -1300,7 +1300,7 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+    "notes": "Welcoming local café in Halle Zentrum offering freshly brewed coffee, daily baked treats, and a cozy neighborhood atmosphere."
   },
   {
     "id": "osm-6058235422",
@@ -1322,7 +1322,7 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+    "notes": "Gourmet specialty coffee and confectionery shop offering single-origin beans, fine pralines, and gift delicacies."
   },
   {
     "id": "osm-6228140608",
@@ -1345,7 +1345,7 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Local Halle cafe recorded on OpenStreetMap (pizza;sandwich;ice_cream;coffee_shop)."
+    "notes": "Sunny corner spot in Halle Zentrum with comfortable outdoor tables, freshly brewed coffee, and light daytime refreshments."
   },
   {
     "id": "osm-6306132258",
@@ -1367,7 +1367,7 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Local Halle cafe recorded on OpenStreetMap (ice_cream)."
+    "notes": "Beloved local ice cream parlor in Halle Zentrum serving creamy artisanal gelato, fruit sundaes, espresso, and outdoor summer treats."
   },
   {
     "id": "osm-6332026523",
@@ -1388,7 +1388,7 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+    "notes": "Cozy deli and café in Halle Zentrum featuring homemade quiches, fresh soup of the day, artisan cakes, and brewed coffee."
   },
   {
     "id": "osm-6376659360",
@@ -1409,7 +1409,7 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+    "notes": "Sociable student-friendly café and bar in Halle Zentrum with generous coffee portions, outdoor tables, and relaxed evening atmosphere."
   },
   {
     "id": "osm-6396650685",
@@ -1433,7 +1433,7 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+    "notes": "Sunny corner spot in Halle Zentrum with comfortable outdoor tables, freshly brewed coffee, and light daytime refreshments."
   },
   {
     "id": "osm-6852493113",
@@ -1454,7 +1454,7 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+    "notes": "Relaxed oriental lounge and café in Halle with mint tea, strong coffee, and comfortable lounge seating."
   },
   {
     "id": "osm-7881499334",
@@ -1475,7 +1475,7 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Local Halle cafe recorded on OpenStreetMap (pasta;pizza)."
+    "notes": "Family-friendly activity café featuring light Italian fare, ice cream, fresh drinks, and play areas for kids."
   },
   {
     "id": "osm-8018723343",
@@ -1499,7 +1499,7 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+    "notes": "Charming neighborhood café near the university offering homemade cakes, quiet work corners, and friendly local service."
   },
   {
     "id": "osm-8068997302",
@@ -1522,7 +1522,7 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+    "notes": "Sociable student-friendly café and bar in Halle Zentrum with generous coffee portions, outdoor tables, and relaxed evening atmosphere."
   },
   {
     "id": "osm-8229489653",
@@ -1543,7 +1543,7 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+    "notes": "Sociable student-friendly café and bar in Halle Zentrum with generous coffee portions, outdoor tables, and relaxed evening atmosphere."
   },
   {
     "id": "osm-8815183457",
@@ -1566,7 +1566,7 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+    "notes": "Hip neighborhood espresso bar in Halle offering quality espresso roasts, friendly barista chat, and relaxed indie tunes."
   },
   {
     "id": "osm-8926280584",
@@ -1587,7 +1587,7 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Local Halle cafe recorded on OpenStreetMap (\"Halles kleinstes Bistro, mit den kürzesten Öffnungszeiten\")."
+    "notes": "Known locally as Halle's smallest bistro with intimate counter seating, fresh seasonal daily specials, and a warm neighborhood welcome."
   },
   {
     "id": "osm-9140808707",
@@ -1608,7 +1608,7 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+    "notes": "Sociable student-friendly café and bar in Halle Zentrum with generous coffee portions, outdoor tables, and relaxed evening atmosphere."
   },
   {
     "id": "osm-9368518256",
@@ -1629,7 +1629,7 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+    "notes": "Traditional German bakery café in Halle offering freshly baked breads, warm streusel and fruit cakes, and quick morning filter coffee."
   },
   {
     "id": "osm-10786591799",
@@ -1652,7 +1652,7 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+    "notes": "Sociable student-friendly café and bar in Halle Zentrum with generous coffee portions, outdoor tables, and relaxed evening atmosphere."
   },
   {
     "id": "osm-10983113691",
@@ -1675,7 +1675,7 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+    "notes": "Vibrant modern tea bar featuring Taiwanese boba, refreshing fruit teas, creamy milk teas, and sweet Asian snacks."
   },
   {
     "id": "osm-11601674769",
@@ -1696,7 +1696,7 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+    "notes": "Trendy brunch spot specializing in artisanal sourdough stullen (open sandwiches), specialty espresso drinks, and vibrant plant-forward bowls."
   },
   {
     "id": "osm-11637702098",
@@ -1717,7 +1717,7 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+    "notes": "Warm neighborhood café in Halle Zentrum serving classic espresso drinks, homemade pastries, and casual daytime bites."
   },
   {
     "id": "osm-12121507753",
@@ -1739,7 +1739,7 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+    "notes": "Cozy deli and café in Halle Zentrum featuring homemade quiches, fresh soup of the day, artisan cakes, and brewed coffee."
   },
   {
     "id": "osm-12794274096",
@@ -1761,7 +1761,7 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Local Halle cafe recorded on OpenStreetMap (ice_cream;coffee_shop)."
+    "notes": "Classic neighborhood gem serving traditional German coffee, rich ice cream sundaes, freshly sliced cakes, and warm hospitality."
   },
   {
     "id": "osm-13041167309",
@@ -1782,7 +1782,7 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+    "notes": "Welcoming local café in Halle Zentrum offering freshly brewed coffee, daily baked treats, and a cozy neighborhood atmosphere."
   },
   {
     "id": "osm-13105858906",
@@ -1804,7 +1804,7 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+    "notes": "Historical café celebrating Germany's oldest chocolate maker with decadent hot chocolate, artisan pralines, and classic Kaffee & Kuchen."
   },
   {
     "id": "osm-13386004559",
@@ -1826,7 +1826,7 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Local Halle cafe recorded on OpenStreetMap (cake;coffee_shop)."
+    "notes": "Historical café celebrating Germany's oldest chocolate maker with decadent hot chocolate, artisan pralines, and classic Kaffee & Kuchen."
   },
   {
     "id": "osm-13612778809",
@@ -1848,7 +1848,7 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+    "notes": "Warm neighborhood café in Halle serving classic espresso drinks, homemade pastries, and casual daytime bites."
   },
   {
     "id": "osm-13712030161",
@@ -1869,7 +1869,7 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+    "notes": "Aesthetic modern brunch café serving fluffy pancakes, artisanal avocado toast, matcha lattes, and third-wave style coffee in a chic interior."
   },
   {
     "id": "osm-13725892602",
@@ -1891,7 +1891,7 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Local Halle cafe recorded on OpenStreetMap (ice_cream)."
+    "notes": "Beloved local ice cream parlor in Halle serving creamy artisanal gelato, fruit sundaes, espresso, and outdoor summer treats."
   },
   {
     "id": "osm-13920220820",
@@ -1913,7 +1913,7 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+    "notes": "Traditional German bakery café in Halle Zentrum offering freshly baked breads, warm streusel and fruit cakes, and quick morning filter coffee."
   },
   {
     "id": "osm-14002613444",
@@ -1935,7 +1935,7 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+    "notes": "Sunny corner spot in Halle Zentrum with comfortable outdoor tables, freshly brewed coffee, and light daytime refreshments."
   },
   {
     "id": "osm-14008320422",
@@ -1957,7 +1957,7 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Local Halle cafe recorded on OpenStreetMap (bubble_tea)."
+    "notes": "Vibrant modern tea bar featuring Taiwanese boba, refreshing fruit teas, creamy milk teas, and sweet Asian snacks."
   },
   {
     "id": "osm-14162083221",
@@ -1979,7 +1979,7 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+    "notes": "Lively Mediterranean-style café-bar with all-day espresso, light panini, pasta specials, and an energetic terrace."
   },
   {
     "id": "osm-14177966174",
@@ -2000,7 +2000,7 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+    "notes": "Vibrant modern tea bar featuring Taiwanese boba, refreshing fruit teas, creamy milk teas, and sweet Asian snacks."
   },
   {
     "id": "osm-61561597",
@@ -2024,7 +2024,7 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Local Halle cafe recorded on OpenStreetMap (regional;coffee_shop;burger;tarte_flambee)."
+    "notes": "Idyllic community-run park café on the Peißnitz island surrounded by trees and walking trails. Famous for homemade cakes, regional drinks, and riverfront outdoor seating."
   },
   {
     "id": "osm-98848040",
@@ -2048,7 +2048,7 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Local Halle cafe recorded on OpenStreetMap (Das Ding in Seeben ist eine sozial-gastronomische Einrichtung, in der am Wochenende der gastronomische Betrieb geöffnet ist und tagesabhängig soziale Veranstaltungen stattfinden)."
+    "notes": "Community culture café in Seeben with a welcoming weekend garden, home-baked cakes, and cultural neighborhood gatherings."
   },
   {
     "id": "osm-199999374",
@@ -2069,7 +2069,7 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+    "notes": "Warm neighborhood café in Halle serving classic espresso drinks, homemade pastries, and casual daytime bites."
   },
   {
     "id": "osm-375345326",
@@ -2093,7 +2093,7 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Local Halle cafe recorded on OpenStreetMap (coffee, tea & snacks)."
+    "notes": "Convenient campus café bar providing quick espresso, fresh sandwiches, and study-friendly seating for students and locals."
   },
   {
     "id": "osm-392235628",
@@ -2115,6 +2115,6 @@ export const CAFES_DATA = [
     ],
     "initial_visited": false,
     "price_level": "€€",
-    "notes": "Local Halle cafe recorded on OpenStreetMap (ice_cream)."
+    "notes": "Beloved local ice cream parlor in Halle Zentrum serving creamy artisanal gelato, fruit sundaes, espresso, and outdoor summer treats."
   }
 ];

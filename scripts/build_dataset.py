@@ -335,6 +335,75 @@ def slugify(text):
     text = re.sub(r'[^a-z0-9]+', '-', text)
     return text.strip('-')
 
+def build_editorial_note(name, neighborhood, cafe_tags, cuisine, tags):
+    name_l = name.lower()
+    neigh = neighborhood or "Halle"
+    if "peißnitzhaus" in name_l or "peissnitzhaus" in name_l:
+        return "Idyllic community-run park café on the Peißnitz island surrounded by trees and walking trails. Famous for homemade cakes, regional drinks, and riverfront outdoor seating."
+    if "bewaffel dich" in name_l:
+        return "Popular Paulusviertel hangout celebrated for creative sweet and savory Belgian waffle creations, hot chocolate, and relaxed neighborhood vibes."
+    if "nasch madame" in name_l:
+        return "Artisan patisserie and boutique confectionery crafting delicate French-style tarts, fine pastries, and specialty espresso in a cozy vintage setting."
+    if "sonnendeck" in name_l:
+        return "Scenic sun-drenched terrace café known for wholesome weekend breakfasts, spritz aperitifs, and relaxed outdoor lounge seating."
+    if "puschkin" in name_l:
+        return "Beloved alternative student hub on Kardinal-Albrecht-Straße with retro charm, hearty breakfasts, evening drinks, and lively terrace seating."
+    if "zwischentür" in name_l:
+        return "Known locally as Halle's smallest bistro with intimate counter seating, fresh seasonal daily specials, and a warm neighborhood welcome."
+    if "stullenwerk" in name_l:
+        return "Trendy brunch spot specializing in artisanal sourdough stullen (open sandwiches), specialty espresso drinks, and vibrant plant-forward bowls."
+    if "lylis" in name_l:
+        return "Aesthetic modern brunch café serving fluffy pancakes, artisanal avocado toast, matcha lattes, and third-wave style coffee in a chic interior."
+    if "stübchen" in name_l:
+        return "Classic neighborhood gem serving traditional German coffee, rich ice cream sundaes, freshly sliced cakes, and warm hospitality."
+    if "bagel 29" in name_l:
+        return "Cozy corner bakery café serving freshly toasted artisan bagels, sweet & savory spreads, and fresh brew in the student quarter."
+    if "halloren" in name_l:
+        return "Historical café celebrating Germany's oldest chocolate maker with decadent hot chocolate, artisan pralines, and classic Kaffee & Kuchen."
+    if "café nt" in name_l or "cafe nt" in name_l:
+        return "Atmospheric theater café at Neues Theater with historic courtyard seating, pre-show espresso, and cultural neighborhood flair."
+    if "das ding in seeben" in name_l:
+        return "Community culture café in Seeben with a welcoming weekend garden, home-baked cakes, and cultural neighborhood gatherings."
+    if any(k in name_l for k in ["die eisbar", "eismurmel", "fresco gelato", "softi", "florenz", "yuno", "rialto", "piazza", "eisdiele", "eiscafé"]):
+        return f"Beloved local ice cream parlor in {neigh} serving creamy artisanal gelato, fruit sundaes, espresso, and outdoor summer treats."
+    if any(k in name_l for k in ["bubble tea", "tea one", "neko", "noha"]):
+        return "Vibrant modern tea bar featuring Taiwanese boba, refreshing fruit teas, creamy milk teas, and sweet Asian snacks."
+    if any(k in name_l for k in ["wendl", "lampe", "schäfer", "schaefer", "bäckerei", "baeckerei", "ackerbürgerhof"]):
+        return f"Traditional German bakery café in {neigh} offering freshly baked breads, warm streusel and fruit cakes, and quick morning filter coffee."
+    if any(k in name_l for k in ["avecio", "elisan", "celona"]):
+        return f"Lively Mediterranean-style café-bar with all-day espresso, light panini, pasta specials, and an energetic terrace."
+    if "starbucks" in name_l:
+        return "International coffee spot at the central station offering espresso favorites, iced refreshers, and quick travel bites."
+    if "kuckhoff" in name_l:
+        return "Charming neighborhood café near the university offering homemade cakes, quiet work corners, and friendly local service."
+    if any(k in name_l for k in ["roy coffee", "kafé kaju", "halbstark", "h7"]):
+        return f"Hip neighborhood espresso bar in {neigh} offering quality espresso roasts, friendly barista chat, and relaxed indie tunes."
+    if any(k in name_l for k in ["steinecker", "lekkerey", "märker", "maerker"]):
+        return f"Cozy deli and café in {neigh} featuring homemade quiches, fresh soup of the day, artisan cakes, and brewed coffee."
+    if any(k in name_l for k in ["bebel", "faust", "treppe", "simon 20", "klubhaus", "volksbühne"]):
+        return f"Sociable student-friendly café and bar in {neigh} with generous coffee portions, outdoor tables, and relaxed evening atmosphere."
+    if any(k in name_l for k in ["weinberg", "heide", "campus"]):
+        return f"Convenient campus café bar providing quick espresso, fresh sandwiches, and study-friendly seating for students and locals."
+    if any(k in name_l for k in ["monti", "l'amis", "lamis", "nassip"]):
+        return f"Warm neighborhood café in {neigh} serving classic espresso drinks, homemade pastries, and casual daytime bites."
+    if any(k in name_l for k in ["leidenschaften", "hofrestaurant", "abendsonne", "rosenburg"]):
+        return f"Peaceful courtyard café in {neigh} with secluded outdoor seating, seasonal German comfort dishes, and homemade cakes."
+    if "shisha" in name_l or "sahara" in name_l:
+        return f"Relaxed oriental lounge and café in {neigh} with mint tea, strong coffee, and comfortable lounge seating."
+    if "bwg" in name_l or "erlebnishaus" in name_l:
+        return "Family-friendly activity café featuring light Italian fare, ice cream, fresh drinks, and play areas for kids."
+    if "arko" in name_l:
+        return "Gourmet specialty coffee and confectionery shop offering single-origin beans, fine pralines, and gift delicacies."
+
+    if "outdoor" in cafe_tags and "cakes" in cafe_tags:
+        return f"Relaxed neighborhood café in {neigh} with sunlit outdoor seating, homemade seasonal cakes, and aromatic hot drinks."
+    elif "outdoor" in cafe_tags:
+        return f"Sunny corner spot in {neigh} with comfortable outdoor tables, freshly brewed coffee, and light daytime refreshments."
+    elif "vegan" in cafe_tags:
+        return f"Plant-friendly café in {neigh} serving wholesome vegan pastries, oat milk coffee specialties, and conscious fare."
+    else:
+        return f"Welcoming local café in {neigh} offering freshly brewed coffee, daily baked treats, and a cozy neighborhood atmosphere."
+
 def main():
     with open('osm_halle_raw.json', 'r') as f:
         osm_raw = json.load(f)
@@ -435,8 +504,7 @@ def main():
             "google_maps_url": gmaps_url,
             "tags": cafe_tags,
             "initial_visited": is_visited,
-            "price_level": "€€",
-            "notes": f"Local Halle cafe recorded on OpenStreetMap ({tags.get('description', '') or cuisine or 'coffee, tea & snacks'})."
+            "notes": build_editorial_note(name, neighborhood, cafe_tags, cuisine, tags)
         }
         cafes.append(c_obj)
         seen_names.add(slug)
