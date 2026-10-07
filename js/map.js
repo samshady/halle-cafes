@@ -26,10 +26,10 @@ export class CafeMap {
       attributionControl: false
     }).setView(center, zoom);
 
-    // Subtle dark map tiles (CartoDB Dark Matter)
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+    // Free OpenStreetMap tiles (100% keyless, community hosted)
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 19,
-      subdomains: 'abcd'
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(this.map);
 
     // Zoom control at bottom right

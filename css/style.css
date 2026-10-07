@@ -314,6 +314,11 @@ body {
   height: 100%;
 }
 
+/* Seamless Catppuccin Mocha Dark Mode Filter for OSM Tiles */
+.leaflet-tile-pane {
+  filter: brightness(0.68) invert(1) contrast(1.18) hue-rotate(200deg) saturate(0.45);
+}
+
 /* Cafe Cards */
 .cafe-card {
   background: var(--surface0);
