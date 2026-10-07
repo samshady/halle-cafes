@@ -23,7 +23,8 @@ export class CafeMap {
 
     this.map = L.map(this.containerId, {
       zoomControl: false,
-      attributionControl: false
+      attributionControl: false,
+      tap: false // Disable legacy simulated tap so mobile browsers fire native touch and click events
     }).setView(center, zoom);
 
     // Free OpenStreetMap tiles (100% keyless, community hosted)
@@ -37,39 +38,52 @@ export class CafeMap {
   }
 
   createPinIcon(cafe, isVisited, isSelected) {
-    let bg = isVisited ? '#a6e3a1' : (isSelected ? '#cba6f7' : '#fab387');
-    let glyph = isVisited ? '✓' : '☕';
-    let size = isSelected ? 36 : 28;
+    const bg = isVisited ? '#a6e3a1' : (isSelected ? '#cba6f7' : '#fab387');
+    const glyph = isVisited ? '✓' : '☕';
+    const pinSize = isSelected ? 34 : 28;
 
+    // Generous 44x44px touch hitbox for mobile fingers, centering the visual pin
     const html = `
-      <div class="custom-marker ${isSelected ? 'is-selected' : ''} ${isVisited ? 'is-visited' : ''}" style="
-        width: ${size}px;
-        height: ${size}px;
-        background: ${bg};
-        border-radius: 50% 50% 50% 0;
-        transform: rotate(-45deg);
+      <div class="pin-hitbox" style="
+        width: 44px;
+        height: 44px;
         display: flex;
         align-items: center;
         justify-content: center;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-        border: 2px solid #1e1e2e;
-        transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        cursor: pointer;
+        pointer-events: auto;
       ">
-        <span style="
-          transform: rotate(45deg);
-          color: #11111b;
-          font-weight: 800;
-          font-size: ${isSelected ? 16 : 13}px;
-          user-select: none;
-        ">${glyph}</span>
+        <div class="custom-marker ${isSelected ? 'is-selected' : ''} ${isVisited ? 'is-visited' : ''}" style="
+          width: ${pinSize}px;
+          height: ${pinSize}px;
+          background: ${bg};
+          border-radius: 50% 50% 50% 0;
+          transform: rotate(-45deg);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.45);
+          border: 2px solid #1e1e2e;
+          transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+          pointer-events: auto;
+        ">
+          <span style="
+            transform: rotate(45deg);
+            color: #11111b;
+            font-weight: 800;
+            font-size: ${isSelected ? 16 : 13}px;
+            user-select: none;
+            pointer-events: none;
+          ">${glyph}</span>
+        </div>
       </div>
     `;
 
     return L.divIcon({
       html,
       className: 'cafe-marker-wrap',
-      iconSize: [size, size],
-      iconAnchor: [size / 2, size]
+      iconSize: [44, 44],
+      iconAnchor: [22, 44]
     });
   }
 
@@ -96,13 +110,34 @@ export class CafeMap {
         const marker = this.markers.get(cafe.id);
         marker.setIcon(icon);
       } else {
-        const marker = L.marker([cafe.lat, cafe.lon], { icon }).addTo(this.map);
-        marker.on('click', () => {
+        const marker = L.marker([cafe.lat, cafe.lon], { icon, riseOnHover: true }).addTo(this.map);
+
+        const handleSelect = (e) => {
+          if (e && e.originalEvent) {
+            L.DomEvent.stopPropagation(e);
+          }
           this.selectCafe(cafe.id);
           if (this.onSelectCafe) {
             this.onSelectCafe(cafe);
           }
-        });
+        };
+
+        // Primary Leaflet click listener
+        marker.on('click', handleSelect);
+
+        // Fail-safe DOM click & pointer listeners
+        const bindDomEvents = () => {
+          const el = marker.getElement();
+          if (el) {
+            el.style.cursor = 'pointer';
+            el.addEventListener('click', (ev) => {
+              ev.stopPropagation();
+              handleSelect(ev);
+            });
+          }
+        };
+        setTimeout(bindDomEvents, 60);
+
         this.markers.set(cafe.id, marker);
       }
     }

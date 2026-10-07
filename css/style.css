@@ -415,20 +415,48 @@ textarea:focus-visible {
 .panel-map {
   flex: 1;
   display: flex;
+  flex-direction: column;
   height: calc(100vh - 215px);
   position: relative;
   background: var(--mantle);
+  min-width: 0;
 }
 
 #map-container {
   width: 100%;
   height: 100%;
   min-height: 100%;
+  flex: 1 1 100%;
 }
 
 /* Dark filter for OpenStreetMap tiles */
 .leaflet-tile-pane {
   filter: brightness(0.7) invert(1) contrast(1.15) hue-rotate(200deg) saturate(0.4);
+}
+
+/* Marker Pins & Mobile Touch Targets */
+.cafe-marker-wrap {
+  cursor: pointer;
+  touch-action: manipulation;
+  pointer-events: auto !important;
+}
+
+.cafe-marker-wrap .pin-hitbox {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  touch-action: manipulation;
+  cursor: pointer;
+}
+
+.cafe-marker-wrap .custom-marker {
+  pointer-events: auto;
+}
+
+.cafe-marker-wrap .custom-marker span {
+  pointer-events: none;
 }
 
 /* Cafe Cards */
@@ -1073,10 +1101,19 @@ textarea:focus-visible {
   }
 
   .panel-map {
-    height: calc(100vh - 260px);
+    height: calc(100vh - 240px);
     width: 100%;
     min-height: 350px;
+    display: flex;
     flex-direction: column;
+    flex: 1 1 auto;
+  }
+
+  #map-container {
+    height: 100%;
+    width: 100%;
+    min-height: 350px;
+    flex: 1 1 100%;
   }
 
   .hidden-mobile {

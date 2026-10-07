@@ -18,6 +18,7 @@ class HalleCafeApp {
     this.sortMode = 'recommended';
     this.selectedCafe = null;
     this.userCoords = null;
+    this.store = store;
 
     // Elements
     this.listEl = document.getElementById('cafe-cards-list');
@@ -134,14 +135,16 @@ class HalleCafeApp {
       detailClose.addEventListener('click', () => this.closeDetail());
     }
 
-    // Backdrop dismissal for modal overlays
+    // Backdrop dismissal for modal overlays (ignores delayed synthetic ghost clicks within 350ms of modal open)
     if (this.detailModal) {
       this.detailModal.addEventListener('click', (e) => {
+        if (Date.now() - (this.lastModalOpenTime || 0) < 350) return;
         if (e.target === this.detailModal) this.closeDetail();
       });
     }
     if (this.backupModal) {
       this.backupModal.addEventListener('click', (e) => {
+        if (Date.now() - (this.lastBackupOpenTime || 0) < 350) return;
         if (e.target === this.backupModal) this.closeBackupModal();
       });
     }
@@ -176,10 +179,11 @@ class HalleCafeApp {
       listTabBtn.classList.remove('active');
       mapView.classList.remove('hidden-mobile');
       listView.classList.add('hidden-mobile');
-      // Ensure Leaflet recalculates dimensions after visibility change
-      setTimeout(() => {
-        this.map.invalidateSize();
-      }, 50);
+      // Ensure Leaflet recalculates dimensions immediately and after reflow
+      this.map.invalidateSize();
+      setTimeout(() => this.map.invalidateSize(), 60);
+      setTimeout(() => this.map.invalidateSize(), 220);
+      requestAnimationFrame(() => this.map.invalidateSize());
     });
   }
 
@@ -421,6 +425,7 @@ class HalleCafeApp {
 
   openDetail(cafe) {
     this.selectedCafe = cafe;
+    this.lastModalOpenTime = Date.now();
     this.map.selectCafe(cafe.id);
 
     const userData = store.get(cafe.id);
@@ -544,6 +549,7 @@ class HalleCafeApp {
   }
 
   openBackupModal() {
+    this.lastBackupOpenTime = Date.now();
     this.backupModal.classList.remove('hidden');
     this.backupModal.classList.add('flex');
   }
@@ -583,7 +589,12 @@ class HalleCafeApp {
   }
 }
 
-// Bootstrap on DOM ready
-document.addEventListener('DOMContentLoaded', () => {
+// Bootstrap on DOM ready or immediately if already loaded
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', () => {
+    window.app = new HalleCafeApp();
+  });
+} else {
   window.app = new HalleCafeApp();
-});
+}
+

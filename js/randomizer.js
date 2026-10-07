@@ -31,6 +31,7 @@ export class CafeRandomizer {
 
     if (this.modalEl) {
       this.modalEl.addEventListener('click', (e) => {
+        if (Date.now() - (this.lastOpenTime || 0) < 350) return;
         if (e.target === this.modalEl) this.close();
       });
     }
@@ -66,6 +67,7 @@ export class CafeRandomizer {
   }
 
   open() {
+    this.lastOpenTime = Date.now();
     if (this.modalEl) {
       this.modalEl.classList.remove('hidden');
       this.modalEl.classList.add('flex');
