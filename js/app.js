@@ -403,9 +403,9 @@ class HalleCafeApp {
          class="google-rating-pill"
          title="Google Maps: ${cafe.google_rating} ★ (${cafe.google_review_count || 0} reviews)"
          onclick="event.stopPropagation();">
-        <span style="color:#f9e2af;">★</span>
-        <span>${cafe.google_rating.toFixed(1)}</span>
-        <span style="opacity:0.75; font-size:11px;">(${cafe.google_review_count || 0})</span>
+        <span class="rating-star-icon">★</span>
+        <span class="rating-val">${cafe.google_rating.toFixed(1)}</span>
+        <span class="rating-count">(${cafe.google_review_count || 0})</span>
       </a>
     ` : '';
 
