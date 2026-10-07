@@ -14,20 +14,20 @@ import re
 
 CURATED_EXTRA = [
     {
-        "id": "ziegelkram",
-        "name": "Ziegelkram (am Campus)",
-        "lat": 51.4862,
-        "lon": 11.9688,
-        "address": "Universitätsplatz / Universitätsring",
+        "id": "7-gramm",
+        "name": "7 Gramm",
+        "lat": 51.48544,
+        "lon": 11.96991,
+        "address": "Barfüßerstraße 11",
         "postcode": "06108",
-        "neighborhood": "Altstadt / Uni Campus",
-        "opening_hours": "Mo-Fr 08:00-18:00",
-        "website": "https://www.uni-halle.de",
-        "phone": "",
-        "tags": ["near_uni", "outdoor", "budget", "coffee", "study"],
+        "neighborhood": "Altstadt / Uni",
+        "opening_hours": "Mo-Fr 08:00-18:00; Sa 09:00-18:00; Su 10:00-17:00",
+        "website": "https://7gramm.com",
+        "phone": "+49 345 2082260",
+        "tags": ["specialty_coffee", "espresso", "near_uni", "cakes", "visited"],
         "initial_visited": True,
-        "price_level": "€",
-        "notes": "Sam's regular default hangout right next to the university. Great outdoor seating on sunny days."
+        "price_level": "€€",
+        "notes": "Sam's regular default hangout right next to the uni campus! Famous for single-origin specialty filter & flat whites, but this app helps you explore the rest of Halle."
     },
     {
         "id": "she-coffee",
@@ -44,22 +44,6 @@ CURATED_EXTRA = [
         "initial_visited": True,
         "price_level": "€€",
         "notes": "Cozy aesthetic coffee spot in the lively Kleine Ulli. Already visited and checked off!"
-    },
-    {
-        "id": "7-gramm",
-        "name": "7 Gramm",
-        "lat": 51.48544,
-        "lon": 11.96991,
-        "address": "Barfüßerstraße 11",
-        "postcode": "06108",
-        "neighborhood": "Altstadt",
-        "opening_hours": "Mo-Fr 08:00-18:00; Sa 09:00-18:00; Su 10:00-17:00",
-        "website": "https://7gramm.com",
-        "phone": "+49 345 2082260",
-        "tags": ["specialty_coffee", "espresso", "near_uni", "cakes", "visited"],
-        "initial_visited": True,
-        "price_level": "€€",
-        "notes": "Benchmark specialty third-wave coffee spot in Halle. Famous for single-origin filter & flat whites."
     },
     {
         "id": "picknick-waffles",

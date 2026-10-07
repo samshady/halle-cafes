@@ -8,10 +8,10 @@ const STORAGE_KEY = 'halle_cafes_userdata_v1';
 
 // Initial pre-seed data based on Sam's desktop list checkmarks and habitual spots
 const INITIAL_PRESEED = {
-  'ziegelkram': {
+  '7-gramm': {
     visited: true,
-    rating: 4,
-    notes: 'Our classic default spot right next to the uni campus! Great outdoor student vibes.',
+    rating: 5,
+    notes: 'Our regular default spot right next to the uni! Benchmark specialty third-wave coffee.',
     visitedAt: '2026-10-01',
     favorite: true
   },
@@ -21,13 +21,6 @@ const INITIAL_PRESEED = {
     notes: 'Checked off! Cozy aesthetic spot in the Kleine Ulrichstraße.',
     visitedAt: '2026-09-20',
     favorite: false
-  },
-  '7-gramm': {
-    visited: true,
-    rating: 5,
-    notes: 'Checked off! Outstanding specialty filter & flat white on Barfüßerstraße.',
-    visitedAt: '2026-09-15',
-    favorite: true
   }
 };
 

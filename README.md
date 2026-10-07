@@ -9,7 +9,7 @@ Themed in **Catppuccin Mocha** dark mode with warm coffee accents, inspired by S
 ## ✨ Features
 
 - **95 Halle Cafes Mapped**: Pre-populated with coordinates, street addresses, opening hours, and vibe tags derived from Sam's curated list and OpenStreetMap.
-- **🎲 "Pick For Me" Decision Solver**: Random roulette spinner that shuffles through currently open and filtered cafes to break the habit of always going to the same spot (like *Ziegelkram* next to uni).
+- **🎲 "Pick For Me" Decision Solver**: Random roulette spinner that shuffles through currently open and filtered cafes to break the habit of always going to the same spot (like *7 Gramm* next to uni).
 - **🕒 Timezone-Aware Live Hours**: Evaluates OSM opening hour strings against `Europe/Berlin` time to show real-time badges (🟢 Open Now, 🟡 Closing Soon, 🔴 Closed) plus full weekly schedules.
 - **📍 GPS Distance & Walking Time**: Tap *Near Me* to calculate exact walking distance (e.g. `450 m • 6 min walk`) using the Haversine formula.
 - **✍️ Personal Visit & Rating Tracker**:
