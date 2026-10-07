@@ -9,6 +9,12 @@
     "test:e2e": "node --test tests/full_feature_e2e.test.mjs",
     "build:data": "python3 scripts/build_dataset.py",
     "enrich:google": "python3 scripts/enrich_google.py",
+    "cafe:list": "python3 scripts/manage_cafes.py list",
+    "cafe:add": "python3 scripts/manage_cafes.py add",
+    "cafe:update": "python3 scripts/manage_cafes.py update",
+    "cafe:remove": "python3 scripts/manage_cafes.py remove",
+    "cafe:validate": "python3 scripts/manage_cafes.py validate",
+    "cafe:sync": "python3 scripts/manage_cafes.py sync",
     "serve": "npx serve -l 8080 ."
   },
   "keywords": [

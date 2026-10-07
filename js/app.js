@@ -389,7 +389,7 @@ class HalleCafeApp {
       return;
     }
 
-    this.listEl.innerHTML = this.filteredCafes.map(cafe => this.renderCardHtml(cafe)).join('');
+    this.listEl.innerHTML = this.filteredCafes.map((cafe, index) => this.renderCardHtml(cafe, index + 1)).join('');
 
     // Attach card event listeners
     this.filteredCafes.forEach(cafe => {
@@ -436,7 +436,7 @@ class HalleCafeApp {
     });
   }
 
-  renderCardHtml(cafe) {
+  renderCardHtml(cafe, indexNum) {
     const userData = store.get(cafe.id);
     const status = getCafeOpenStatus(cafe.opening_hours);
     const distText = cafe.distanceMeters ? formatWalkDistance(cafe.distanceMeters) : null;
@@ -460,7 +460,10 @@ class HalleCafeApp {
       <div id="cafe-card-${cafe.id}" class="cafe-card ${userData.visited ? 'is-visited' : ''}">
         <div class="card-header">
           <div class="card-title-group">
-            <h3 class="card-name">${cafe.name}</h3>
+            <div class="card-title-row">
+              ${indexNum ? `<span class="card-number-badge">#${indexNum}</span>` : ''}
+              <h3 class="card-name">${cafe.name}</h3>
+            </div>
             <div class="card-meta">
               <span class="status-badge ${status.statusClass}">${status.badgeText}</span>
               ${googleBadge}

@@ -177,27 +177,35 @@ textarea:focus-visible {
 }
 
 /* Full Width Search Bar */
-.search-bar-wrap {
-  position: relative;
-  width: 100%;
-  margin-bottom: 10px;
+.search-actions-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+@media (min-width: 820px) {
+  .search-actions-bar {
+    flex-direction: row;
+    align-items: center;
+  }
 }
 
 .search-input-box {
   position: relative;
-  width: 100%;
+  flex: 1;
 }
 
 .search-input-box input {
   width: 100%;
-  height: 46px;
+  height: 44px;
   background: var(--crust);
   border: 1px solid var(--surface0);
   border-radius: var(--radius-full);
   padding: 0 42px 0 42px;
   color: var(--text);
   font-family: inherit;
-  font-size: 15px;
+  font-size: 14px;
   transition: all 0.2s ease;
 }
 
@@ -234,58 +242,50 @@ textarea:focus-visible {
   border-radius: 50%;
 }
 
-/* Header Action Row (Pick For Me & Near Me) */
-.header-action-row {
+/* Quick Action Group (Pick For Me & Near Me) */
+.header-action-group {
   display: flex;
-  gap: 10px;
-  margin-bottom: 12px;
+  align-items: center;
+  gap: 8px;
 }
 
 .btn-pick {
   flex: 1;
-  min-height: 44px;
+  min-height: 42px;
   background: linear-gradient(135deg, var(--accent) 0%, var(--pink) 100%);
   color: var(--crust);
   border: none;
   border-radius: var(--radius-full);
-  padding: 10px 18px;
-  font-size: 14px;
+  padding: 8px 16px;
+  font-size: 13px;
   font-weight: 700;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  box-shadow: 0 6px 18px rgba(203, 166, 247, 0.35);
+  gap: 7px;
+  box-shadow: 0 4px 14px rgba(203, 166, 247, 0.35);
   transition: transform 0.15s ease, box-shadow 0.15s ease;
+  white-space: nowrap;
 }
 
 .btn-pick:hover {
-  box-shadow: 0 8px 24px rgba(203, 166, 247, 0.5);
+  box-shadow: 0 6px 20px rgba(203, 166, 247, 0.5);
 }
 
 .btn-pick:active {
   transform: scale(0.97);
 }
 
-@media (min-width: 769px) {
-  .header-action-row {
-    justify-content: flex-start;
-  }
-  .btn-pick {
-    flex: 0 1 auto;
-    min-width: 220px;
-  }
-}
-
 .btn-locate {
-  min-height: 44px;
+  flex: 1;
+  min-height: 42px;
   background: var(--surface0);
   color: var(--blue);
   border: 1px solid rgba(137, 180, 250, 0.25);
   border-radius: var(--radius-full);
-  padding: 10px 18px;
-  font-size: 14px;
+  padding: 8px 15px;
+  font-size: 13px;
   font-weight: 600;
   cursor: pointer;
   display: flex;
@@ -293,6 +293,7 @@ textarea:focus-visible {
   justify-content: center;
   gap: 6px;
   transition: all 0.2s ease;
+  white-space: nowrap;
 }
 
 .btn-locate:hover {
@@ -302,6 +303,12 @@ textarea:focus-visible {
 
 .btn-locate:active {
   transform: scale(0.97);
+}
+
+@media (min-width: 820px) {
+  .btn-pick, .btn-locate {
+    flex: 0 0 auto;
+  }
 }
 
 /* Filter Chips with Touch Targets */
@@ -401,12 +408,13 @@ textarea:focus-visible {
   display: flex;
   position: relative;
   overflow: hidden;
+  min-height: 0;
 }
 
 .panel-list {
-  width: 100%;
-  max-width: 520px;
-  height: calc(100vh - 215px);
+  flex: 1 1 60%;
+  max-width: 640px;
+  height: calc(100vh - 180px);
   overflow-y: auto;
   padding: 24px 20px 48px;
   display: flex;
@@ -416,6 +424,12 @@ textarea:focus-visible {
   background: var(--bg);
 }
 
+@media (min-width: 1400px) {
+  .panel-list {
+    max-width: 720px;
+  }
+}
+
 #cafe-cards-list {
   display: flex;
   flex-direction: column;
@@ -423,13 +437,13 @@ textarea:focus-visible {
 }
 
 .panel-map {
-  flex: 1;
+  flex: 1 1 40%;
   display: flex;
   flex-direction: column;
-  height: calc(100vh - 215px);
+  height: calc(100vh - 180px);
   position: relative;
   background: var(--mantle);
-  min-width: 0;
+  min-width: 320px;
   isolation: isolate;
   z-index: 1;
 }
@@ -567,17 +581,45 @@ textarea:focus-visible {
   display: flex;
   align-items: center;
   justify-content: center;
+  background: var(--peach, #fab387);
+  color: #11111b;
   border: 2px solid #11111b;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
-  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease;
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease, border-color 0.2s ease;
   position: relative;
   z-index: 2;
 }
 
-.marker-glyph {
-  font-size: 13px;
-  font-weight: 800;
-  line-height: 1;
+.marker-coffee-svg {
+  display: block;
+  pointer-events: none;
+}
+
+/* Visited Marker: Subtle emerald glow ring */
+.cafe-marker-wrap.is-visited .custom-marker-badge {
+  box-shadow: 0 0 0 2px var(--green, #a6e3a1), 0 3px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Visited Mini Corner Badge */
+.marker-visited-badge {
+  display: none;
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: var(--green, #a6e3a1);
+  color: #11111b;
+  border: 1.5px solid #11111b;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+  z-index: 3;
+}
+
+.cafe-marker-wrap.is-visited .marker-visited-badge {
+  display: flex;
 }
 
 .cafe-marker-wrap:hover .custom-marker-badge {
@@ -587,6 +629,7 @@ textarea:focus-visible {
 
 .cafe-marker-wrap.is-selected .custom-marker-badge {
   transform: scale(1.25);
+  background: var(--accent, #cba6f7);
   border-color: #ffffff;
   box-shadow: 0 0 0 2px var(--accent), 0 8px 24px rgba(0, 0, 0, 0.6);
 }
@@ -885,6 +928,25 @@ textarea:focus-visible {
 
 .card-title-group {
   flex: 1;
+}
+
+.card-title-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.card-number-badge {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--accent);
+  background: rgba(203, 166, 247, 0.12);
+  border: 1px solid rgba(203, 166, 247, 0.25);
+  padding: 1px 7px;
+  border-radius: var(--radius-xs);
+  font-feature-settings: "tnum";
+  letter-spacing: -0.02em;
 }
 
 .card-name {

@@ -101,14 +101,21 @@ export class CafeMap {
     el.setAttribute('aria-label', `${cafe.name} (${cafe.neighborhood})`);
     el.style.cursor = 'pointer';
 
-    const bg = isVisited ? 'var(--green, #a6e3a1)' : (isSelected ? 'var(--accent, #cba6f7)' : 'var(--peach, #fab387)');
-    const glyphColor = '#11111b';
-    const glyph = isVisited ? '✓' : '☕';
-
     el.innerHTML = `
       <div class="marker-pulse-halo ${isSelected ? 'active' : ''}"></div>
-      <div class="custom-marker-badge" style="background: ${bg};">
-        <span class="marker-glyph" style="color: ${glyphColor};">${glyph}</span>
+      <div class="custom-marker-badge">
+        <svg class="marker-coffee-svg" viewBox="0 0 24 24" width="13" height="13" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+          <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+          <line x1="6" y1="1" x2="6" y2="4"></line>
+          <line x1="10" y1="1" x2="10" y2="4"></line>
+          <line x1="14" y1="1" x2="14" y2="4"></line>
+        </svg>
+        <span class="marker-visited-badge" aria-hidden="true" title="Visited">
+          <svg viewBox="0 0 12 12" width="7" height="7" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="2 6 4.5 8.5 10 3"></polyline>
+          </svg>
+        </span>
       </div>
     `;
 
@@ -141,13 +148,7 @@ export class CafeMap {
         const el = marker.getElement();
         if (el) {
           el.className = `cafe-marker-wrap maplibregl-marker ${isSelected ? 'is-selected' : ''} ${isVisited ? 'is-visited' : ''}`;
-          const badge = el.querySelector('.custom-marker-badge');
           const halo = el.querySelector('.marker-pulse-halo');
-          if (badge) {
-            badge.style.background = isVisited ? 'var(--green, #a6e3a1)' : (isSelected ? 'var(--accent, #cba6f7)' : 'var(--peach, #fab387)');
-            const glyph = badge.querySelector('.marker-glyph');
-            if (glyph) glyph.textContent = isVisited ? '✓' : '☕';
-          }
           if (halo) {
             halo.className = `marker-pulse-halo ${isSelected ? 'active' : ''}`;
           }
