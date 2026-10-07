@@ -420,6 +420,8 @@ textarea:focus-visible {
   position: relative;
   background: var(--mantle);
   min-width: 0;
+  isolation: isolate;
+  z-index: 1;
 }
 
 #map-container {
@@ -429,9 +431,14 @@ textarea:focus-visible {
   flex: 1 1 100%;
 }
 
-/* Dark filter for OpenStreetMap tiles */
+/* Tuned Dark Theme for OpenStreetMap tiles (natural hues, zero watermarks, zero API keys) */
 .leaflet-tile-pane {
-  filter: brightness(0.7) invert(1) contrast(1.15) hue-rotate(200deg) saturate(0.4);
+  filter: invert(100%) hue-rotate(180deg) brightness(88%) contrast(98%) saturate(85%);
+  transition: filter 0.2s ease;
+}
+
+.leaflet-tile-pane.no-filter {
+  filter: none !important;
 }
 
 /* Marker Pins & Mobile Touch Targets */
@@ -465,6 +472,91 @@ textarea:focus-visible {
   pointer-events: none;
 }
 
+/* Custom Leaflet Controls & Layer Switcher */
+.leaflet-bar {
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-radius: var(--radius-sm) !important;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45) !important;
+}
+
+.leaflet-bar a {
+  background-color: var(--surface0) !important;
+  color: var(--text) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  width: 36px !important;
+  height: 36px !important;
+  line-height: 36px !important;
+  font-size: 16px !important;
+  transition: all 0.15s ease;
+}
+
+.leaflet-bar a:hover {
+  background-color: var(--surface1) !important;
+  color: var(--accent) !important;
+}
+
+.leaflet-control-layers {
+  background: var(--surface0) !important;
+  color: var(--text) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-radius: var(--radius-sm) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45) !important;
+  font-family: inherit !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  padding: 6px 12px !important;
+}
+
+.leaflet-control-layers-expanded {
+  background: var(--surface0) !important;
+  color: var(--text) !important;
+}
+
+.leaflet-control-layers label {
+  color: var(--subtext1) !important;
+  cursor: pointer;
+  margin: 4px 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.leaflet-control-layers label:hover {
+  color: var(--text) !important;
+}
+
+/* Custom Leaflet Popup Card */
+.leaflet-popup-content-wrapper {
+  background: var(--surface0) !important;
+  color: var(--text) !important;
+  border-radius: var(--radius-md) !important;
+  border: 1px solid rgba(203, 166, 247, 0.3) !important;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6) !important;
+  padding: 0 !important;
+  overflow: hidden;
+}
+
+.leaflet-popup-content {
+  margin: 14px 16px !important;
+  line-height: 1.4 !important;
+}
+
+.leaflet-popup-tip {
+  background: var(--surface0) !important;
+  border: 1px solid rgba(203, 166, 247, 0.3) !important;
+}
+
+.leaflet-container a.leaflet-popup-close-button {
+  color: var(--subtext0) !important;
+  padding: 8px !important;
+  font-size: 16px !important;
+}
+
+.leaflet-container a.leaflet-popup-close-button:hover {
+  color: var(--text) !important;
+}
+
 /* Cafe Cards */
 .cafe-card {
   background: var(--surface0);
@@ -480,6 +572,12 @@ textarea:focus-visible {
   border-color: rgba(203, 166, 247, 0.35);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
   transform: translateY(-2px);
+}
+
+.cafe-card.is-active-selected {
+  border-color: var(--accent);
+  background: rgba(203, 166, 247, 0.08);
+  box-shadow: 0 0 0 1px var(--accent), 0 8px 24px rgba(0, 0, 0, 0.4);
 }
 
 .cafe-card.is-visited {
@@ -697,7 +795,7 @@ textarea:focus-visible {
   right: 0;
   background: var(--crust);
   border-top: 1px solid var(--surface0);
-  z-index: 110;
+  z-index: 500;
   padding: 6px 14px calc(6px + env(safe-area-inset-bottom, 0px));
 }
 
@@ -730,7 +828,7 @@ textarea:focus-visible {
   background: rgba(17, 17, 27, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  z-index: 200;
+  z-index: 9999;
   align-items: center;
   justify-content: center;
   padding: 16px;
@@ -747,6 +845,7 @@ textarea:focus-visible {
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
   padding: 26px;
   position: relative;
+  z-index: 10000;
   animation: modalPop 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
@@ -1042,7 +1141,7 @@ textarea:focus-visible {
   border-radius: var(--radius-full);
   font-size: 13px;
   font-weight: 600;
-  z-index: 300;
+  z-index: 10001;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   transition: opacity 0.2s ease;
 }

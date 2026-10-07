@@ -428,6 +428,14 @@ class HalleCafeApp {
     this.lastModalOpenTime = Date.now();
     this.map.selectCafe(cafe.id);
 
+    // Highlight matching card in list and scroll into view smoothly
+    const card = document.getElementById(`cafe-card-${cafe.id}`);
+    if (card) {
+      document.querySelectorAll('.cafe-card').forEach(c => c.classList.remove('is-active-selected'));
+      card.classList.add('is-active-selected');
+      card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
     const userData = store.get(cafe.id);
     const status = getCafeOpenStatus(cafe.opening_hours);
     const weeklySchedule = formatWeeklySchedule(cafe.opening_hours);

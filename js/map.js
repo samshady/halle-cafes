@@ -23,15 +23,50 @@ export class CafeMap {
 
     this.map = L.map(this.containerId, {
       zoomControl: false,
-      attributionControl: false,
+      attributionControl: true,
       tap: false // Disable legacy simulated tap so mobile browsers fire native touch and click events
     }).setView(center, zoom);
 
-    // Free OpenStreetMap tiles (100% keyless, community hosted)
-    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    // 1. Saale Dark Mode tiles (Default: tuned high-contrast dark theme, 100% keyless, zero watermarks)
+    this.darkLayer = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 19,
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(this.map);
+
+    // 2. Standard OpenStreetMap (Clean, natural light map for bright daylight)
+    this.standardLayer = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    });
+
+    // 3. OpenStreetMap Deutschland (High-detail German cartography)
+    this.deLayer = L.tileLayer('https://{s}.tile.openstreetmap.de/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      subdomains: 'abc',
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    });
+
+    // Map style layer switcher (top right)
+    L.control.layers(
+      {
+        '🌙 Saale Dark': this.darkLayer,
+        '🗺️ Standard Map': this.standardLayer,
+        '🇩🇪 OpenStreetMap DE': this.deLayer
+      },
+      null,
+      { position: 'topright', collapsed: true }
+    ).addTo(this.map);
+
+    // Dynamic tile filter toggling on layer switch
+    this.map.on('baselayerchange', (e) => {
+      const tilePane = this.map.getPane('tilePane');
+      if (!tilePane) return;
+      if (e.name && e.name.includes('Dark')) {
+        tilePane.classList.remove('no-filter');
+      } else {
+        tilePane.classList.add('no-filter');
+      }
+    });
 
     // Zoom control at bottom right
     L.control.zoom({ position: 'bottomright' }).addTo(this.map);

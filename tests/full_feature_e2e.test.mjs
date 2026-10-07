@@ -106,13 +106,21 @@ test('Full feature browser automation suite across all user interactions', async
         const address = document.getElementById('detail-address').textContent;
         const googleBadge = document.getElementById('detail-google-badge').textContent;
 
-        return { isHidden, name, address, googleBadge };
+        const modalCard = document.querySelector('#detail-modal .modal-card');
+        const cardRect = modalCard.getBoundingClientRect();
+        const topEl = document.elementFromPoint(cardRect.left + cardRect.width / 2, cardRect.top + cardRect.height / 2);
+        const isCoveredByMap = topEl ? topEl.closest('#map-view-container, .leaflet-container') !== null : false;
+        const isInsideCard = topEl ? modalCard.contains(topEl) : false;
+
+        return { isHidden, name, address, googleBadge, isCoveredByMap, isInsideCard };
       })()
     `);
     assert.equal(result.isHidden, false, 'Modal should be visible');
     assert.equal(result.name, '7 Gramm');
     assert.ok(result.address.includes('Barfüßerstraße') || result.address.includes('Altstadt'));
     assert.ok(result.googleBadge.includes('4.8'), 'Google rating should be displayed');
+    assert.equal(result.isCoveredByMap, false, 'Modal card must NOT be covered by map elements');
+    assert.equal(result.isInsideCard, true, 'Top element must be inside modal card');
   });
 
   await t.test('3. Modal can be dismissed via Escape key', async () => {
